@@ -37,6 +37,11 @@
 
 {% set primary_color = theme.global_colors.primary.color  %}
 {% set secondary_color = theme.global_colors.secondary.color %}
+{% set tertiary_color = theme.global_colors.tertiary.color %} 
+{% set dark_grey_color = theme.global_colors.dark_grey.color %} 
+{% set mid_grey_color = theme.global_colors.mid_grey.color %} 
+{% set light_grey_color = theme.global_colors.light_grey.color %} 
+{% set white_color = theme.global_colors.white.color %}
 
 /* 1c. Typography */
 

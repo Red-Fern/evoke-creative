@@ -14,13 +14,8 @@
             "opacity": true
           }
         },
-        "inherited_value": {
-          "property_value_paths": {
-            "color": "brand_settings.primaryColor"
-          }
-        },
         "default": {
-          "color": "#494A52"
+          "color": "#3C3C3B"
         }
       },
       {
@@ -33,13 +28,73 @@
             "opacity": true
           }
         },
-        "inherited_value": {
-          "property_value_paths": {
-            "color": "brand_settings.colors[1]"
+        "default": {
+          "color": "#5DB035"
+        }
+      },
+      {
+        "label": "Tertiary",
+        "name": "tertiary",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
           }
         },
         "default": {
-          "color": "#F8FAFC"
+          "color": "#009FE3"
+        }
+      },
+      {
+        "label": "Dark Grey",
+        "name": "dark_grey",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "default": {
+          "color": "#3C4F57"
+        }
+      },
+      {
+        "label": "Mid Grey",
+        "name": "mid_grey",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "default": {
+          "color": "#616673"
+        }
+      },
+      {
+        "label": "Light Grey",
+        "name": "light_grey",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "default": {
+          "color": "#F0F0F0"
+        }
+      },
+      {
+        "label": "White",
+        "name": "white",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "default": {
+          "color": "#FFFFFF"
         }
       }
     ]
@@ -118,7 +173,7 @@
         "max": 2500,
         "min": 900,
         "suffix": "px",
-        "default": 1240
+        "default": 1480
       }
     ]
   },
@@ -734,11 +789,11 @@
                 "type": "color",
                 "inherited_value": {
                   "property_value_paths": {
-                    "color": "theme.global_colors.secondary.color"
+                    "color": "theme.global_colors.light_grey.color"
                   }
                 },
                 "default": {
-                  "opacity": 100
+                  "opacity": 0
                 }
               }
             ]
@@ -1366,11 +1421,11 @@
                 "type": "color",
                 "inherited_value": {
                   "property_value_paths": {
-                    "color": "theme.global_colors.secondary.color"
+                    "color": "theme.global_colors.light_grey.color"
                   }
                 },
                 "default": {
-                  "opacity": 100
+                  "opacity": 0
                 }
               }
             ]
@@ -1916,7 +1971,7 @@
             "type": "color",
             "inherited_value": {
               "property_value_paths": {
-                "color": "theme.global_colors.secondary.color"
+                "color": "theme.global_colors.light_grey.color"
               }
             },
             "default": {
@@ -1948,7 +2003,7 @@
             },
             "inherited_value": {
               "property_value_paths": {
-                "color": "theme.global_fonts.primary.color"
+                "color": "theme.global_colors.white.color"
               }
             }
           }
@@ -1965,7 +2020,7 @@
             "type": "color",
             "inherited_value": {
               "property_value_paths": {
-                "color": "theme.global_colors.secondary.color"
+                "color": "theme.global_colors.primary.color"
               }
             },
             "default": {
