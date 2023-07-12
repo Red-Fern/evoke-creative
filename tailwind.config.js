@@ -2,7 +2,7 @@
 
 module.exports = {
   content: [
-    "./test-theme/**/*.html"
+    "./evoke-creative/**/*.html"
   ],
   theme: {
     extend: {},
