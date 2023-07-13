@@ -82,14 +82,9 @@
 {% set button_font = theme.buttons.text.font %}
 {% set button_font_mobile = theme.buttons.text.font_mobile %}
 {% set button_text_transform = theme.buttons.text.transform %}
-{% set button_bg_color = color(theme.buttons.background.color) %}
-{% set button_border = theme.buttons.border.border.css %}
+{% set button_accent_color = color(theme.buttons.accent.color) %}
 {% set button_corner_radius = theme.buttons.corner.radius ~ 'px' %}
 {% set button_spacing = theme.buttons.spacing.spacing.css %}
-
-{% set button_color_hover = color(theme.buttons.hover.text.color) %}
-{% set button_background_hover = color(theme.buttons.hover.background.color) %}
-{% set button_border_hover = theme.buttons.hover.border.border.css %}
 
 /* 1e. Forms */
 {% set form_bg_color = color(theme.forms.form.background.color) %}
@@ -310,7 +305,7 @@ button,
   {{ button_border }}
   {{ button_spacing }}
   {{ button_font.style }};
-  background-color: {{ button_bg_color }};
+  background-color: {{ button_accent_color }};
   border-radius: {{ button_corner_radius }};
   color: {{ button_font.color }};
   font-size: {{ button_font.size ~ button_font.size_unit }};
@@ -319,25 +314,19 @@ button,
 
 button:hover,
 button:focus,
+button:active,
 .button:hover,
 .button:focus,
+.button:active,
 .hs-button:hover,
 .hs-button:focus,
-.hs-blog-post-listing__post-button:hover,
-.hs-blog-post-listing__post-button:focus {
-  {{ button_border_hover }};
-  {{ button_font.style }};
-  color: {{ button_color_hover }};
-  background-color: {{ button_background_hover }};
-}
-
-button:active,
-.button:active,
 .hs-button:active,
+.hs-blog-post-listing__post-button:hover,
+.hs-blog-post-listing__post-button:focus,
 .hs-blog-post-listing__post-button:active {
   {{ button_font.style }};
-  background-color: rgba({{ color_variant(theme.buttons.background.color.color, 40)|convert_rgb }}, {{ theme.buttons.background.color.opacity / 100 }});
-  border-color: {{ color_variant(theme.buttons.border.border.top.color, 40) }};
+  color: {{ button_accent_color }};
+  background-color: {{ white_color }};
 }
 
 @media(max-width: 767px) { 

@@ -682,7 +682,7 @@
             },
             "default": {
               "color": "#FFFFFF",
-              "size": 16,
+              "size": 18,
               "size_unit": "px",
               "variant": "700"
             }
@@ -728,8 +728,8 @@
         ]
       },
       {
-        "label": "Background",
-        "name": "background",
+        "label": "Accent",
+        "name": "accent",
         "type": "group",
         "children": [
           {
@@ -738,69 +738,11 @@
             "type": "color",
             "inherited_value": {
               "property_value_paths": {
-                "color": "theme.global_colors.primary.color"
+                "color": "theme.global_colors.tertiary.color"
               }
             },
             "default": {
               "opacity": 100
-            }
-          }
-        ]
-      },
-      {
-        "label": "Border",
-        "name": "border",
-        "type": "group",
-        "children": [
-          {
-            "label": "Border",
-            "name": "border",
-            "type": "border",
-            "inherited_value": {
-              "property_value_paths": {
-                "top.color": "theme.buttons.background.color.color",
-                "right.color": "theme.buttons.background.color.color",
-                "bottom.color": "theme.buttons.background.color.color",
-                "left.color": "theme.buttons.background.color.color"
-              }
-            },
-            "default": {
-              "top": {
-                "width": {
-                  "value": 1,
-                  "units": "px"
-                },
-                "opacity": 100,
-                "style": "solid",
-                "color": "#494A52"
-              },
-              "right": {
-                "width": {
-                  "value": 1,
-                  "units": "px"
-                },
-                "opacity": 100,
-                "style": "solid",
-                "color": "#494A52"
-              },
-              "bottom": {
-                "width": {
-                  "value": 1,
-                  "units": "px"
-                },
-                "opacity": 100,
-                "style": "solid",
-                "color": "#494A52"
-              },
-              "left": {
-                "width": {
-                  "value": 1,
-                  "units": "px"
-                },
-                "opacity": 100,
-                "style": "solid",
-                "color": "#494A52"
-              }
             }
           }
         ]
@@ -856,95 +798,6 @@
                 }
               }
             }
-          }
-        ]
-      },
-      {
-        "label": "Hover",
-        "name": "hover",
-        "type": "group",
-        "children": [
-          {
-            "label": "Text",
-            "name": "text",
-            "type": "group",
-            "children": [
-              {
-                "label": "Color",
-                "name": "color",
-                "type": "color",
-                "default": {
-                  "color": "#ffffff",
-                  "opacity": 100
-                }
-              }
-            ]
-          },
-          {
-            "label": "Background",
-            "name": "background",
-            "type": "group",
-            "children": [
-              {
-                "label": "Color",
-                "name": "color",
-                "type": "color",
-                "default": {
-                  "opacity": 100,
-                  "color": "#1a334e"
-                }
-              }
-            ]
-          },
-          {
-            "label": "Border",
-            "name": "border",
-            "type": "group",
-            "children": [
-              {
-                "label": "Border",
-                "name": "border",
-                "type": "border",
-                "default": {
-                  "top": {
-                    "width": {
-                      "value": 1,
-                      "units": "px"
-                    },
-                    "opacity": 100,
-                    "style": "solid",
-                    "color": "#1a334e"
-                  },
-                  "right": {
-                    "width": {
-                      "value": 1,
-                      "units": "px"
-                    },
-                    "opacity": 100,
-                    "style": "solid",
-                    "color": "#1a334e"
-                  },
-                  "bottom": {
-                    "width": {
-                      "value": 1,
-                      "units": "px"
-                    },
-                    "opacity": 100,
-                    "style": "solid",
-                    "color": "#1a334e"
-                  },
-                  "left": {
-                    "width": {
-                      "value": 1,
-                      "units": "px"
-                    },
-                    "opacity": 100,
-                    "style": "solid",
-                    "color": "#1a334e"
-                  }
-                }
-              }
-            ]
           }
         ]
       }

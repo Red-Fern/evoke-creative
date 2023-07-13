@@ -38,3 +38,18 @@ button:disabled,
   text-decoration: none;
   transition: none;
 }
+
+button.secondary,
+.button.secondary,
+.hs-button.secondary {
+  background-color: transparent;
+  color: {{ theme.buttons.accent.color.color }};
+}
+
+button.tertiary,
+.button.tertiary,
+.hs-button.tertiary {
+  padding: 0;
+  background-color: transparent;
+  color: {{ theme.buttons.accent.color.color }};
+}
