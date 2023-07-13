@@ -142,17 +142,17 @@
 
 /* 1g. Website header */
 
-{% set nav_font_color = theme.header.menu.text.color.color %}
-{% set nav_drop_down_font_color = theme.header.menu.drop_downs.text.color.color %}
-{% set nav_drop_down_bg_color = color(theme.header.menu.drop_downs.background.color) %}
-{% set nav_drop_down_border = theme.header.menu.drop_downs.border.border.css %}
+{% set nav_font_color = theme.global_colors.primary.color %}
+{% set nav_drop_down_font_color = theme.global_colors.primary.color %}
+{% set nav_drop_down_bg_color = theme.global_colors.light_grey.color %}
+{% set nav_drop_down_border = theme.global_colors.primary.color %}
 
-{% set header_bg_color = color(theme.header.background.color) %}
+{% set header_bg_color = theme.global_colors.light_grey.color %}
 
 /* 1h. Website footer */
 
-{% set footer_bg_color = color(theme.footer.background.color) %}
-{% set footer_font_color = theme.footer.text.color.color %}
+{% set footer_bg_color = theme.global_colors.primary.color %}
+{% set footer_font_color = theme.global_colors.white.color %}
 
 {###########################################################################}
 {##################   2. Containers / Grid / DND areas   ###################}
