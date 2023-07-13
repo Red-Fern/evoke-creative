@@ -1,0 +1,22 @@
+{
+    "name": "Gilroy",
+    "fallback": "arial, sans-serif",
+    "variants": [
+      { 
+        "name": "Regular",
+        "files": [
+          {
+            "file": "./gilroy-extrabold.woff",
+            "format": "woff"
+          },
+          {
+            "file": "./gilroy-extrabold.woff2",
+            "format": "woff2"
+          }
+        ],
+        "styles": {
+          "font-weight": 400
+        }
+      }
+    ]
+}

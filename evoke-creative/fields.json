@@ -122,8 +122,7 @@
         },
         "default": {
           "fallback": "sans-serif",
-          "font": "Lato",
-          "font_set": "GOOGLE"
+          "font": "Proxima Nova"
         }
       },
       {
@@ -143,9 +142,8 @@
           }
         },
         "default": {
-          "fallback": "serif",
-          "font": "Merriweather",
-          "font_set": "GOOGLE"
+          "fallback": "serif", 
+          "font": "Gilroy"
         }
       }
     ]
