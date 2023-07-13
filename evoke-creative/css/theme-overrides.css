@@ -80,6 +80,7 @@
 /* 1d. Buttons */
 
 {% set button_font = theme.buttons.text.font %}
+{% set button_font_mobile = theme.buttons.text.font_mobile %}
 {% set button_text_transform = theme.buttons.text.transform %}
 {% set button_bg_color = color(theme.buttons.background.color) %}
 {% set button_border = theme.buttons.border.border.css %}
@@ -89,7 +90,6 @@
 {% set button_color_hover = color(theme.buttons.hover.text.color) %}
 {% set button_background_hover = color(theme.buttons.hover.background.color) %}
 {% set button_border_hover = theme.buttons.hover.border.border.css %}
-{% set button_corner_radius_hover = theme.buttons.hover.corner.radius ~ 'px' %}
 
 /* 1e. Forms */
 {% set form_bg_color = color(theme.forms.form.background.color) %}
@@ -329,7 +329,6 @@ button:focus,
   {{ button_font.style }};
   color: {{ button_color_hover }};
   background-color: {{ button_background_hover }};
-  border-radius: {{ button_corner_radius_hover }};
 }
 
 button:active,
@@ -346,7 +345,7 @@ button:active,
   .button,
   .hs-button,
   .hs-blog-post-listing__post-button {
-    font-size: {{ body_font_mobile.size ~ body_font_mobile.size_unit }};
+    font-size: {{ button_font_mobile.size ~ button_font_mobile.size_unit }};
   }
 }
 

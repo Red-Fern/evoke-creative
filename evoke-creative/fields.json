@@ -682,9 +682,34 @@
             },
             "default": {
               "color": "#FFFFFF",
-              "size": 18,
+              "size": 16,
               "size_unit": "px",
               "variant": "700"
+            }
+          },
+          {
+            "label": "Font (Mobile)",
+            "name": "font_mobile",
+            "type": "font",
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "font": true,
+                "styles": true,
+                "variant": true
+              }
+            },
+            "inherited_value": {
+              "property_value_paths": {
+                "color": "theme.buttons.text.font.color",
+                "fallback": "theme.buttons.text.font.fallback",
+                "font": "theme.buttons.text.font.font",
+                "font_set": "theme.buttons.text.font.font_set"
+              }
+            },
+            "default": {
+              "size": 14,
+              "size_unit": "px"
             }
           },
           {
@@ -790,10 +815,10 @@
             "name": "radius",
             "type": "number",
             "display": "text",
-            "max": 100,
+            "max": 999,
             "step": 1,
             "suffix": "px",
-            "default": 6
+            "default": 999
           }
         ]
       },
@@ -814,19 +839,19 @@
             "default": {
               "padding": {
                 "top": {
-                  "value": 15,
+                  "value": 12,
                   "units": "px"
                 },
                 "right": {
-                  "value": 53,
+                  "value": 24,
                   "units": "px"
                 },
                 "bottom": {
-                  "value": 15,
+                  "value": 12,
                   "units": "px"
                 },
                 "left": {
-                  "value": 53,
+                  "value": 24,
                   "units": "px"
                 }
               }
@@ -918,23 +943,6 @@
                     "color": "#1a334e"
                   }
                 }
-              }
-            ]
-          },
-          {
-            "label": "Corner",
-            "name": "corner",
-            "type": "group",
-            "children": [
-              {
-                "label": "Radius",
-                "name": "radius",
-                "type": "number",
-                "display": "text",
-                "max": 100,
-                "step": 1,
-                "suffix": "px",
-                "default": 6
               }
             ]
           }
