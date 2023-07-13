@@ -1,3 +1,18 @@
 @tailwind base;
+
+@layer base {
+    /* Lists */
+    ul, ol {
+        @apply pl-4;
+    }
+    ul {
+        @apply list-disc;
+    }
+    ol {
+        @apply list-[auto];
+    }
+}
+
 @tailwind components;
+
 @tailwind utilities;
