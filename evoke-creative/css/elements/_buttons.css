@@ -4,6 +4,7 @@ button,
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   text-align: center;
   line-height: 1;
   text-transform: uppercase;
@@ -11,7 +12,6 @@ button,
   white-space: normal;
 }
 
-button::after,
 .button::after,
 .hs-button::after {
   content: '';
@@ -36,34 +36,27 @@ button:disabled,
 
 /* Button variations */
 
-button.secondary,
 .button.secondary,
 .hs-button.secondary,
-button.tertiary,
 .button.tertiary,
 .hs-button.tertiary {
   background-color: transparent;
 }
 
-button.secondary::after,
 .button.secondary::after,
 .hs-button.secondary::after,
-button.tertiary::after,
 .button.tertiary::after,
 .hs-button.tertiary::after {
   border: 1px solid {{ theme.global_colors.light_grey.color }};
 }
 
-button.secondary:hover::after,
 .button.secondary:hover::after,
 .hs-button.secondary:hover::after,
-button.tertiary:hover::after,
 .button.tertiary:hover::after,
 .hs-button.tertiary:hover::after {
   border: none;
 }
 
-button.tertiary,
 .button.tertiary,
 .hs-button.tertiary {
   padding: 0;
