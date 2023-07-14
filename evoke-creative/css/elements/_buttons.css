@@ -2,18 +2,70 @@ button,
 .button,
 .hs-button {
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   text-align: center;
+  line-height: 1;
   transition: all 0.15s linear;
   white-space: normal;
 }
 
+button::after,
+.button::after,
+.hs-button::after {
+  content: '';
+  flex-shrink: 0;
+  margin-left: 15px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+  transition: all 0.15s linear;
+}
+
 button:disabled,
-.button:disabled,
+.button:disabled, 
 .hs-button:disabled {
   background-color: #D0D0D0;
   border-color: #D0D0D0;
   color: #E6E6E6;
+}
+
+/* Button variations */
+
+button.secondary,
+.button.secondary,
+.hs-button.secondary,
+button.tertiary,
+.button.tertiary,
+.hs-button.tertiary {
+  background-color: transparent;
+}
+
+button.secondary::after,
+.button.secondary::after,
+.hs-button.secondary::after,
+button.tertiary::after,
+.button.tertiary::after,
+.hs-button.tertiary::after {
+  border: 1px solid {{ theme.global_colors.light_grey.color }};
+}
+
+button.secondary:hover::after,
+.button.secondary:hover::after,
+.hs-button.secondary:hover::after,
+button.tertiary:hover::after,
+.button.tertiary:hover::after,
+.hs-button.tertiary:hover::after {
+  border: none;
+}
+
+button.tertiary,
+.button.tertiary,
+.hs-button.tertiary {
+  padding: 0;
 }
 
 /* No button */
@@ -37,19 +89,4 @@ button:disabled,
   text-align: left;
   text-decoration: none;
   transition: none;
-}
-
-button.secondary,
-.button.secondary,
-.hs-button.secondary {
-  background-color: transparent;
-  color: {{ theme.buttons.accent.color.color }};
-}
-
-button.tertiary,
-.button.tertiary,
-.hs-button.tertiary {
-  padding: 0;
-  background-color: transparent;
-  color: {{ theme.buttons.accent.color.color }};
 }

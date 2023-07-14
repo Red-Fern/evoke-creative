@@ -82,7 +82,7 @@
 {% set button_font = theme.buttons.text.font %}
 {% set button_font_mobile = theme.buttons.text.font_mobile %}
 {% set button_text_transform = theme.buttons.text.transform %}
-{% set button_accent_color = color(theme.buttons.accent.color) %}
+{% set button_accent_color = theme.buttons.accent.color.color %}
 {% set button_corner_radius = theme.buttons.corner.radius ~ 'px' %}
 {% set button_spacing = theme.buttons.spacing.spacing.css %}
 
@@ -300,8 +300,7 @@ blockquote {
 
 button,
 .button,
-.hs-button,
-.hs-blog-post-listing__post-button {
+.hs-button {
   {{ button_border }}
   {{ button_spacing }}
   {{ button_font.style }};
@@ -312,6 +311,13 @@ button,
   text-transform: {{ button_text_transform }};
 }
 
+button::after,
+.button::after,
+.hs-button:after {
+  background-color: {{ white_color }};
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="{{ button_accent_color|urlencode }}" d="M13.91 3.375h.563v9h-1.125v-7.08l-8.884 8.883-.397.398-.795-.795.398-.397L12.554 4.5H5.473V3.375h8.438Z"/></svg>');
+}
+
 button:hover,
 button:focus,
 button:active,
@@ -320,20 +326,38 @@ button:active,
 .button:active,
 .hs-button:hover,
 .hs-button:focus,
-.hs-button:active,
-.hs-blog-post-listing__post-button:hover,
-.hs-blog-post-listing__post-button:focus,
-.hs-blog-post-listing__post-button:active {
+.hs-button:active {
   {{ button_font.style }};
   color: {{ button_accent_color }};
   background-color: {{ white_color }};
 }
 
+button:hover::after,
+button:focus::after,
+button:active::after,
+.button:hover::after,
+.button:focus::after,
+.button:active::after,
+.hs-button:hover::after,
+.hs-button:focus::after,
+.hs-button:active::after {
+  background-color: {{ button_accent_color }};
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="{{ white_color|urlencode }}" d="M13.91 3.375h.563v9h-1.125v-7.08l-8.884 8.883-.397.398-.795-.795.398-.397L12.554 4.5H5.473V3.375h8.438Z"/></svg>');
+}
+
+button.secondary,
+.button.secondary,
+.hs-button.secondary,
+button.tertiary,
+.button.tertiary,
+.hs-button.tertiary {
+  color: {{ button_accent_color }};
+}
+
 @media(max-width: 767px) { 
   button,
   .button,
-  .hs-button,
-  .hs-blog-post-listing__post-button {
+  .hs-button {
     font-size: {{ button_font_mobile.size ~ button_font_mobile.size_unit }};
   }
 }

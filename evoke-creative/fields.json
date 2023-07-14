@@ -781,15 +781,15 @@
             "default": {
               "padding": {
                 "top": {
-                  "value": 12,
+                  "value": 5,
                   "units": "px"
                 },
                 "right": {
-                  "value": 24,
+                  "value": 5,
                   "units": "px"
                 },
                 "bottom": {
-                  "value": 12,
+                  "value": 5,
                   "units": "px"
                 },
                 "left": {
