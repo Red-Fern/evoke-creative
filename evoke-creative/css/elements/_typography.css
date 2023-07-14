@@ -1,3 +1,29 @@
+/* Fonts */
+
+@font-face { 
+  font-family: 'Proxima Nova'; 
+  src: url('https://139730430.fs1.hubspotusercontent-eu1.net/hubfs/139730430/proxima-nova-regular.ttf') format('truetype'), 
+       url('https://139730430.fs1.hubspotusercontent-eu1.net/hubfs/139730430/proxima-nova-regular.woff') format('woff'), 
+       url('https://139730430.fs1.hubspotusercontent-eu1.net/hubfs/139730430/proxima-nova-regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face { 
+  font-family: 'Proxima Nova'; 
+  src: url('https://139730430.fs1.hubspotusercontent-eu1.net/hubfs/139730430/proxima-nova-bold.ttf') format('truetype'), 
+       url('https://139730430.fs1.hubspotusercontent-eu1.net/hubfs/139730430/proxima-nova-bold.woff') format('woff'), 
+       url('https://139730430.fs1.hubspotusercontent-eu1.net/hubfs/139730430/proxima-nova-bold.woff2') format('woff2');
+  font-weight: 700;
+}
+
+@font-face { 
+  font-family: 'Gilroy'; 
+  src: url('https://139730430.fs1.hubspotusercontent-eu1.net/hubfs/139730430/gilroy-extrabold.ttf') format('truetype'), 
+       url('https://139730430.fs1.hubspotusercontent-eu1.net/hubfs/139730430/gilroy-extrabold.woff') format('woff'), 
+       url('https://139730430.fs1.hubspotusercontent-eu1.net/hubfs/139730430/gilroy-extrabold.woff2') format('woff2');
+  font-weight: 800;
+}
+
 body {
   line-height: 1.4;
   overflow-wrap: break-word;

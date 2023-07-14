@@ -111,6 +111,7 @@
         "alternate_names": ["body_font"],
         "visibility": {
           "hidden_subfields": {
+            "font": true,
             "size": true,
             "styles": true
           }
@@ -132,6 +133,7 @@
         "alternate_names": ["heading_font"],
         "visibility": {
           "hidden_subfields": {
+            "font": true,
             "size": true,
             "styles": true
           }
@@ -189,6 +191,14 @@
             "label": "Font",
             "name": "font",
             "type": "font",
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "font": true,
+                "styles": true,
+                "variant": true
+              }
+            },
             "inherited_value": {
               "property_value_paths": {
                 "color": "theme.global_fonts.secondary.color",
@@ -255,6 +265,14 @@
             "label": "Font",
             "name": "font",
             "type": "font",
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "font": true,
+                "styles": true,
+                "variant": true
+              }
+            },
             "inherited_value": {
               "property_value_paths": {
                 "color": "theme.global_fonts.secondary.color",
@@ -321,6 +339,14 @@
             "label": "Font",
             "name": "font",
             "type": "font",
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "font": true,
+                "styles": true,
+                "variant": true
+              }
+            },
             "inherited_value": {
               "property_value_paths": {
                 "color": "theme.global_fonts.secondary.color",
@@ -387,6 +413,14 @@
             "label": "Font",
             "name": "font",
             "type": "font",
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "font": true,
+                "styles": true,
+                "variant": true
+              }
+            },
             "inherited_value": {
               "property_value_paths": {
                 "color": "theme.global_fonts.secondary.color",
@@ -452,6 +486,14 @@
             "label": "Font",
             "name": "font",
             "type": "font",
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "font": true,
+                "styles": true,
+                "variant": true
+              }
+            },
             "inherited_value": {
               "property_value_paths": {
                 "fallback": "theme.global_fonts.secondary.fallback",
@@ -517,6 +559,14 @@
             "label": "Font",
             "name": "font",
             "type": "font",
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "font": true,
+                "styles": true,
+                "variant": true
+              }
+            },
             "inherited_value": {
               "property_value_paths": {
                 "color": "theme.global_fonts.secondary.color",
@@ -584,7 +634,10 @@
             "type": "font",
             "visibility": {
               "hidden_subfields": {
-                "styles": true
+                "color": true,
+                "font": true,
+                "styles": true,
+                "variant": true
               }
             },
             "inherited_value": {
@@ -638,7 +691,10 @@
             "type": "font",
             "visibility": {
               "hidden_subfields": {
-                "size": true
+                "size": true,
+                "font": true,
+                "styles": true,
+                "variant": true
               }
             },
             "inherited_value": {

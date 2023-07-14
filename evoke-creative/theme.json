@@ -24,9 +24,5 @@
   "hidden_modules": [
     "@hubspot/follow_me",
     "@hubspot/language_switcher"
-  ],
-  "custom_fonts": [ 
-    "./fonts/proxima-nova",
-    "./fonts/gilroy" 
   ]
 } 
