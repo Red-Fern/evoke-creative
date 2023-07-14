@@ -34,6 +34,22 @@ h6 {
   margin: 0 0 1.4rem;
 }
 
+h1 {
+  line-height: 0.85;
+}
+
+h2 {
+  line-height: 0.9;
+}
+
+h3 {
+  line-height: 0.95;
+}
+
+h4 {
+  line-height: 1;
+}
+
 /* Lists */
 
 ul,
