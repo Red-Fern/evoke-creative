@@ -1,15 +1,17 @@
 /* Fields */
 
 .hs-form-field {
-  margin-bottom: 1.4rem;
+  margin-bottom: 20px;
 }
 
 /* Labels */
 
 form label {
   display: block;
-  font-size: 0.875rem;
+  font-size: 18px;
+  font-weight: 700;
   margin-bottom: 0.35rem;
+  text-transform: uppercase;
 }
 
 /* Form Title */
@@ -35,9 +37,9 @@ form input[type=file],
 form select,
 form textarea {
   display: inline-block;
-  font-size: 0.875rem;
-  padding: 0.7rem;
+  padding: 15px 24px;
   width: 100%;
+  border-radius: 30px;
 }
 
 form textarea {
@@ -131,7 +133,7 @@ form .hs-richtext img {
 /* Validation */
 
 .hs-form-required {
-  color: #EF6B51;
+  margin-left: 1px;
 }
 
 .hs-input.invalid.error {

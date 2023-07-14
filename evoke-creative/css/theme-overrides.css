@@ -80,35 +80,10 @@
 {% set button_spacing = theme.buttons.spacing.spacing.css %}
 
 /* 1e. Forms */
-{% set form_bg_color = color(theme.forms.form.background.color) %}
 
-{% set form_title_font = theme.forms.title.text.font %}
-{% set form_title_bg_color =  color(theme.forms.title.background.color) %}
-{% set form_title_spacing = theme.forms.title.spacing.spacing.css %}
-{% set form_title_border = theme.forms.title.border.border.css %}
-{% set form_title_top_left_corner_radius = theme.forms.title.corner.top_left_radius ~ "px" %}
-{% set form_title_top_right_corner_radius = theme.forms.title.corner.top_right_radius ~ "px" %}
-{% set form_title_bottom_left_corner_radius = theme.forms.title.corner.bottom_left_radius ~ "px" %}
-{% set form_title_bottom_right_corner_radius = theme.forms.title.corner.bottom_right_radius ~ "px" %}
+{% set form_field_placeholder_color = mid_grey_color %}
 
-
-{% set form_label_font_color = theme.forms.labels.text.color.color %}
-
-{% set form_help_text_font_color = theme.forms.help_text.text.color.color %}
-
-{% set form_field_placeholder_color = theme.forms.fields.placeholder.color.color %}
-{% set form_field_font_color = theme.forms.fields.text.color.color %}
-{% set form_field_bg_color = color(theme.forms.fields.background.color) %}
-{% set form_field_border = theme.forms.fields.border.border.css %}
-{% set form_field_corner_radius = theme.forms.fields.corner.radius ~ 'px' %}
-
-{% set form_bg_color = color(theme.forms.form.background.color) %}
-{% set form_padding = theme.forms.form.spacing.spacing.css %}
-{% set form_border = theme.forms.form.border.border.css %}
-{% set form_top_left_corner_radius = theme.forms.form.corner.top_left_radius ~ "px" %}
-{% set form_top_right_corner_radius = theme.forms.form.corner.top_right_radius ~ "px" %}
-{% set form_bottom_left_corner_radius = theme.forms.form.corner.bottom_left_radius ~ "px" %}
-{% set form_bottom_right_corner_radius = theme.forms.form.corner.bottom_right_radius ~ "px" %}
+{% set form_border_color = light_grey_color %}
 
 /* 1f. Tables */
 
@@ -126,17 +101,17 @@
 
 /* 1g. Website header */
 
-{% set nav_font_color = theme.global_colors.primary.color %}
-{% set nav_drop_down_font_color = theme.global_colors.primary.color %}
-{% set nav_drop_down_bg_color = theme.global_colors.light_grey.color %}
-{% set nav_drop_down_border = theme.global_colors.primary.color %}
+{% set nav_font_color = primary_color %}
+{% set nav_drop_down_font_color = primary_color %}
+{% set nav_drop_down_bg_color = light_grey_color %}
+{% set nav_drop_down_border = primary_color %}
 
-{% set header_bg_color = theme.global_colors.light_grey.color %}
+{% set header_bg_color = light_grey_color %}
 
 /* 1h. Website footer */
 
-{% set footer_bg_color = theme.global_colors.primary.color %}
-{% set footer_font_color = theme.global_colors.white.color %}
+{% set footer_bg_color = primary_color %}
+{% set footer_font_color = white_color %}
 
 {###########################################################################}
 {##################   2. Containers / Grid / DND areas   ###################}
@@ -352,45 +327,6 @@ button.tertiary,
 {##############################   5. Forms   ###############################}
 {###########################################################################}
 
-form,
-.submitted-message {
-  {{ body_font.style }};
-  {{ form_border }};
-  border-top-left-radius: {{ form_top_left_corner_radius }};
-  border-top-right-radius: {{ form_top_right_corner_radius }};
-  border-bottom-left-radius: {{ form_bottom_left_corner_radius }};
-  border-bottom-right-radius: {{ form_bottom_right_corner_radius }};
-  background-color: {{ form_bg_color }};
-  {{ form_padding }};
-}
-
-/* Form title */
-
-.form-title {
-  {{ form_title_border}};
-  {{ form_title_spacing }};
-  {{ form_title_font.style }};
-  border-top-left-radius: {{ form_title_top_left_corner_radius }};
-  border-top-right-radius: {{ form_title_top_right_corner_radius }};
-  border-bottom-left-radius: {{ form_title_bottom_left_corner_radius }};
-  border-bottom-right-radius: {{ form_title_bottom_right_corner_radius }};
-  font-size: {{ form_title_font.size  ~ form_title_font.size_unit }};
-  color: {{ form_title_font.color }};
-  background-color: {{ form_title_bg_color }};
-}
-
-/* Labels */
-
-form label {
-  color: {{ form_label_font_color }};
-}
-
-/* Help text */
-
-form legend {
-  color: {{ form_help_text_font_color }};
-}
-
 /* Inputs */
 
 form input[type=text],
@@ -402,10 +338,7 @@ form input[type=number],
 form input[type=file],
 form select,
 form textarea {
-  {{ form_field_border }}
-  background-color: {{ form_field_bg_color }};
-  color: {{ form_field_font_color }};
-  border-radius: {{ form_field_corner_radius }};
+  border: 1px solid {{ form_border_color }};
 }
 
 /* Form placeholder text */
