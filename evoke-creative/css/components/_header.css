@@ -147,6 +147,10 @@
   .header__search .hs-search-field__button svg {
     height: 25px;
   }
+
+  .header__search .hs-search-field__button::after {
+    display: none;
+  }
 {% endif %}
 
 .header__search .hs-search-field--open .hs-search-field__input {
