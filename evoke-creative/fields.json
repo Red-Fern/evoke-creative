@@ -240,19 +240,6 @@
               "size": 24,
               "size_unit": "px"
             }
-          },
-          {
-            "label": "Transform",
-            "name": "transform",
-            "type": "choice",
-            "choices": [
-              ["none", "None"],
-              ["capitalize", "Capitalize"],
-              ["uppercase", "Uppercase"],
-              ["lowercase", "Lowercase"]
-            ],
-            "display": "select",
-            "default": "uppercase"
           }
         ]
       },
@@ -314,19 +301,6 @@
               "size": 24,
               "size_unit": "px"
             }
-          },
-          {
-            "label": "Transform",
-            "name": "transform",
-            "type": "choice",
-            "choices": [
-              ["none", "None"],
-              ["capitalize", "Capitalize"],
-              ["uppercase", "Uppercase"],
-              ["lowercase", "Lowercase"]
-            ],
-            "display": "select",
-            "default": "uppercase"
           }
         ]
       },
@@ -388,19 +362,6 @@
               "size": 18,
               "size_unit": "px"
             }
-          },
-          {
-            "label": "Transform",
-            "name": "transform",
-            "type": "choice",
-            "choices": [
-              ["none", "None"],
-              ["capitalize", "Capitalize"],
-              ["uppercase", "Uppercase"],
-              ["lowercase", "Lowercase"]
-            ],
-            "display": "select",
-            "default": "uppercase"
           }
         ]
       },
@@ -461,19 +422,6 @@
               "size": 18,
               "size_unit": "px"
             }
-          },
-          {
-            "label": "Transform",
-            "name": "transform",
-            "type": "choice",
-            "choices": [
-              ["none", "None"],
-              ["capitalize", "Capitalize"],
-              ["uppercase", "Uppercase"],
-              ["lowercase", "Lowercase"]
-            ],
-            "display": "select",
-            "default": "uppercase"
           }
         ]
       },
@@ -534,19 +482,6 @@
               "size": 16,
               "size_unit": "px"
             }
-          },
-          {
-            "label": "Transform",
-            "name": "transform",
-            "type": "choice",
-            "choices": [
-              ["none", "None"],
-              ["capitalize", "Capitalize"],
-              ["uppercase", "Uppercase"],
-              ["lowercase", "Lowercase"]
-            ],
-            "display": "select",
-            "default": "uppercase"
           }
         ]
       },
@@ -607,19 +542,6 @@
               "size": 16,
               "size_unit": "px"
             }
-          },
-          {
-            "label": "Transform",
-            "name": "transform",
-            "type": "choice",
-            "choices": [
-              ["none", "None"],
-              ["capitalize", "Capitalize"],
-              ["uppercase", "Uppercase"],
-              ["lowercase", "Lowercase"]
-            ],
-            "display": "select",
-            "default": "uppercase"
           }
         ]
       },
@@ -767,19 +689,6 @@
               "size": 14,
               "size_unit": "px"
             }
-          },
-          {
-            "label": "Transform",
-            "name": "transform",
-            "type": "choice",
-            "choices": [
-              ["none", "None"],
-              ["capitalize", "Capitalize"],
-              ["uppercase", "Uppercase"],
-              ["lowercase", "Lowercase"]
-            ],
-            "display": "select",
-            "default": "uppercase"
           }
         ]
       },
