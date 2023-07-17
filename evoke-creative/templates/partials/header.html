@@ -14,9 +14,21 @@
 
     {# Header logo column #}
 
-    <div class="header__logo header__logo--main">
-      {% module "site_logo"
+
+    <div class="header__logo header__logo--dark">
+      {% module "site_logo_dark"
         path="@hubspot/logo"
+        label="Logo - dark"
+        img={
+          "loading": "eager"
+        }
+      %}
+    </div>
+
+    <div class="header__logo header__logo--light">
+      {% module "site_logo_light"
+        path="@hubspot/logo"
+        label="Logo - light"
         img={
           "loading": "eager"
         }
