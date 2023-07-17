@@ -22,7 +22,7 @@ header.header {
   width: 100%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .header__column {
     width: auto;
   }
@@ -62,7 +62,19 @@ header.header {
   overflow: hidden;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1399px) {
+  .header__logo {
+    max-width: 135px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header__logo {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 991px) {
   .header__logo {
     max-width: 88px;
   }
@@ -94,9 +106,13 @@ header.header {
   margin-left: auto;
 }
 
+.header__navigation .button {
+  font-size: 16px;
+}
+
 /* Mobile toggles */
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   header.header.open {
     position: fixed;
     top: 1rem;

@@ -459,7 +459,7 @@ tfoot td {
   background-color: {{ dark_grey_color }};
 }
 
-@media (min-width: 767px) {
+@media (min-width: 991px) {
   .menu .menu__submenu {
     {{ nav_drop_down_border }}
     background-color: {{ nav_drop_down_bg_color }};
@@ -485,7 +485,7 @@ tfoot td {
   background-color: {{ header_bg_color }};
 }
 
-@media(max-width: 767px) {
+@media(max-width: 991px) {
   header.header.open {
     border-radius: {{ border_radius }} {{ border_radius }} 0 0;
   }
