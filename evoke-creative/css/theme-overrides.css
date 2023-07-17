@@ -139,9 +139,15 @@ html {
 }
 
 body {
+  background-color: {{ white_color }};
   {{ body_font.style }};
   color: {{ body_font.color }};
   font-size: {{ body_font.size ~ body_font.size_unit }};
+}
+
+.body-wrapper {
+  border-radius: {{ border_radius }} {{ border_radius }} 0 0;
+  background-color: {{ light_grey_color }};
 }
 
 @media(max-width: 767px) {
