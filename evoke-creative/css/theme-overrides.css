@@ -39,8 +39,8 @@
 {% set primary_color = theme.global_colors.primary.color  %}
 {% set secondary_color = theme.global_colors.secondary.color %}
 {% set tertiary_color = theme.global_colors.tertiary.color %} 
+{% set black_color = theme.global_colors.black.color %} 
 {% set dark_grey_color = theme.global_colors.dark_grey.color %} 
-{% set mid_grey_color = theme.global_colors.mid_grey.color %} 
 {% set light_grey_color = theme.global_colors.light_grey.color %} 
 {% set white_color = theme.global_colors.white.color %}
 
@@ -82,7 +82,7 @@
 
 /* 1e. Forms */
 
-{% set form_field_placeholder_color = mid_grey_color %}
+{% set form_field_placeholder_color = dark_grey_color %}
 
 {% set form_border_color = light_grey_color %}
 
@@ -103,7 +103,7 @@
 /* 1g. Website header */
 
 {% set nav_drop_down_bg_color = light_grey_color %}
-{% set nav_drop_down_border = primary_color %}
+{% set nav_drop_down_border = light_grey_color %}
 
 {% set header_bg_color = light_grey_color %}
 
@@ -375,15 +375,15 @@ form textarea {
 }
 
 .fn-date-picker td.is-selected .pika-button {
-  background: {{ primary_color }};
+  background: {{ black_color }};
 }
 
 .fn-date-picker td .pika-button:hover {
-  background-color: {{ primary_color }} !important;
+  background-color: {{ black_color }} !important;
 }
 
 .fn-date-picker td.is-today .pika-button {
-  color: {{ primary_color }};
+  color: {{ black_color }};
 }
 
 {###########################################################################}
@@ -430,33 +430,33 @@ tfoot td {
 
 .menu__link,
 .header__logo .logo-company-name {
-  color: {{ primary_color }};
+  color: {{ dark_grey_color }};
 }
 
 .menu__child-toggle-icon {
-  border-top-color: {{ primary_color }};
+  border-top-color: {{ dark_grey_color }};
 }
 
 .menu .menu__link:hover,
 .menu .menu__link:focus {
-  color: {{ color_variant(primary_color, -40) }};
+  color: {{ color_variant(dark_grey_color, -40) }};
 }
 
 .menu__child-toggle-icon:hover,
 .menu__child-toggle-icon:focus {
-  border-top-color: {{ color_variant(primary_color, -40) }};
+  border-top-color: {{ color_variant(dark_grey_color, -40) }};
 }
 
 .menu .menu__link:active {
-  color: {{ color_variant(primary_color, 40) }};
+  color: {{ color_variant(dark_grey_color, 40) }};
 }
 
 .menu__child-toggle-icon:active {
-  border-top-color: {{ color_variant(primary_color, 40) }};
+  border-top-color: {{ color_variant(dark_grey_color, 40) }};
 }
 
 .menu .menu__item--depth-1 > .menu__link--active-link:after {
-  background-color: {{ primary_color }};
+  background-color: {{ dark_grey_color }};
 }
 
 @media (min-width: 767px) {
@@ -492,7 +492,7 @@ tfoot td {
 
   .header__navigation-toggle svg,
   .menu-arrow svg {
-    fill: {{ primary_color }};
+    fill: {{ dark_grey_color }};
   }
 }
 
