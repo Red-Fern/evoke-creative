@@ -25,6 +25,8 @@
 }
 
 body {
+  border: 20px solid {{ theme.global_colors.white.color }};
+  border-bottom: 0;
   line-height: 1.4;
   overflow-wrap: break-word;
 }
