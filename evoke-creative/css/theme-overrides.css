@@ -11,6 +11,7 @@
     1f. Tables
     1g. Website header
     1h. Website footer
+    1i. Utility 
   2. Containers / Grid / DND areas
   3. Typography
   4. Buttons
@@ -101,8 +102,6 @@
 
 /* 1g. Website header */
 
-{% set nav_font_color = primary_color %}
-{% set nav_drop_down_font_color = primary_color %}
 {% set nav_drop_down_bg_color = light_grey_color %}
 {% set nav_drop_down_border = primary_color %}
 
@@ -112,6 +111,10 @@
 
 {% set footer_bg_color = primary_color %}
 {% set footer_font_color = white_color %}
+
+/* 1h. Utility */
+
+{% set border_radius = '30px' %}
 
 {###########################################################################}
 {##################   2. Containers / Grid / DND areas   ###################}
@@ -426,47 +429,38 @@ tfoot td {
 }
 
 .menu__link,
-.header__logo .logo-company-name,
-.header__language-switcher-label-current,
-.header__language-switcher .lang_list_class li a {
-  color: {{ nav_font_color }};
+.header__logo .logo-company-name {
+  color: {{ primary_color }};
 }
 
 .menu__child-toggle-icon {
-  border-top-color: {{ nav_font_color }};
+  border-top-color: {{ primary_color }};
 }
 
 .menu .menu__link:hover,
-.menu .menu__link:focus,
-.header__language-switcher-label-current:hover,
-.header__language-switcher-label-current:focus,
-.header__language-switcher .lang_list_class li:hover a,
-.header__language-switcher .lang_list_class li a:focus {
-  color: {{ color_variant(nav_font_color, -40) }};
+.menu .menu__link:focus {
+  color: {{ color_variant(primary_color, -40) }};
 }
 
 .menu__child-toggle-icon:hover,
 .menu__child-toggle-icon:focus {
-  border-top-color: {{ color_variant(nav_font_color, -40) }};
+  border-top-color: {{ color_variant(primary_color, -40) }};
 }
 
-.menu .menu__link:active,
-.header__language-switcher-label-current:active,
-.header__language-switcher .lang_list_class li a:active {
-  color: {{ color_variant(nav_font_color, 40) }};
+.menu .menu__link:active {
+  color: {{ color_variant(primary_color, 40) }};
 }
 
 .menu__child-toggle-icon:active {
-  border-top-color: {{ color_variant(nav_font_color, 40) }};
+  border-top-color: {{ color_variant(primary_color, 40) }};
 }
 
 .menu .menu__item--depth-1 > .menu__link--active-link:after {
-  background-color: {{ nav_font_color }};
+  background-color: {{ primary_color }};
 }
 
 @media (min-width: 767px) {
-  .menu .menu__submenu,
-  .header__language-switcher .lang_list_class {
+  .menu .menu__submenu {
     {{ nav_drop_down_border }}
     background-color: {{ nav_drop_down_bg_color }};
   }
@@ -484,34 +478,21 @@ tfoot td {
   background-color: {{ nav_drop_down_bg_color }};
 }
 
-.header__language-switcher .lang_list_class:before {
-  border-bottom-color: {{ theme.header.menu.drop_downs.border.border.top.color }};
-}
-
 .menu__submenu .menu__link:hover,
 .menu__submenu .menu__link:focus,
-.header__language-switcher .lang_list_class li:hover,
 .menu__submenu--level-2 > .menu__item:first-child:hover:before,
 .menu__submenu--level-2 > .menu__item:first-child.focus:before {
   background-color: {{ header_bg_color }};
 }
 
-.header__language-switcher .lang_list_class.first-active::after {
-  border-bottom-color: {{ header_bg_color }};
-}
-
-.header__language-switcher-label-current:after {
-  border-top-color: {{ nav_font_color }};
-}
-
 @media(max-width: 767px) {
-  .header__navigation {
-    background-color: {{ header_bg_color }};
+  header.header.open {
+    border-radius: {{ border_radius }} {{ border_radius }} 0 0;
   }
 
   .header__navigation-toggle svg,
   .menu-arrow svg {
-    fill: {{ nav_font_color }};
+    fill: {{ primary_color }};
   }
 }
 

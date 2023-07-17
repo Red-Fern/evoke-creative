@@ -1,6 +1,7 @@
 (function () {
   // Variables
-  var nav = document.querySelector('.header__navigation');
+  var body = document.querySelector('body');
+  var nav = document.querySelector('header.header');
   var langSwitcher = document.querySelector('.header__language-switcher');
   var search = document.querySelector('.header__search');
   var allToggles = document.querySelectorAll('.header--toggle');
@@ -30,8 +31,8 @@
       toggle.classList.toggle('hide');
     });
 
+    body.classList.toggle('no-scroll');
     nav.classList.toggle('open');
-    navToggle.classList.toggle('open');
 
     closeToggle.classList.toggle('show');
   }
@@ -65,6 +66,9 @@
     allElements.forEach(function (element) {
       element.classList.remove('hide', 'open');
     });
+
+    body.classList.toggle('no-scroll');
+    nav.classList.toggle('open');
 
     closeToggle.classList.remove('show');
   }
