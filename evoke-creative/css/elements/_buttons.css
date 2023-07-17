@@ -8,7 +8,7 @@ button,
   text-align: center;
   line-height: 1;
   text-transform: uppercase;
-  transition: all 0.15s linear;
+  transition: background-color 0.15s linear;
   white-space: normal;
 }
 
@@ -23,7 +23,7 @@ button,
   background-repeat: no-repeat;
   background-position: center;
   background-size: 18px 18px;
-  transition: all 0.15s linear;
+  transition: background-color 0.15s linear;
 }
 
 button:disabled,
