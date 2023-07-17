@@ -3,7 +3,7 @@
   padding: 0 1rem;
 }
 
-@media screen and (min-width: 1380px) {
+@media screen and (min-width: 1560px) {
   .content-wrapper {
     padding: 0;
   }
