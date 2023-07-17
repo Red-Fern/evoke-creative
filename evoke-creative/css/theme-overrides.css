@@ -153,7 +153,7 @@ body {
   background-color: {{ light_grey_color }};
 }
 
-@media(max-width: 767px) {
+@media(max-width: 991px) {
   body {
     font-size: {{ body_font_mobile.size ~ body_font_mobile.size_unit }};
   }
@@ -227,7 +227,19 @@ h6,
   font-size: {{ h6_font.size ~ h6_font.size_unit }};
 }
 
-@media(max-width: 767px) {
+@media(max-width: 1199px) {
+  h1,
+  .h1 {
+    font-size: {{ h1_font.size|multiply(0.75)|round ~ h1_font.size_unit }};
+  }
+  
+  h2,
+  .h2 {
+    font-size: {{ h2_font.size|multiply(0.75)|round ~ h2_font.size_unit }};
+  }
+}
+
+@media(max-width: 991px) {
   h1,
   .h1 {
     font-size: {{ h1_font_mobile.size ~ h1_font_mobile.size_unit }};
