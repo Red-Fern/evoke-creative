@@ -85,7 +85,7 @@
 
 @media (max-width: 991px) {
   .menu__item--depth-1 {
-    border-top: 1px solid {{ theme.global_colors.dark_grey.color }};
+    border-top: 1px solid var(--dark_grey_color);
     padding: 0;
   }
 

@@ -47,7 +47,14 @@ button:disabled,
 .hs-button.secondary::after,
 .button.tertiary::after,
 .hs-button.tertiary::after {
-  border: 1px solid {{ theme.global_colors.light_grey.color }};
+  border: 1px solid var(--light_grey_color);
+}
+
+.button.secondary:hover,
+.hs-button.secondary:hover,
+.button.tertiary:hover,
+.hs-button.tertiary:hover {
+  background-color: transparent;
 }
 
 .button.secondary:hover::after,

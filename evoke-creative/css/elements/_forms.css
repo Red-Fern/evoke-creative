@@ -151,7 +151,7 @@ form input[type=submit],
 form .hs-button {
   cursor: pointer;
   display: inline-block;
-  padding-right: {{ theme.buttons.spacing.spacing.padding.left.value ~ "px" }};
+  padding-right: var(--button_padding_right);
   text-align: center;
   transition: all 0.15s linear;
   white-space: normal;
