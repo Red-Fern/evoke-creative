@@ -2,19 +2,11 @@
   templateType: global_partial
   label: Website header
 -->
-<header class="header {{ widget_data.header_style.style }}">
-
+<header class="header py-4 | lg:py-5 {{ widget_data.header_style.style }}">
   {# The link below is used for a navigation skipper which allows users navigating the site with their keyboard to skip over the site navigation. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
-
   <a href="#main-content" class="header__skip">Skip to content</a>
 
-  {# Main header #}
-
   <div class="header__container content-wrapper">
-
-    {# Header logo column #}
-
-
     <div class="header__logo header__logo--dark">
       {% module "site_logo_dark"
         path="@hubspot/logo"
@@ -35,24 +27,24 @@
       %}
     </div>
 
-    {# Header navigation column #}
-
-    <div class="header__column">
+    <div class="flex items-center w-auto | lg:w-full">
       <div class="header--toggle header__navigation--toggle"></div>
       <div class="header__close--toggle"></div>
 
       <div class="header__navigation header--element">
-        {% module "navigation-primary"
+        {% module "header_menu"
           path="../../modules/menu",
-          label="Primary navigation"
+          label="Header menu"
         %}
 
-        <div class="header-contact">
+        <div class="mt-12 ml-auto | lg:mt-0">
+          <h4 class="mb-3 text-secondary | lg:hidden">[ Title ]</h4>
+
+          <p class="mb-4 text-white | lg:hidden">[ Text ]</p>
+
           <a href="" class="button">Contact</a>
         </div>
       </div>
     </div>
-
   </div>
-
 </header>

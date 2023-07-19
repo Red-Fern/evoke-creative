@@ -1,7 +1,3 @@
-header.header {
-  padding: 1rem 0;
-}
-
 /* Header DND sections */
 
 .header .dnd-section {
@@ -14,18 +10,6 @@ header.header {
   position: relative;
   display: flex;
   justify-content: space-between;
-}
-
-.header__column {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-@media (max-width: 991px) {
-  .header__column {
-    width: auto;
-  }
 }
 
 /* Navigation skipper */
@@ -113,8 +97,7 @@ header.header {
   width: 100%;
 }
 
-.header__navigation .hs_cos_wrapper,
-.header__navigation .header-contact {
+.header__navigation .hs_cos_wrapper {
   margin-left: auto;
 }
 
@@ -138,12 +121,16 @@ header.header {
     display: none;
   }
 
+  .header__navigation nav {
+    border-bottom: 1px solid var(--dark-grey-color);
+  }
+
   header.header.open .header__navigation {
     display: block;
     position: absolute;
     top: 100%;
     left: 0;
-    padding: 1rem;
+    padding: 25px 1rem;
     width: 100%;
   }
 
