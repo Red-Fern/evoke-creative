@@ -47,7 +47,7 @@ button:disabled,
 .hs-button.secondary::after,
 .button.tertiary::after,
 .hs-button.tertiary::after {
-  border: 1px solid var(--light_grey_color);
+  border: 1px solid var(--light-grey-color);
 }
 
 .button.secondary:hover,

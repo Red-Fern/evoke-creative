@@ -2,84 +2,84 @@
 
 :root {
     /* Containers */
-    --container_width: {{ theme.spacing.maximum_content_width ~ 'px' }};
-    --dnd_section_padding: {{ theme.spacing.vertical_spacing ~ 'px ' ~ '1rem' }};
+    --container-width: {{ theme.spacing.maximum_content_width ~ 'px' }};
+    --dnd-section-padding: {{ theme.spacing.vertical_spacing ~ 'px ' ~ '1rem' }};
     
     /* Colors */
-    --primary_color: {{ theme.global_colors.primary.color }};
-    --primary_color_light: {{ color_variant(theme.global_colors.primary.color, 40) }};
-    --primary_color_dark: {{ color_variant(theme.global_colors.primary.color, -40) }};
+    --primary-color: {{ theme.global_colors.primary.color }};
+    --primary-color-light: {{ color_variant(theme.global_colors.primary.color, 40) }};
+    --primary-color-dark: {{ color_variant(theme.global_colors.primary.color, -40) }};
 
-    --secondary_color: {{ theme.global_colors.secondary.color }};
-    --secondary_color_light: {{ color_variant(theme.global_colors.secondary.color, 40) }};
-    --secondary_color_dark: {{ color_variant(theme.global_colors.secondary.color, -40) }};
+    --secondary-color: {{ theme.global_colors.secondary.color }};
+    --secondary-color-light: {{ color_variant(theme.global_colors.secondary.color, 40) }};
+    --secondary-color-dark: {{ color_variant(theme.global_colors.secondary.color, -40) }};
 
-    --tertiary_color: {{ theme.global_colors.tertiary.color }};
-    --tertiary_color_light: {{ color_variant(theme.global_colors.tertiary.color, 40) }};
-    --tertiary_color_dark: {{ color_variant(theme.global_colors.tertiary.color, -40) }};
+    --tertiary-color: {{ theme.global_colors.tertiary.color }};
+    --tertiary-color-light: {{ color_variant(theme.global_colors.tertiary.color, 40) }};
+    --tertiary-color-dark: {{ color_variant(theme.global_colors.tertiary.color, -40) }};
 
-    --black_color: {{ theme.global_colors.black.color }};
-    --black_color_light: {{ color_variant(theme.global_colors.black.color, 40) }};
-    --black_color_dark: {{ color_variant(theme.global_colors.black.color, -40) }};
+    --black-color: {{ theme.global_colors.black.color }};
+    --black-color-light: {{ color_variant(theme.global_colors.black.color, 40) }};
+    --black-color-dark: {{ color_variant(theme.global_colors.black.color, -40) }};
 
-    --dark_grey_color: {{ theme.global_colors.dark_grey.color }};
-    --dark_grey_color_light: {{ color_variant(theme.global_colors.dark_grey.color, 40) }};
-    --dark_grey_color_dark: {{ color_variant(theme.global_colors.dark_grey.color, -40) }};
+    --dark-grey-color: {{ theme.global_colors.dark_grey.color }};
+    --dark-grey-color-light: {{ color_variant(theme.global_colors.dark_grey.color, 40) }};
+    --dark-grey-color-dark: {{ color_variant(theme.global_colors.dark_grey.color, -40) }};
 
-    --light_grey_color: {{ theme.global_colors.light_grey.color }}; 
-    --light_grey_color_light: {{ color_variant(theme.global_colors.light_grey.color, 40) }};
-    --light_grey_color_dark: {{ color_variant(theme.global_colors.light_grey.color, -40) }};
+    --light-grey-color: {{ theme.global_colors.light_grey.color }}; 
+    --light-grey-color-light: {{ color_variant(theme.global_colors.light_grey.color, 40) }};
+    --light-grey-color-dark: {{ color_variant(theme.global_colors.light_grey.color, -40) }};
 
-    --white_color: {{ theme.global_colors.white.color }};
-    --white_color_light: {{ color_variant(theme.global_colors.white.color, 40) }};
-    --white_color_dark: {{ color_variant(theme.global_colors.white.color, -40) }};
+    --white-color: {{ theme.global_colors.white.color }};
+    --white-color-light: {{ color_variant(theme.global_colors.white.color, 40) }};
+    --white-color-dark: {{ color_variant(theme.global_colors.white.color, -40) }};
     
     /* Typography */
-    --primary_font_color: {{ theme.global_fonts.primary.color }};
-    --primary_font_family: {{ theme.global_fonts.primary.styles['font-family'] }};
+    --primary-font-color: {{ theme.global_fonts.primary.color }};
+    --primary-font-family: {{ theme.global_fonts.primary.styles['font-family'] }};
 
-    --secondary_font_color: {{ theme.global_fonts.secondary.color }};
-    --secondary_font_family: {{ theme.global_fonts.secondary.styles['font-family'] }};
-    --secondary_font_weight: {{ theme.global_fonts.secondary.variant }};
+    --secondary-font-color: {{ theme.global_fonts.secondary.color }};
+    --secondary-font-family: {{ theme.global_fonts.secondary.styles['font-family'] }};
+    --secondary-font-weight: {{ theme.global_fonts.secondary.variant }};
     
-    --h1_font_size: {{ theme.text.h1.font.size ~ theme.text.h1.font.size_unit }};
-    --h1_font_size_mobile: {{ theme.text.h1.font_mobile.size ~ theme.text.h1.font_mobile.size_unit }};
+    --h1-font-size: {{ theme.text.h1.font.size ~ theme.text.h1.font.size_unit }};
+    --h1-font-size-mobile: {{ theme.text.h1.font_mobile.size ~ theme.text.h1.font_mobile.size_unit }};
 
-    --h2_font_size: {{ theme.text.h2.font.size ~ theme.text.h2.font.size_unit }};
-    --h2_font_size_mobile: {{ theme.text.h2.font_mobile.size ~ theme.text.h2.font_mobile.size_unit }};
+    --h2-font-size: {{ theme.text.h2.font.size ~ theme.text.h2.font.size_unit }};
+    --h2-font-size-mobile: {{ theme.text.h2.font_mobile.size ~ theme.text.h2.font_mobile.size_unit }};
     
-    --h3_font_size: {{ theme.text.h3.font.size ~ theme.text.h3.font.size_unit }};
-    --h3_font_size_mobile: {{ theme.text.h3.font_mobile.size ~ theme.text.h3.font_mobile.size_unit }};
+    --h3-font-size: {{ theme.text.h3.font.size ~ theme.text.h3.font.size_unit }};
+    --h3-font-size-mobile: {{ theme.text.h3.font_mobile.size ~ theme.text.h3.font_mobile.size_unit }};
 
-    --h4_font_size: {{ theme.text.h4.font.size ~ theme.text.h4.font.size_unit }};
-    --h4_font_size_mobile: {{ theme.text.h4.font_mobile.size ~ theme.text.h4.font_mobile.size_unit }};
+    --h4-font-size: {{ theme.text.h4.font.size ~ theme.text.h4.font.size_unit }};
+    --h4-font-size-mobile: {{ theme.text.h4.font_mobile.size ~ theme.text.h4.font_mobile.size_unit }};
     
-    --h5_font_size: {{ theme.text.h5.font.size ~ theme.text.h5.font.size_unit }};
-    --h5_font_size_mobile: {{ theme.text.h5.font_mobile.size ~ theme.text.h5.font_mobile.size_unit }};
+    --h5-font-size: {{ theme.text.h5.font.size ~ theme.text.h5.font.size_unit }};
+    --h5-font-size-mobile: {{ theme.text.h5.font_mobile.size ~ theme.text.h5.font_mobile.size_unit }};
 
-    --h6_font_size: {{ theme.text.h6.font.size ~ theme.text.h6.font.size_unit }};
-    --h6_font_size_mobile: {{ theme.text.h6.font_mobile.size ~ theme.text.h6.font_mobile.size_unit }};
+    --h6-font-size: {{ theme.text.h6.font.size ~ theme.text.h6.font.size_unit }};
+    --h6-font-size-mobile: {{ theme.text.h6.font_mobile.size ~ theme.text.h6.font_mobile.size_unit }};
 
-    --body_font_size: {{ theme.text.body_font.font.size ~ theme.text.body_font.font.size_unit }};
-    --body_font_size_mobile: {{ theme.text.body_font.font_mobile.size ~ theme.text.body_font.font_mobile.size_unit }};
+    --body-font-size: {{ theme.text.body_font.font.size ~ theme.text.body_font.font.size_unit }};
+    --body-font-size-mobile: {{ theme.text.body_font.font_mobile.size ~ theme.text.body_font.font_mobile.size_unit }};
     
-    --anchor_font_color: {{ theme.text.links.font.color }};
-    --anchor_font_color_light: {{ color_variant(theme.text.links.font.color, 40) }};
-    --anchor_font_color_dark: {{ color_variant(theme.text.links.font.color, -40) }};
+    --anchor-font-color: {{ theme.text.links.font.color }};
+    --anchor-font-color-light: {{ color_variant(theme.text.links.font.color, 40) }};
+    --anchor-font-color-dark: {{ color_variant(theme.text.links.font.color, -40) }};
     
     /* Buttons */
-    --button_font_color: {{ theme.buttons.text.font.color }};
-    --button_font_family: {{ theme.buttons.text.font.styles['font-family'] }};
-    --button_font_size: {{ theme.buttons.text.font.size ~ theme.buttons.text.font.size_unit }};
-    --button_font_weight: {{ theme.buttons.text.font.variant }};
-    --button_font_size_mobile: {{ theme.buttons.text.font_mobile.size ~ theme.buttons.text.font_mobile.size_unit }};
-    --button_accent_color: {{ theme.buttons.accent.color.color }};
-    --button_corner_radius: {{ theme.buttons.corner.radius ~ 'px' }};
-    --button_padding_top: {{ theme.buttons.spacing.spacing.padding.top.value ~ 'px' }};
-    --button_padding_right: {{ theme.buttons.spacing.spacing.padding.right.value ~ 'px' }};
-    --button_padding_bottom: {{ theme.buttons.spacing.spacing.padding.bottom.value ~ 'px' }};
-    --button_padding_left: {{ theme.buttons.spacing.spacing.padding.left.value ~ 'px' }};
+    --button-font-color: {{ theme.buttons.text.font.color }};
+    --button-font-family: {{ theme.buttons.text.font.styles['font-family'] }};
+    --button-font-size: {{ theme.buttons.text.font.size ~ theme.buttons.text.font.size_unit }};
+    --button-font-weight: {{ theme.buttons.text.font.variant }};
+    --button-font-size-mobile: {{ theme.buttons.text.font_mobile.size ~ theme.buttons.text.font_mobile.size_unit }};
+    --button-accent-color: {{ theme.buttons.accent.color.color }};
+    --button-corner-radius: {{ theme.buttons.corner.radius ~ 'px' }};
+    --button-padding-top: {{ theme.buttons.spacing.spacing.padding.top.value ~ 'px' }};
+    --button-padding-right: {{ theme.buttons.spacing.spacing.padding.right.value ~ 'px' }};
+    --button-padding-bottom: {{ theme.buttons.spacing.spacing.padding.bottom.value ~ 'px' }};
+    --button-padding-left: {{ theme.buttons.spacing.spacing.padding.left.value ~ 'px' }};
 
     /* Utility */
-    --border_radius: 30px;
+    --border-radius: 30px;
 }
