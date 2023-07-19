@@ -2,42 +2,84 @@
   templateType: global_partial
   label: Footer
 -->
-<footer class="footer">
-  {% dnd_area "footer"
-    label="Footer",
-    class="footer__container content-wrapper"
-  %}
 
-    {# Social follow and copyright #}
+<footer class="footer pt-6 pb-8 | lg:pt-20 lg:pb-12">
+  <div class="content-wrapper">
+    <div class="lg:flex">
+      <div class="grid grid-cols-2 gap-6 mr-0 w-full | lg:grid-cols-4 lg:gap-8 lg:mr-8 xl:w-2/3">
+        <div class="footer__column col-span-2 mb-2.5 | lg:col-auto lg:mb-0">
+          <div class="footer__logo">
+            {% module "footer_logo"
+              path="@hubspot/logo"
+              label="Logo"
+            %}
+          </div>
 
-    {% dnd_section %}
-      {% dnd_column %}
-        {% dnd_row %}
-          {% dnd_module path="../../modules/social-follow" %}
-            {% module_attribute "social_link" is_json=True %}
-              [
-                {"social_account": "facebook-f"},
-                {"social_account": "linkedin-in"},
-                {"social_account": "twitter"},
-                {"social_account": "instagram"}
-              ]
-            {% end_module_attribute %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-        {% dnd_row
-          margin={
-            "top": 12,
-            "bottom": 12
-          }
-        %}
-          {% dnd_module
-            path="@hubspot/rich_text",
-            html='<div style="text-align: center; font-size: 0.7rem;"><span>© {{ year }} All rights reserved.</span></div>'
+          <br>
+          [ Social icons ]
+        </div>
+
+        <div class="footer__column">
+          <span class="block mb-2.5 font-bold uppercase | lg:text-large lg:normal-case">
+            {% module "footer_solutions_heading" 
+              path="@hubspot/text" 
+              label="Solutions heading"
+              value="Solutions"
+            %}
+          </span>
+          {% module "footer_solutions_menu"
+            path="../../modules/menu",
+            label="Solutions menu"
           %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-      {% end_dnd_column %}
-    {% end_dnd_section %}
+        </div>
 
-  {% end_dnd_area %}
+        <div class="footer__column">
+          <span class="block mb-2.5 font-bold uppercase | lg:text-large lg:normal-case">
+            {% module "footer_specialists_heading" 
+              path="@hubspot/text" 
+              label="Specialists heading"
+              value="Specialists"
+            %}
+          </span>
+          {% module "footer_specialists_menu"
+            path="../../modules/menu",
+            label="Specialists menu"
+          %}
+        </div>
+
+        <div class="footer__column">
+          <span class="block mb-2.5 font-bold uppercase | lg:text-large lg:normal-case">
+            {% module "footer_about_heading" 
+              path="@hubspot/text" 
+              label="About heading"
+              value="Evoke Creative"
+            %}
+          </span>
+          {% module "footer_about_menu"
+            path="../../modules/menu",
+            label="About menu"
+          %}
+        </div>
+      </div>
+
+      <div class="hidden ml-auto shrink-0 | lg:block">
+        <a href="" class="button">Contact</a>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-10 border-t border-dark-grey text-light-grey text-center text-x-small">
+      {% module "footer_copyright"
+        path="@hubspot/rich_text",
+        label="Copyright notice"
+        html="Copyright © {{ year }} Evoke Creative Limited, Reg. in England No.4665065. Reg Office: Units 6&7 Power Station, Bromborough, Wirral CH62 4YB"
+      %}
+    </div>
+
+    <div class="footer__bottom_menu mt-2.5">
+      {% module "footer_bottom_menu"
+        path="../../modules/menu",
+        label="Bottom menu"
+      %}
+    </div>
+  </div>
 </footer>
