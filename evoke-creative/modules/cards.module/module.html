@@ -1,4 +1,4 @@
-<div class="grid md:grid-cols-2 gap-5 {{ module.cards_per_row == 2 ? '' : 'xl:grid-cols-4' }}">
+<div class="grid gap-x-5 gap-y-8 | md:grid-cols-2 {{ module.cards_per_row == 2 ? '' : 'xl:grid-cols-4' }}">
   {% for card in module.card %}
     {# Set page if provided #}
     {% set page = content_by_id(card.page) %}
