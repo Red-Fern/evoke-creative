@@ -3,7 +3,8 @@
 :root {
     /* Containers */
     --container-width: {{ theme.spacing.maximum_content_width ~ 'px' }};
-    --dnd-section-padding: {{ theme.spacing.vertical_spacing ~ 'px ' ~ '1rem' }};
+    --dnd-section-padding: {{ theme.spacing.vertical_spacing ~ 'px ' }};
+    --dnd-section-padding-mobile: {{ theme.spacing.vertical_spacing_mobile ~ 'px ' }};
     
     /* Colors */
     --primary-color: {{ theme.global_colors.primary.color }};

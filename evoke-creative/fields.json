@@ -164,7 +164,17 @@
         "max": 500,
         "min": 0,
         "suffix": "px",
-        "default": 80
+        "default": 160
+      },
+      {
+        "label": "Vertical spacing (mobile)",
+        "name": "vertical_spacing_mobile",
+        "type": "number",
+        "display": "slider",
+        "max": 500,
+        "min": 0,
+        "suffix": "px",
+        "default": 48
       },
       {
         "label": "Maximum content width",
@@ -174,7 +184,7 @@
         "max": 2500,
         "min": 900,
         "suffix": "px",
-        "default": 1480
+        "default": 1510
       }
     ]
   },
@@ -218,7 +228,7 @@
             }
           },
           {
-            "label": "Font (Mobile)",
+            "label": "Font (mobile)",
             "name": "font_mobile",
             "type": "font",
             "visibility": {
@@ -279,7 +289,7 @@
             }
           },
           {
-            "label": "Font (Mobile)",
+            "label": "Font (mobile)",
             "name": "font_mobile",
             "type": "font",
             "visibility": {
@@ -340,7 +350,7 @@
             }
           },
           {
-            "label": "Font (Mobile)",
+            "label": "Font (mobile)",
             "name": "font_mobile",
             "type": "font",
             "visibility": {
@@ -400,7 +410,7 @@
             }
           },
           {
-            "label": "Font (Mobile)",
+            "label": "Font (mobile)",
             "name": "font_mobile",
             "type": "font",
             "visibility": {
@@ -461,7 +471,7 @@
             }
           },
           {
-            "label": "Font (Mobile)",
+            "label": "Font (mobile)",
             "name": "font_mobile",
             "type": "font",
             "visibility": {
@@ -521,7 +531,7 @@
             }
           },
           {
-            "label": "Font (Mobile)",
+            "label": "Font (mobile)",
             "name": "font_mobile",
             "type": "font",
             "visibility": {
@@ -578,7 +588,7 @@
             }
           },
           {
-            "label": "Font (Mobile)",
+            "label": "Font (mobile)",
             "name": "font_mobile",
             "type": "font",
             "visibility": {
@@ -668,7 +678,7 @@
             }
           },
           {
-            "label": "Font (Mobile)",
+            "label": "Font (mobile)",
             "name": "font_mobile",
             "type": "font",
             "visibility": {

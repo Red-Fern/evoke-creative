@@ -16,11 +16,18 @@
 
 .dnd-section,
 .content-wrapper--vertical-spacing {
-  padding: var(--dnd-section-padding);
+  padding: var(--dnd-section-padding) 0;
 }
 
 .dnd-section > .row-fluid {
   max-width: var(--container-width);
+}
+
+@media(max-width: 991px) {
+  .dnd-section,
+  .content-wrapper--vertical-spacing {
+    padding: var(--dnd-section-padding-mobile) 0;
+  }
 }
 
 {###########################################################################}
@@ -465,6 +472,18 @@ tfoot td {
 
 #comments-listing .comment-reply-to:active {
   color: var(--anchor-font-color-light);
+}
+
+@media(max-width: 991px) {
+  .blog-post,
+  .blog-header__inner,
+  .blog-related-posts {
+    padding: var(--dnd-section-padding-mobile) 0;
+  }
+  
+  .blog-comments {
+    margin-bottom: var(--dnd-section-padding-mobile);
+  }
 }
 
 {###########################################################################}
