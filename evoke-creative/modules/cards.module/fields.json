@@ -1,0 +1,139 @@
+[ {
+  "id" : "770125af-b383-af0e-d4cf-4286baad11f9",
+  "name" : "cards_per_row",
+  "display_width" : null,
+  "label" : "Cards per row",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "2", "2" ], [ "4", "4" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "2"
+}, {
+  "id" : "2a1de326-75a7-0f1e-1b10-b5c0743cdfb4",
+  "name" : "pull_content",
+  "display_width" : null,
+  "label" : "Pull content from linked pages?",
+  "help_text" : "If selected, each card will pull in the featured image and title from the page it is linked to.",
+  "inline_help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "card",
+  "name" : "card",
+  "display_width" : null,
+  "label" : "Card",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "card.title",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "431be8fb-e8d9-ca03-1525-29ada838e58e",
+    "name" : "page",
+    "display_width" : null,
+    "label" : "Page",
+    "required" : false,
+    "locked" : false,
+    "type" : "page"
+  }, {
+    "id" : "card.image",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "pull_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "NOT_EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "default" : {
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "724295e7-a77f-62f0-f282-3a82cce97303",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "pull_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "NOT_EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "card.text",
+    "name" : "text",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "pull_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "NOT_EQUAL",
+      "access" : null
+    },
+    "enabled_features" : [ "emoji", "lists", "font_size", "standard_emphasis", "block", "font_family", "alignment", "advanced_emphasis" ],
+    "type" : "richtext",
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "image" : {
+      "loading" : "lazy"
+    },
+    "text" : ""
+  }, {
+    "image" : {
+      "loading" : "lazy"
+    },
+    "text" : ""
+  }, {
+    "image" : {
+      "loading" : "lazy"
+    },
+    "text" : ""
+  } ]
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+} ]

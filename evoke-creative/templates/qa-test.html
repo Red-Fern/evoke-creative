@@ -233,7 +233,7 @@
         {% end_dnd_module %}
       {% end_dnd_row %}
 
-      {# Card #}
+      {# Cards #}
 
       {% dnd_row
         margin={
@@ -242,62 +242,17 @@
       %}
         {% dnd_module path="@hubspot/rich_text" %}
           {% module_attribute "html" %}
-            <h3>Card</h3>
+            <h3>Cards</h3>
           {% end_module_attribute %}
         {% end_dnd_module %}
       {% end_dnd_row %}
 
-      {# One column #}
-
       {% dnd_row
         padding={
         "top": 35
         }
       %}
-        {% dnd_module path="../modules/card" %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-
-      {# Two column #}
-
-      {% dnd_row
-        padding={
-        "top": 35
-        }
-      %}
-        {% dnd_module path="../modules/card",
-          offset=0,
-          width=6
-        %}
-        {% end_dnd_module %}
-        {% dnd_module path="../modules/card",
-          offset=6,
-          width=6
-        %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-
-      {# Three column #}
-
-      {% dnd_row
-        padding={
-        "top": 35
-        }
-      %}
-        {% dnd_module path="../modules/card",
-          offset=0,
-          width=4
-        %}
-        {% end_dnd_module %}
-        {% dnd_module path="../modules/card",
-          offset=4,
-          width=4
-        %}
-        {% end_dnd_module %}
-        {% dnd_module path="../modules/card",
-          offset=8,
-          width=4
-        %}
+        {% dnd_module path="../modules/cards" %}
         {% end_dnd_module %}
       {% end_dnd_row %}
 

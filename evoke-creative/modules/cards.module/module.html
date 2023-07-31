@@ -1,0 +1,55 @@
+<div class="grid md:grid-cols-2 gap-5 {{ module.cards_per_row == 2 ? '' : 'xl:grid-cols-4' }}">
+  {% for card in module.card %}
+    {# Set page if provided #}
+    {% set page = content_by_id(card.page) %}
+
+    
+    {# Image #}
+    <div class="flex flex-col bg-white rounded-theme shadow-lg {{ module.cards_per_row == 2 ? 'xl:flex-row' : '' }}">
+      <div class="shrink-0 w-full aspect-[1/0.7] rounded-theme overflow-hidden {{ module.cards_per_row == 2 ? 'xl:w-[55%]' : '' }}">
+        {% if module.pull_content && page %}
+          {% if page.featured_image %}
+              <img src="{{ page.featured_image }}" class="w-full h-full object-cover"  alt="{{ page.featured_image_alt_text }}" loading="lazy">
+          {% endif %}
+        {% else %}
+          {% if card.image.src %}
+            {% set sizeAttrs = 'width="{{ card.image.width }}" height="{{ card.image.height }}"' %}
+            {% if card.image.size_type == "auto" %}
+              {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+            {% elif card.image.size_type == "auto_custom_max" %}
+              {% set sizeAttrs = 'width="{{ card.image.max_width }}" height="{{ card.image.max_height }}" style="max-width: 100%; max-height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = card.image.loading != "disabled" ? 'loading="{{ card.image.loading }}"' : "" %}
+          
+            <img src="{{ card.image.src }}" class="w-full h-full object-cover" alt="{{ card.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      <div class="flex-1 flex flex-col start p-8">
+        {# Title #}
+        {% if module.pull_content && page %}
+          <h4 class="mb-5">{{ page.title }}</h4>
+        {% elif card.title %}
+          <h4 class="mb-5">{{ card.title }}</h4>
+        {% endif %}
+
+        {# Text #}
+        {% if module.pull_content && page %}
+          <div class="{{ page ? 'mb-4' : '' }}">
+            {{ page.meta_description }}
+          </div>
+        {% elif card.text %}
+          <div class="{{ page ? 'mb-4' : '' }}">
+            {{ card.text }}
+          </div>
+        {% endif %} 
+
+        {# Button #}
+        {% if page %}
+          <a href="{{ page.url }}" class="mt-auto button tertiary">More information</a>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
