@@ -41,6 +41,7 @@ button:disabled,
 .button.tertiary,
 .hs-button.tertiary {
   background-color: transparent;
+  text-align: left;
 }
 
 .button.secondary::after,
