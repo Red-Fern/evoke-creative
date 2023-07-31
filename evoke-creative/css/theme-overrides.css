@@ -346,7 +346,7 @@ tfoot td {
   }
 
   .header__navigation--toggle {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><circle cx="16" cy="16" r="15.625" fill="white" stroke="%23DCDCDC" stroke-width="0.75"/><path fill="{{ theme.global_colors.tertiary.color|urlencode }}" d="M10.084 21.526 21.61 10l.795.795L10.88 22.32l-.795-.795Z"/><path fill="{{ theme.global_colors.tertiary.color|urlencode }}" d="M21.608 22.321 10.082 10.795l.795-.795 11.526 11.526-.794.795Z"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><circle cx="16" cy="16" r="15.625" fill="white" stroke="%23DCDCDC" stroke-width="0.75"/><path fill="{{ theme.global_colors.tertiary.color|urlencode }}" d="M21.797 12.531H10.203a.316.316 0 0 1-.328-.328v-.875c0-.164.137-.328.328-.328h11.594c.164 0 .328.164.328.328v.875a.332.332 0 0 1-.328.328Zm0 4.375H10.203a.316.316 0 0 1-.328-.328v-.875c0-.164.137-.328.328-.328h11.594c.164 0 .328.164.328.328v.875a.332.332 0 0 1-.328.328Zm0 4.375H10.203a.316.316 0 0 1-.328-.328v-.875c0-.164.137-.328.328-.328h11.594c.164 0 .328.164.328.328v.875a.332.332 0 0 1-.328.328Z"/></svg>');
   }
 
   .header__close--toggle {
