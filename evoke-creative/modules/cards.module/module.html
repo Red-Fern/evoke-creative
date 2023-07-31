@@ -46,8 +46,8 @@
         {% endif %} 
 
         {# Button #}
-        {% if page %}
-          <a href="{{ page.url }}" class="mt-auto button tertiary">More information</a>
+        {% if page %} 
+          <a href="{{ page.url }}" class="mt-auto button tertiary">{{ module.link_text }}</a>
         {% endif %}
       </div>
     </div>

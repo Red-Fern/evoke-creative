@@ -25,6 +25,18 @@
   "type" : "boolean",
   "default" : false
 }, {
+  "id" : "49f0126b-d130-0826-2281-b61ca6ba3223",
+  "name" : "link_text",
+  "display_width" : null,
+  "label" : "Link text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Read more"
+}, {
   "id" : "card",
   "name" : "card",
   "display_width" : null,
