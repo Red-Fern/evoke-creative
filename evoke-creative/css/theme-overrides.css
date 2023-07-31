@@ -81,7 +81,6 @@ h5,
 .h5,
 h6,
 .h6 {
-  color: var(--secondary-font-color);
   font-family: var(--secondary-font-family);
   font-weight: var(--secondary-font-weight);
 }
