@@ -11,6 +11,10 @@
     ol {
         @apply list-[auto];
     }
+
+    .rounded-images .hs_cos_wrapper_type_linked_image {
+        @apply block rounded-theme overflow-hidden;
+    }
 }
 
 @tailwind components;
