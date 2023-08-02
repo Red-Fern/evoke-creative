@@ -1,0 +1,84 @@
+<!--
+  templateType: section
+  label: Title
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/title.png
+  description: "Section separated in two columns with a divider underneath. Left column has text and right column has a button."
+-->
+{% dnd_section
+  class="title-section"
+%}
+  {% dnd_column
+    padding={
+      "right": 0,
+      "left": 0
+    }
+  %}
+    {% dnd_row
+      vertical_alignment="BOTTOM"
+    %}
+      {% dnd_column
+        offset=0,
+        width=8
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="@hubspot/rich_text",
+            html={{ context.content or "<h2>Lorem ipsum<span class='text-secondary'>.</span></h2>" }}
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+
+      {% dnd_column
+        offset=8,
+        width=4
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/button",
+            button_text="Link"
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_column
+        offset=0,
+        width=12
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="@hubspot/divider",
+            fields={
+              width: "100"
+            }
+            color={
+              "color": "#616673", 
+              "opacity": 100
+            }
+            styles={
+              "spacing": {
+                "spacing": {
+                  "margin": {
+                    "bottom": {
+                      "units": "px",
+                      "value": 0
+                    },
+                    "top": {
+                      "units": "px",
+                      "value": 30
+                    }
+                  }
+                }
+              }
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

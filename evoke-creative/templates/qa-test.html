@@ -269,6 +269,30 @@
     {% end_dnd_column %}
   {% end_dnd_section %}
 
+  {# Title #}
+
+  {% dnd_section
+    padding={
+      "top": 0,
+      "bottom": 0
+    },
+    margin={
+      "top": 35
+    }
+  %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module path="@hubspot/rich_text" %}
+          {% module_attribute "html" %}
+            <h3>Title</h3>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% include_dnd_partial path="../sections/title.html" %}
+
   {# Text with media #}
 
   {% dnd_section

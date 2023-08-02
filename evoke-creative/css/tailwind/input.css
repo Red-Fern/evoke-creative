@@ -11,12 +11,18 @@
     ol {
         @apply list-[auto];
     }
-
-    .rounded-images .hs_cos_wrapper_type_linked_image {
-        @apply block rounded-theme overflow-hidden;
-    }
 }
 
 @tailwind components;
+
+@layer components {
+    /* Sections */
+    .rounded-images .hs_cos_wrapper_type_linked_image {
+        @apply block rounded-theme overflow-hidden;
+    }
+    .title-section .dnd-column + .dnd-column {
+        @apply md:text-right;
+    }
+}
 
 @tailwind utilities;
