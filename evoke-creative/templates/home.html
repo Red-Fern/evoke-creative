@@ -2,7 +2,6 @@
   templateType: page
   isAvailableForNewContent: true
   label: Home
-  screenshotPath: ../images/template-previews/home.png
 -->
 {% extends "./layouts/base.html" %}
 
@@ -14,22 +13,6 @@
   label="Main section",
   class="body-container body-container--home"
 %}
-
-  {# Hero banner #}
-
-  {% include_dnd_partial path="../sections/hero-banner.html" %}
-
-  {# Two column image right #}
-
-  {% include_dnd_partial path="../sections/multi-row-content.html" %}
-
-  {# Call to action #}
-
-  {% include_dnd_partial path="../sections/call-to-action.html" %}
-
-  {# Three column image with text #}
-
-  {% include_dnd_partial path="../sections/multi-column-content.html" %}
 
 {% end_dnd_area %}
 {% endblock body %} 
