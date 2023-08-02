@@ -34,6 +34,21 @@ button:disabled,
   color: #E6E6E6;
 }
 
+@media(max-width: 767px) {
+  button,
+  .button,
+  .hs-button {
+    min-height: 34px;
+  }
+
+  .button::after,
+  .hs-button::after {
+    width: 24px;
+    height: 24px;
+    background-size: 12px 12px;
+  }
+}
+
 /* Button variations */
 
 .button.secondary,
@@ -53,8 +68,16 @@ button:disabled,
 
 .button.secondary:hover,
 .hs-button.secondary:hover,
+.button.secondary:focus,
+.hs-button.secondary:focus,
+.button.secondary:active,
+.hs-button.secondary:active,
 .button.tertiary:hover,
-.hs-button.tertiary:hover {
+.hs-button.tertiary:hover,
+.button.tertiary:focus,
+.hs-button.tertiary:focus,
+.button.tertiary:active,
+.hs-button.tertiary:active {
   background-color: transparent;
 }
 
@@ -68,6 +91,19 @@ button:disabled,
 .button.tertiary,
 .hs-button.tertiary {
   padding: 0;
+  min-height: 34px;
+}
+
+@media(max-width: 767px) {
+  .button.tertiary,
+  .hs-button.tertiary {
+    min-height: 24px;
+  }
+
+  .button.tertiary::after,
+  .hs-button.tertiary::after {
+    margin-left: 10px;
+  }
 }
 
 /* No button */

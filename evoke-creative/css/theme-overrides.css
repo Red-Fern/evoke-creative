@@ -214,13 +214,27 @@ button:active::after,
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="{{ theme.global_colors.white.color|urlencode }}" d="M13.91 3.375h.563v9h-1.125v-7.08l-8.884 8.883-.397.398-.795-.795.398-.397L12.554 4.5H5.473V3.375h8.438Z"/></svg>');
 }
 
-button.secondary,
 .button.secondary,
 .hs-button.secondary,
-button.tertiary,
 .button.tertiary,
 .hs-button.tertiary {
   color: var(--button-accent-color);
+}
+
+button.tertiary::after,
+.button.tertiary::after {
+  background-color: var(--button-accent-color);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="{{ theme.global_colors.white.color|urlencode }}" d="M13.91 3.375h.563v9h-1.125v-7.08l-8.884 8.883-.397.398-.795-.795.398-.397L12.554 4.5H5.473V3.375h8.438Z"/></svg>');
+}
+
+.button.tertiary:hover::after,
+.hs-button.tertiary:hover::after,
+.button.tertiary:focus::after,
+.hs-button.tertiary:focus::after,
+.button.tertiary:active::after,
+.hs-button.tertiary:active::after {
+  background-color: var(--white-color);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="{{ theme.buttons.accent.color.color|urlencode }}" d="M13.91 3.375h.563v9h-1.125v-7.08l-8.884 8.883-.397.398-.795-.795.398-.397L12.554 4.5H5.473V3.375h8.438Z"/></svg>');
 }
 
 @media(max-width: 767px) { 
