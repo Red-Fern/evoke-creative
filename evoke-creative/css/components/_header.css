@@ -50,6 +50,15 @@
   display: none;
 }
 
+.header__logo img {
+  max-width: 100%;
+}
+
+.header__logo .logo-company-name {
+  font-size: 1.167rem;
+  margin-top: 0.7rem;
+}
+
 @media (max-width: 1399px) {
   .header__logo {
     max-width: 135px;
@@ -74,15 +83,6 @@
   header.header.open .header__logo--light {
     display: flex;
   }
-}
-
-.header__logo img {
-  max-width: 100%;
-}
-
-.header__logo .logo-company-name {
-  font-size: 1.167rem;
-  margin-top: 0.7rem;
 }
 
 /* Navigation */
