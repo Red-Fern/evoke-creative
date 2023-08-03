@@ -16,7 +16,13 @@
     {% dnd_row %}
       {% dnd_module
         path="@hubspot/rich_text",
-        html={{ context.content or "<h3 class='mb-10'>Lorem ipsum</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>" }}
+        html={{ 
+          context.content or 
+          "<div class='space-y-8 | lg:space-y-10'>
+            <h3>Lorem ipsum</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>
+          </div>" 
+        }}
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}

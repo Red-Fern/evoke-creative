@@ -34,7 +34,10 @@
     .border-edge::after {
         @apply content-[''] absolute top-0 left-0 w-1 h-[calc(100%-0.15em)] bg-primary lg:w-4;
     }
-    .border-edge.text-white::after {
+    .border-edge.edge-white::after {
         @apply bg-white;
+    }
+    .border-edge.edge-secondary::after {
+        @apply bg-secondary;
     }
 }

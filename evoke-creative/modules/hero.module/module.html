@@ -3,7 +3,7 @@
         <div class="grid gap-10 items-center | lg:gap-14 {{ module.image.src ? 'lg:grid-cols-2' : '' }}">
             <div class="space-y-8 | lg:space-y-14">
                 {% if module.title %}
-                    <h1 class="border-edge {{ module.style.layout == 'grey' ? 'text-white' : 'h2' }}">{{ module.title }}</h1>
+                    <h1 class="border-edge {{ module.style.layout == 'grey' ? 'edge-white text-white' : 'h2' }}">{{ module.title }}</h1>
                 {% endif %}
                 
                 {% if module.text %}
