@@ -88,9 +88,15 @@ button:disabled,
   border: none;
 }
 
+.button.secondary,
+.hs-button.secondary,
 .button.tertiary,
 .hs-button.tertiary {
   padding: 0;
+}
+
+.button.tertiary,
+.hs-button.tertiary {
   min-height: 34px;
 }
 

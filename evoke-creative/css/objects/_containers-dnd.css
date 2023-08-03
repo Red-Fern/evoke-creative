@@ -3,12 +3,6 @@
   padding: 0 1rem;
 }
 
-@media screen and (min-width: 1560px) {
-  .content-wrapper {
-    padding: 0;
-  }
-}
-
 .dnd-section > .row-fluid {
   margin: 0 auto;
 }
