@@ -347,6 +347,17 @@ tfoot td {
   border-color: var(--dark-grey-color);
 }
 
+.header.grey .menu__link,
+.header.grey .header__logo .logo-company-name {
+  color: var(--white-color);
+}
+
+..header.grey menu .menu__link:hover,
+..header.grey menu .menu__link:focus,
+..header.grey menu .menu__link:active {
+  color: var(--white-color_dark);
+}
+
 @media(min-width: 991px) {
   .menu__submenu {
     background-color: var(--light-grey-color);

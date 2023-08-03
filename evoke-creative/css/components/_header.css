@@ -107,6 +107,20 @@
   }
 }
 
+/* Variations */
+
+.header.grey {
+  background-color: var(--primary-color);
+}
+
+header.grey .header__logo--dark {
+  display: none;
+}
+
+header.grey .header__logo--light {
+  display: flex;
+}
+
 /* Mobile toggles */
 
 @media (max-width: 991px) {

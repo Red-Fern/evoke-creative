@@ -6,7 +6,7 @@
   "required" : false,
   "locked" : false,
   "display" : "select",
-  "choices" : [ [ "default", "Default" ], [ "white", "White" ] ],
+  "choices" : [ [ "default", "Default" ], [ "grey", "Grey" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
