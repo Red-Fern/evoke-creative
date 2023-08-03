@@ -1,4 +1,35 @@
-/* Navigation */
+/* Footer */
+
+footer.footer {
+  position: relative;
+}
+
+footer.footer::before {
+  content: '';
+  position: absolute; 
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: var(--dnd-section-padding);
+  background-image: url({{ get_asset_url('/evoke-creative/images/grid-bg.svg') }});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%; 
+}
+
+@media (max-width: 991px) {
+  footer.footer::before {
+    height: var(--dnd-section-padding-mobile);
+  }
+}
+
+@media (max-width: 767px) {
+  footer.footer::before {
+    background-size: 200%;
+  }
+}
+
+/* Logo */
 
 .footer__logo {
   flex-shrink: 0;
@@ -27,6 +58,8 @@
     max-width: 88px;
   }
 }
+
+/* Navigation */
 
 .footer .menu__link {
     display: inline-block;
