@@ -1,9 +1,9 @@
 <!--
   templateType: section
-  label: Hero on white background
+  label: Hero on grey background
   isAvailableForNewContent: true
-  screenshotPath: ../images/section-previews/hero.png
-  description: "Full size section separated in two columns. Left column has heading and text and right column has an image."
+  screenshotPath: ../images/section-previews/hero-grey.png
+  description: "Full size background color section separated in two columns. Left column has heading and text and right column has an image."
 -->
 {% dnd_section
   margin={
@@ -14,7 +14,10 @@
 %}
   {% dnd_module
     path="../modules/hero",
-    title={{ context.title or "Lorem ipsum <span class='text-secondary'>dolor sit amet.</span>" }}
+    style={
+      "layout": "grey"
+    }
+    title={{ context.title or "Lorem<br><span class='text-secondary'>ipsum.</span>" }}
     text={{ context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>" }},
     image={
       "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
@@ -27,3 +30,4 @@
   %}
   {% end_dnd_module %}
 {% end_dnd_section %}
+
