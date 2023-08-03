@@ -1,17 +1,17 @@
-<div class="hero py-12 lg:py-28 rounded-bl-theme rounded-br-theme {{ module.style.layout == 'grey' ? 'bg-primary text-white' : '' }}">
+<div class="py-12 rounded-bl-theme rounded-br-theme | lg:py-28 {{ module.style.layout == 'grey' ? 'bg-primary text-white' : '' }}">
     <div class="content-wrapper">
-        <div class="grid gap-10 items-center lg:gap-14 {{ module.image.src ? 'lg:grid-cols-2' : '' }}">
-            <div class="space-y-8 lg:space-y-14">
+        <div class="grid gap-10 items-center | lg:gap-14 {{ module.image.src ? 'lg:grid-cols-2' : '' }}">
+            <div class="space-y-8 | lg:space-y-14">
                 {% if module.title %}
                     <h1 class="border-edge {{ module.style.layout == 'grey' ? 'text-white' : 'h2' }}">{{ module.title }}</h1>
                 {% endif %}
                 
                 {% if module.text %}
-                    <div class="text-medium lg:text-x-large">{{ module.text }}</div>
+                    <div class="text-medium | lg:text-x-large">{{ module.text }}</div>
                 {% endif %}
 
                 {% if module.button %}
-                    <div class="flex flex-wrap gap-x-8 gap-y-5 lg:gap-x-12">
+                    <div class="flex flex-wrap gap-x-8 gap-y-5 | lg:gap-x-12">
                         {% for item in module.button %}
                             {% set href = item.link.url.href %}
                             {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
