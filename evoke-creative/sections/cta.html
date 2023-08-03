@@ -1,0 +1,48 @@
+<!--
+  templateType: section
+  label: CTA
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/cta.png
+  description: "Section separated in two columns. Left column has an image and right column has text."
+-->
+{% dnd_section %}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/cta",
+        image={
+          "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+          "loading": context.image_loading or "disabled",
+          "max_height": context.image_height or 550,
+          "max_width": context.image_width or 630,
+          "size_type": "auto_custom_max",
+          "src": context.image or get_asset_url("../images/grayscale-mountain.png")
+        }
+        title={{ context.title or "Lorem <span class='text-secondary'>ipsum</span>" }}
+        text={{ context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>" }},
+        button=[{
+          "link": {
+            "no_follow": false,
+            "open_in_new_tab": false,
+            "url": {
+              "href": "",
+              "type": "EXTERNAL"
+            }
+          },
+          "link_text": "Read more"
+        }, {
+          "link": {
+            "no_follow": false,
+            "open_in_new_tab": false,
+            "url": {
+              "href": "",
+              "type": "EXTERNAL"
+            }
+          },
+          "link_text": "Read more"
+        }],
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

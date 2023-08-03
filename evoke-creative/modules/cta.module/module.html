@@ -1,0 +1,47 @@
+<div class="px-[15px] py-[30px] rounded-theme bg-primary text-white | lg:px-[80px] lg:py-0">
+    <div class="grid gap-10 items-center | lg:grid-cols-2 lg:gap-14">
+        <div class="lg:relative lg:self-end lg:h-[calc(100%+100px)]">
+            <div class="lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:h-full lg:w-full">
+                {% if module.image.src %}
+                    {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+                    {% if module.image.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%; height: auto;"' %}
+                    {% elif module.image.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}"' %}
+                    {% endif %}
+                    {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+                    
+                    <img src="{{ module.image.src }}" class="h-full rounded-theme object-contain object-bottom lg:rounded-none" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="space-y-8 | lg:py-[80px] lg:space-y-10">
+            {% if module.title %}
+                <h3 class="text-white">{{ module.title }}</h3>
+            {% endif %}
+            
+            {% if module.text %}
+                {{ module.text }}
+            {% endif %}
+
+            {% if module.button %}
+                <div class="flex flex-wrap gap-x-8 gap-y-5 | lg:gap-x-12">
+                    {% for item in module.button %}
+                        {% set href = item.link.url.href %}
+                        {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                        {% endif %}
+
+                        <a href="{{ href }}" class="button {{ loop.first ? 'primary' : 'secondary' }}"
+                            {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                            {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+                            >
+                            {{ item.link_text }}
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
