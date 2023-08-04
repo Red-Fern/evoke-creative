@@ -1,9 +1,13 @@
 <div class="py-12 rounded-bl-theme rounded-br-theme | lg:py-28 {{ module.style.layout == 'grey' ? 'bg-primary text-white' : '' }}">
     <div class="content-wrapper">
-        <div class="grid gap-10 items-center | md:gap-14 {{ module.image.src ? 'md:grid-cols-2' : '' }}">
-            <div class="space-y-8 | lg:space-y-14">
-                {% if module.title %}
-                    <h1 class="border-edge {{ module.style.layout == 'grey' ? 'edge-white text-white' : 'h2' }}">{{ module.title }}</h1>
+        {% if !module.image.src && module.title %}
+            <h1 class="border-edge mb-8 | lg:mb-14 {{ module.style.layout == 'grey' ? 'edge-white text-white' : '' }}">{{ module.title }}</h1>
+        {% endif %}
+
+        <div class="gap-10 items-center | md:flex md:gap-14">
+            <div class="space-y-8 | md:w-[55%] | lg:space-y-14">
+                {% if module.image.src && module.title %}
+                    <h1 class="border-edge {{ module.style.layout == 'grey' ? 'edge-white text-white' : '' }}">{{ module.title }}</h1>
                 {% endif %}
                 
                 {% if module.text %}
@@ -38,7 +42,9 @@
                 {% endif %}
                 {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
                 
-                <img src="{{ module.image.src }}" class="rounded-theme" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                <div class="flex justify-center | md:w-[45%]">
+                    <img src="{{ module.image.src }}" class="rounded-theme" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                </div>
             {% endif %}
         </div>
     </div>
