@@ -56,4 +56,8 @@
     .border-edge.edge-secondary::after {
         @apply bg-secondary;
     }
+
+    .prose-spacing .button {
+        @apply max-lg:!mt-8;
+    }
 }
