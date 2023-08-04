@@ -3,7 +3,7 @@
 /* CSS variables */
 
 :root {
-  --column-gap: 2.13%;
+  --column-gap: 1rem;
   --column-width-multiplier: 8.333;
 }
 
