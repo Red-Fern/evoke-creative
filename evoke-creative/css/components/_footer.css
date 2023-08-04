@@ -4,28 +4,17 @@ footer.footer {
   position: relative;
 }
 
-footer.footer::before {
-  content: '';
+footer.footer .grid-bg {
   position: absolute; 
   bottom: 100%;
   left: 0;
   width: 100%;
   height: var(--dnd-section-padding);
-  background-image: url({{ get_asset_url('/evoke-creative/images/grid-bg.svg') }});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%; 
 }
 
 @media (max-width: 991px) {
-  footer.footer::before {
+  footer.footer .grid-bg {
     height: var(--dnd-section-padding-mobile);
-  }
-}
-
-@media (max-width: 767px) {
-  footer.footer::before {
-    background-size: 200%;
   }
 }
 

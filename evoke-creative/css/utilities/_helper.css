@@ -23,3 +23,18 @@
     width: 1px !important;
   }
 }
+
+/* Grid background */
+
+.grid-bg {
+  background-image: url({{ get_asset_url('/evoke-creative/images/grid-bg.svg') }});
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: 100%; 
+}
+
+@media (max-width: 767px) {
+  .grid-bg {
+    background-size: 767px;
+  }
+}
