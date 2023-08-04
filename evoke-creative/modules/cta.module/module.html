@@ -1,7 +1,7 @@
-<div class="px-[15px] py-[30px] rounded-theme bg-primary text-white | lg:px-[80px] lg:py-0">
-    <div class="grid gap-10 items-center | lg:grid-cols-2 lg:gap-14">
-        <div class="lg:relative lg:self-end lg:h-[calc(100%+100px)]">
-            <div class="lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:h-full lg:w-full">
+<div class="px-[15px] py-[30px] rounded-theme bg-primary text-white | md:py-0 | lg:px-[80px]">
+    <div class="grid gap-10 items-center | md:grid-cols-2 md:gap-14">
+        <div class="md:relative md:self-end md:h-[calc(100%+100px)]">
+            <div class="md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:h-full md:w-full">
                 {% if module.image.src %}
                     {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
                     {% if module.image.size_type == 'auto' %}
@@ -11,12 +11,12 @@
                     {% endif %}
                     {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
                     
-                    <img src="{{ module.image.src }}" class="h-full rounded-theme object-contain object-bottom lg:rounded-none" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    <img src="{{ module.image.src }}" class="h-full rounded-theme object-contain object-bottom md:rounded-none" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
                 {% endif %}
             </div>
         </div>
 
-        <div class="space-y-8 | lg:py-[80px] lg:space-y-10">
+        <div class="space-y-8 | md:py-8 | lg:py-[80px] lg:space-y-10">
             {% if module.title %}
                 <h3 class="text-white">{{ module.title }}</h3>
             {% endif %}
