@@ -1,3 +1,27 @@
+{# Module styles #}
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+
+      {# Button wrapper #}
+
+      {% if module.styles.alignment.alignment %}
+        .button-wrapper {
+          text-align: {{ module.styles.alignment.alignment.horizontal_align }};
+        }
+      {% endif %}
+
+      {# Button #}
+
+      .button {
+        {{ module.styles.spacing.spacing.css }}
+      }
+
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
 {# Sets attributes used for the link field #}
 
 {% set style = module.styles.style %}

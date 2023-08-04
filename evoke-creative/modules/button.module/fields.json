@@ -27,7 +27,7 @@
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
-  "default" : "Add a button link here"
+  "default" : "Read more"
 }, {
   "id" : "styles",
   "name" : "styles",
@@ -49,6 +49,31 @@
     "preset" : null,
     "type" : "choice",
     "default" : "primary"
+  },
+  {
+    "label": "Spacing",
+    "name": "spacing",
+    "type": "group",
+    "children": [
+      {
+        "label": "Spacing",
+        "name": "spacing",
+        "type": "spacing"
+      }
+    ]
+  },
+  {
+    "label": "Alignment",
+    "name": "alignment",
+    "type": "group",
+    "children": [
+      {
+        "label": "Alignment",
+        "name": "alignment",
+        "type": "alignment",
+        "alignment_direction": "HORIZONTAL"
+      }
+    ]
   } ],
   "tab" : "STYLE",
   "expanded" : false,
