@@ -1,0 +1,68 @@
+<!--
+  templateType: section
+  label: Logo list
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/logo-list.png
+  description: "Section with a heading followed by a grid of images."
+-->
+{% dnd_section
+  class="logo-list-section grid-bg",
+  padding={
+    "default": {
+      "top": "90px",
+      "right": 0,
+      "bottom": "130px",
+      "left": 0
+    },
+    "mobile": {
+      "top": "30px",
+      "right": 0,
+      "bottom": "30px",
+      "left": 0
+    }
+  }
+%}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html={{ context.content or "<h4>Lorem ipsum</h4>" 
+      }}
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/image_grid",
+        grid_settings={
+          "group_image_click": {
+            "image_click_functionality": "nothing"
+          },
+          "group_image_hover": {
+            "overlay_show_on": "never"
+          },
+          "group_uniform_display_options": {
+            "mobile_columns": true,
+            "mobile_number_of_columns": 4,
+            "number_of_columns": 10
+          }
+        },
+        styles={
+          "container": {
+            "spacing": {
+              "margin": {
+                "bottom": { },
+                "top": {
+                  "units": "px",
+                  "value": 80
+                }
+              }
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

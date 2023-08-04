@@ -321,6 +321,22 @@
 
   {% include_dnd_partial path="../sections/text-media-box.html" %}
 
+  {# Quote #}
+
+  {% dnd_section class="section-tag" %}
+    {% dnd_column class="column-tag" %}
+      {% dnd_row class="row-tag" %}
+        {% dnd_module path="@hubspot/rich_text" %}
+          {% module_attribute "html" %}
+            <h3>Quote</h3>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% include_dnd_partial path="../sections/quote.html" %}
+
   {# Cards #}
 
   {% dnd_section %}
@@ -368,6 +384,22 @@
   {% end_dnd_section %}
 
   {% include_dnd_partial path="../sections/statistics.html" %}
+
+  {# Logo list #}
+
+  {% dnd_section class="section-tag" %}
+    {% dnd_column class="column-tag" %}
+      {% dnd_row class="row-tag" %}
+        {% dnd_module path="@hubspot/rich_text" %}
+          {% module_attribute "html" %}
+            <h3>Logo list</h3>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% include_dnd_partial path="../sections/logo-list.html" %}
 
 {% end_dnd_area %}
 {% endblock body %}

@@ -28,6 +28,14 @@
     .title-section .dnd-column + .dnd-column {
         @apply md:text-right;
     }
+
+    .logo-list-section .hs-image__grid__container {
+        @apply max-lg:!mt-8;
+    }
+
+    .logo-list-section .hs-image__grid__container .hs-image__grid__list {
+        @apply justify-between;
+    }
 }
 
 @tailwind utilities;
