@@ -1,0 +1,20 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Page
+-->
+{% module "header_style" path="../modules/header-style", export_to_template_context=True %}
+  
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--page"
+%}
+
+  {% include_dnd_partial path="../sections/hero.html" %}
+
+{% end_dnd_area %}
+{% endblock body %} 
