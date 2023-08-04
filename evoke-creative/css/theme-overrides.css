@@ -125,6 +125,11 @@ h6,
   .h2 {
     font-size: calc(var(--h2-font-size) * 0.75);
   }
+
+  h3,
+  .h3 {
+    font-size: calc(var(--h3-font-size) * 0.75);
+  }
 }
 
 @media(max-width: 991px) {
