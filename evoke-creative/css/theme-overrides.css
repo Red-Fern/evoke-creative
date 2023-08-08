@@ -248,6 +248,13 @@ button.tertiary::after,
   .hs-button {
     font-size: var(--button-font-size-mobile);
   }
+
+  .button.secondary.full,
+  .hs-button.secondary.full,
+  .button.tertiary.full,
+  .hs-button.tertiary.full {
+    font-size: var(--body-font-size-mobile);
+  }
 }
 
 {###########################################################################}

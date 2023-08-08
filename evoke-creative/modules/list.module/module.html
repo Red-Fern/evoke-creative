@@ -1,0 +1,50 @@
+{# Module styles #}
+
+{% require_css %}
+    <style>
+      {% scope_css %}
+
+        .list-module {
+          {{ module.style.spacing.css }}
+        }
+
+        .list-module.tick li {
+            background-image: url({{ get_asset_url('/evoke-creative/images/tick.svg') }});
+        }
+  
+        {% if module.style.spacing.margin.top %}
+          @media(max-width: 992px) {
+            .list-module {
+              margin-top: var(--prose-padding-mobile);
+            }
+          }
+        {% endif %}
+  
+      {% end_scope_css %}
+    </style>
+  {% end_require_css %}
+
+{% if module.list_item %}
+    <ul class="list-module {{ module.style.layout }} {{ module.style.columns == 2 ? 'grid | lg:grid-cols-2 lg:gap-10' : '' }} pl-0 list-none">
+        {% for item in module.list_item %}
+            <li class="py-4 border-b border-dark-grey uppercase font-bold">
+                {% if module.style.layout == 'link' && item.link.url.href != '' %}
+                    {% set href = item.link.url.href %}
+                    {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+                        {% set href = "mailto:" + href %}
+                    {% endif %}
+
+                    <a href="{{ href }}"
+                        class="{{ module.style.layout == 'link' ? 'button secondary full' : '' }}"
+                        {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                        {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+                        >
+                            {% inline_text field="text" value="{{ item.text }}" %}
+                    </a>
+                {% else %}
+                    {% inline_text field="text" value="{{ item.text }}" %}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

@@ -55,6 +55,7 @@ button:disabled,
 .hs-button.secondary,
 .button.tertiary,
 .hs-button.tertiary {
+  padding: 0;
   background-color: transparent;
   text-align: left;
 }
@@ -88,16 +89,18 @@ button:disabled,
   border: none;
 }
 
-.button.secondary,
-.hs-button.secondary,
-.button.tertiary,
-.hs-button.tertiary {
-  padding: 0;
-}
-
 .button.tertiary,
 .hs-button.tertiary {
   min-height: 34px;
+}
+
+.button.secondary.full,
+.hs-button.secondary.full,
+.button.tertiary.full,
+.hs-button.tertiary.full {
+  display: flex;
+  justify-content: space-between;
+  min-height: auto;
 }
 
 @media(max-width: 767px) {
