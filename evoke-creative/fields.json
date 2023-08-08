@@ -523,7 +523,7 @@
               }
             },
             "default": {
-              "size": 18,
+              "size": 16,
               "size_unit": "px",
               "styles": {
                 "text-decoration": "none"
@@ -551,7 +551,7 @@
               }
             },
             "default": {
-              "size": 16,
+              "size": 14,
               "size_unit": "px"
             }
           }
