@@ -1,0 +1,19 @@
+<div class="flex">
+    {% if module.icon.src %}
+        {% set sizeAttrs = 'width="{{ module.icon.width }}" height="{{ module.icon.height }}"' %}
+        {% if module.icon.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.icon.width }}" height="{{ module.icon.height }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.icon.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.icon.max_width }}" height="{{ module.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = module.icon.loading != 'disabled' ? 'loading="{{ module.icon.loading }}"' : '' %}
+        
+        <div class="shrink-0 flex items-center justify-center mr-4 w-12 h-12 | lg:mr-5 lg:w-16 lg:h-16">
+            <img src="{{ module.icon.src }}" class="object-contain" alt="{{ module.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        </div>
+    {% endif %}
+
+    {% if module.text %}
+        <span class="flex items-center {{ module.text_size == 'large' ? 'h4' : 'h6' }}">{% inline_text field="text" value="{{ module.text }}" %}</span>
+    {% endif %}
+</div>
