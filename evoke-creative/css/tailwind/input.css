@@ -41,6 +41,14 @@
 @tailwind utilities;
 
 @layer utilities {
+    .bg-gradient {
+        @apply bg-primary text-white;
+    }
+
+    .bg-gradient .list-module.link a {
+        @apply text-white;
+    }
+
     .border-edge {
         @apply relative pl-5 lg:pl-[75px];
     }
@@ -55,9 +63,5 @@
 
     .border-edge.edge-secondary::after {
         @apply bg-secondary;
-    }
-
-    .prose-spacing .button {
-        @apply max-lg:!mt-8;
     }
 }

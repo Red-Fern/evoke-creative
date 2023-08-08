@@ -13,7 +13,7 @@
     "required" : false,
     "locked" : false,
     "display" : "select",
-    "choices" : [ [ "default", "Default" ], [ "grey", "Grey" ] ],
+    "choices" : [ [ "white", "White" ], [ "grey", "Grey" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,

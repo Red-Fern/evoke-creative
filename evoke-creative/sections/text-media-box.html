@@ -6,8 +6,7 @@
   description: "Full size gradient background color section separated in two columns. Left column has text and right column has an image."
 -->
 {% dnd_section
-  class="rounded-theme rounded-images prose-spacing",
-  background_color={{ context.background_color or theme.global_colors.primary.color }},
+  class="bg-gradient rounded-theme rounded-images",
   padding={
     "default": {
       "top": "60px",
@@ -39,7 +38,7 @@
     {% dnd_row %}
       {% dnd_module
         path="@hubspot/rich_text",
-        html={{ context.content or "<p class='text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>" }},
+        html={{ context.content or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>" }},
         margin={
           "default": {
             "top": "40px",
