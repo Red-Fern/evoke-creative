@@ -203,10 +203,48 @@
 
       {% dnd_row
         padding={
-        "top": 35
+          "top": 35
         }
       %}
         {% dnd_module path="../modules/button" %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+
+      {# Icon heading #}
+
+        {% dnd_row
+        margin={
+          "top": 35
+      }
+      %}
+        {% dnd_module path="@hubspot/rich_text" %}
+          {% module_attribute "html" %}
+            <h3>Icon heading</h3>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+      
+      {% dnd_row %}
+        {% dnd_module path="../modules/icon-heading" %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+
+      {# List #}
+
+      {% dnd_row
+        margin={
+          "top": 35
+      }
+      %}
+        {% dnd_module path="@hubspot/rich_text" %}
+          {% module_attribute "html" %}
+            <h3>List</h3>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+      
+      {% dnd_row %}
+        {% dnd_module path="../modules/list" %}
         {% end_dnd_module %}
       {% end_dnd_row %}
 
@@ -245,7 +283,7 @@
 
       {% dnd_row
         padding={
-        "top": 35
+          "top": 35
         }
       %}
         {% dnd_module path="../modules/social-follow" %}
@@ -268,74 +306,6 @@
       {% end_dnd_row %}
     {% end_dnd_column %}
   {% end_dnd_section %}
-
-  {# Hero #}
-
-  {% dnd_section %}
-    {% dnd_column %}
-      {% dnd_row %}
-        {% dnd_module path="@hubspot/rich_text" %}
-          {% module_attribute "html" %}
-            <h3>Hero</h3>
-          {% end_module_attribute %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
-  {% end_dnd_section %}
-
-  {% include_dnd_partial path="../sections/hero.html" %}
-  
-  {% include_dnd_partial path="../sections/hero-grey.html" %}
-
-  {# Title #}
-
-  {% dnd_section %}
-    {% dnd_column %}
-      {% dnd_row %}
-        {% dnd_module path="@hubspot/rich_text" %}
-          {% module_attribute "html" %}
-            <h3>Title</h3>
-          {% end_module_attribute %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
-  {% end_dnd_section %}
-
-  {% include_dnd_partial path="../sections/title.html" %}
-
-  {# Text with media #}
-
-  {% dnd_section %}
-    {% dnd_column %}
-      {% dnd_row %}
-        {% dnd_module path="@hubspot/rich_text" %}
-          {% module_attribute "html" %}
-            <h3>Text with media</h3>
-          {% end_module_attribute %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
-  {% end_dnd_section %}
-
-  {% include_dnd_partial path="../sections/text-media.html" %}
-
-  {% include_dnd_partial path="../sections/text-media-box.html" %}
-
-  {# Quote #}
-
-  {% dnd_section class="section-tag" %}
-    {% dnd_column class="column-tag" %}
-      {% dnd_row class="row-tag" %}
-        {% dnd_module path="@hubspot/rich_text" %}
-          {% module_attribute "html" %}
-            <h3>Quote</h3>
-          {% end_module_attribute %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
-  {% end_dnd_section %}
-
-  {% include_dnd_partial path="../sections/quote.html" %}
 
   {# Cards #}
 
@@ -369,21 +339,39 @@
 
   {% include_dnd_partial path="../sections/cta.html" %}
 
-  {# Statistics #}
+  {# Hero #}
 
   {% dnd_section %}
     {% dnd_column %}
       {% dnd_row %}
         {% dnd_module path="@hubspot/rich_text" %}
           {% module_attribute "html" %}
-            <h3>Statistics</h3>
+            <h3>Hero</h3>
           {% end_module_attribute %}
         {% end_dnd_module %}
       {% end_dnd_row %}
     {% end_dnd_column %}
   {% end_dnd_section %}
 
-  {% include_dnd_partial path="../sections/statistics.html" %}
+  {% include_dnd_partial path="../sections/hero.html" %}
+  
+  {% include_dnd_partial path="../sections/hero-grey.html" %}
+
+  {# Inline icon list #}
+
+  {% dnd_section class="section-tag" %}
+    {% dnd_column class="column-tag" %}
+      {% dnd_row class="row-tag" %}
+        {% dnd_module path="@hubspot/rich_text" %}
+          {% module_attribute "html" %}
+            <h3>Inline icon list</h3>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% include_dnd_partial path="../sections/inline-icon-list.html" %}
 
   {# Logo list #}
 
@@ -400,6 +388,75 @@
   {% end_dnd_section %}
 
   {% include_dnd_partial path="../sections/logo-list.html" %}
+
+  {# Quote #}
+
+  {% dnd_section class="section-tag" %}
+    {% dnd_column class="column-tag" %}
+      {% dnd_row class="row-tag" %}
+        {% dnd_module path="@hubspot/rich_text" %}
+          {% module_attribute "html" %}
+            <h3>Quote</h3>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% include_dnd_partial path="../sections/quote.html" %}
+
+  {# Statistics #}
+
+  {% dnd_section %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module path="@hubspot/rich_text" %}
+          {% module_attribute "html" %}
+            <h3>Statistics</h3>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% include_dnd_partial path="../sections/statistics.html" %}
+
+
+  {# Text with media #}
+
+  {% dnd_section %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module path="@hubspot/rich_text" %}
+          {% module_attribute "html" %}
+            <h3>Text with media</h3>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% include_dnd_partial path="../sections/text-media.html" %}
+
+  {% include_dnd_partial path="../sections/text-media-box.html" %}
+
+  {% include_dnd_partial path="../sections/text-list-media-box.html" %}
+
+  {# Title #}
+
+  {% dnd_section %}
+    {% dnd_column %}
+      {% dnd_row %}
+        {% dnd_module path="@hubspot/rich_text" %}
+          {% module_attribute "html" %}
+            <h3>Title</h3>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% include_dnd_partial path="../sections/title.html" %}
 
 {% end_dnd_area %}
 {% endblock body %}
