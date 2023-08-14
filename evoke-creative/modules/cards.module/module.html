@@ -18,7 +18,7 @@
             {% elif card.image.size_type == "auto_custom_max" %}
               {% set sizeAttrs = 'width="{{ card.image.max_width }}" height="{{ card.image.max_height }}" style="max-width: 100%; max-height: auto;"' %}
             {% endif %}
-            {% set loadingAttr = card.image.loading != "disabled" ? 'loading="{{ card.image.loading }}"' : "" %}
+            {% set loadingAttr = card.image.loading != "disabled" ? 'loading="{{ card.image.loading }}"' : "lazy" %}
           
             <img src="{{ card.image.src }}" class="w-full h-full object-cover" alt="{{ card.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
           {% endif %}

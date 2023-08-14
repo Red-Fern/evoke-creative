@@ -79,7 +79,7 @@
       {% dnd_module path="@hubspot/linked_image",
         img={
           "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
-          "loading": context.image_loading or "disabled",
+          "loading": context.image_loading or "lazy",
           "max_height": context.image_height or 530,
           "max_width": context.image_width or 710,
           "size_type": "auto_custom_max",
