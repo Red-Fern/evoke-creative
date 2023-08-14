@@ -111,8 +111,13 @@
     .link-inherit {
         @apply text-inherit hover:text-inherit focus:text-inherit active:text-inherit;
     }
+
     .bg-gradient {
         @apply bg-primary text-white;
+    }
+
+    .bg-gradient a {
+        @apply text-white;
     }
 
     .bg-gradient .list-module.link a {
