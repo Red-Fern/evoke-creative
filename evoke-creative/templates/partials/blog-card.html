@@ -1,0 +1,93 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: false
+-->
+
+{####################################################}
+{################# Blog components ##################}
+{####################################################}
+
+{% macro post_image() %}
+  {% if show_image and content.featured_image %}
+    <a href="{{ content.absolute_url }}" class="shrink-0 w-full aspect-[1/0.7] rounded-theme overflow-hidden">
+      <img src="{{ content.featured_image }}" class="w-full h-full object-cover" alt="{{ content.featured_image_alt_text }}" loading="lazy">
+    </a>
+  {% endif %}
+{% endmacro %}
+
+{% macro post_title() %}
+  {% if show_title %}
+    <h5><a href="{{ content.absolute_url }}" class="link-inherit">{{ content.name }}</a></h5>
+  {% endif %}
+{% endmacro %}
+
+{% macro post_description() %}
+  {% if show_description and content.post_list_content %}
+    <p>{{ content.post_list_content|striptags|truncatehtml(100) }}</p>
+  {% endif %}
+{% endmacro %}
+
+{% macro post_tags() %}
+  {% if show_tags and content.tag_list %}
+    <div class="mb-4 text-secondary uppercase font-bold">
+      {% for tag in content.tag_list %}
+        <a href="{{ blog_tag_url(group.id, tag.slug) }}" class="link-inherit" rel="tag">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro post_author() %}
+  {% if (show_author_image or show_author_name) and content.blog_author %}
+    <div class="flex items-center text-small">
+      {% if show_author_image and content.blog_author.avatar %}
+        <div class="mr-2 w-10 h-10">
+          <img src="{{ content.blog_author.avatar }}" class="w-full h-full object-cover" alt="{{ module.default_text.author_alt_text }}" loading="lazy">
+        </div>
+      {% endif %}
+
+      {% if show_author_name %}
+        <a class="link-inherit" href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}">{{ content.blog_author.display_name }}</a>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro post_date() %}
+  {% if show_publish_date and content.publish_date %}
+    <time class="block text-small" datetime="{{ content.publish_date }}">
+      {{ content.publish_date_localized }}
+    </time>
+  {% endif %}
+{% endmacro %}
+
+{% macro post_button() %}
+  {% if show_button %}
+    <a href="{{ content.absolute_url }}" class="button tertiary">{{ module.button_text ? module.button_text : 'Read more' }}</a>
+  {% endif %}
+{% endmacro %}
+
+{% macro post_content() %}
+  <div class="flex-1 flex flex-col px-4 py-8 | lg:p-8">
+    <div class="mb-10 space-y-4">
+      {{ post_title() }}
+      {{ post_description() }}
+    </div>
+
+    <div class="mt-auto space-y-2">
+      {{ post_tags() }}
+      {{ post_author() }}
+      {{ post_date() }}
+      {{ post_button() }}
+    </div>
+{% endmacro %}
+
+{####################################################}
+{################### Blog layout ####################}
+{####################################################}
+
+<article class="hs-blog-post-listing__post flex flex-col bg-white rounded-theme">
+  {{ post_image() }}
+
+  {{ post_content() }}
+</article>

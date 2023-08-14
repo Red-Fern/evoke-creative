@@ -21,6 +21,8 @@
     }
   ],
   "hidden_modules": [
+    "@hubspot/blog_listing",
+    "@hubspot/pagination",
     "@hubspot/follow_me",
     "@hubspot/language_switcher"
   ]

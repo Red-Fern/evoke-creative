@@ -6,6 +6,14 @@
 
 {% set columns = module.columns %}
 
+{% if columns == 2 %}
+  {% set columns_class = 'md:grid-cols-2' %}
+{% elif columns == 3 %}
+  {% set columns_class = 'md:grid-cols-2 lg:grid-cols-3' %}
+{% elif columns == 4 %}
+  {% set columns_class = 'md:grid-cols-2 lg:grid-cols-4' %}
+{% endif %}
+
 {# Content options #}
 
 {% if module.display_for_each_list_item.index("image") >= 0 %}
@@ -41,218 +49,11 @@
 {% endif %}
 
 {####################################################}
-{################# Module styles ####################}
-{####################################################}
-
-{% require_css %}
-  <style>
-  {% scope_css %}
-
-    {# Grid layout #}
-    
-      {% if columns == 2 %}
-        .hs-blog-post-listing--grid {
-          justify-content: space-between;
-        }
-
-        @media (min-width: 767px) {
-          .hs-blog-post-listing__post--2 {
-            {% if module.styles.post.spacing.space_between_posts %}
-              width: calc(50% - {{ module.styles.post.spacing.space_between_posts / 2 ~ "px" }});
-            {% else %}
-              width: calc(50% - 0.5rem);
-            {% endif %}
-          }
-        }
-      {% elif columns == 3 %}
-        @media (min-width: 767px) and (max-width: 1000px) {
-          .hs-blog-post-listing--grid {
-            justify-content: space-between;
-          }
-
-          .hs-blog-post-listing__post--3 {
-            {% if module.styles.post.spacing.space_between_posts %}
-              width: calc(50% - {{ module.styles.post.spacing.space_between_posts / 2 ~ "px" }});
-            {% else %}
-              width: calc(50% - 0.5rem);
-            {% endif %}
-          }
-        }
-
-        @media (min-width: 1000px) {
-          .hs-blog-post-listing__post--3 {
-            {% if module.styles.post.spacing.space_between_posts %}
-              width: calc(33.3% - {{ module.styles.post.spacing.space_between_posts * 2 / 3 ~ "px" }});
-            {% else %}
-              width: calc(33.3% - 0.66rem);
-            {% endif %}
-          }
-          .hs-blog-post-listing__post--3:nth-child(3n + 1),
-          .hs-blog-post-listing__post--3:nth-child(3n + 2) {
-            {% if module.styles.post.spacing.space_between_posts %}
-              margin-right: {{ module.styles.post.spacing.space_between_posts ~ "px" }};
-            {% else %}
-              margin-right: 1rem;
-            {% endif %}
-          }
-        }
-      {% elif columns == 4 %}
-        @media (min-width: 767px) and (max-width: 1000px) {
-          .hs-blog-post-listing--grid {
-            justify-content: space-between;
-          }
-
-          .hs-blog-post-listing__post--4 {
-            {% if module.styles.post.spacing.space_between_posts %}
-              width: calc(50% - {{ module.styles.post.spacing.space_between_posts / 2 ~ "px" }});
-            {% else %}
-              width: calc(50% - 0.5rem);
-            {% endif %}
-          }
-        }
-
-        @media (min-width: 1000px) {
-          .hs-blog-post-listing__post--4 {
-            {% if module.styles.post.spacing.space_between_posts %}
-              width: calc(25% - {{ module.styles.post.spacing.space_between_posts * 3 / 4 ~ "px" }});
-            {% else %}
-              width: calc(25% - 0.75rem);
-            {% endif %}
-          }
-          .hs-blog-post-listing__post--4:nth-child(4n + 1),
-          .hs-blog-post-listing__post--4:nth-child(4n + 2),
-          .hs-blog-post-listing__post--4:nth-child(4n + 3) {
-            {% if module.styles.post.spacing.space_between_posts %}
-              margin-right: {{ module.styles.post.spacing.space_between_posts ~ "px" }};
-            {% else %}
-              margin-right: 1rem;
-            {% endif %}
-          }
-        }
-      {% endif %}
-    
-  {% end_scope_css %}
-  </style>
-{% end_require_css %}
-
-{####################################################}
-{################ Blog components ###################}
-{####################################################}
-
-{% macro post_image() %}
-  {% if show_image and content.featured_image %}
-    <a
-      class="hs-blog-post-listing__post-image-wrapper hs-blog-post-listing__post-image-wrapper--{{ layout }}"
-      href="{{ content.absolute_url }}"
-      aria-label="{{ "{{ module.default_text.full_featured_image_aria_label }} - " if content.featured_image_alt_text }} {{ module.default_text.read_full_post_aria_label }}"
-    >
-      <img
-        class="hs-blog-post-listing__post-image hs-blog-post-listing__post-image--{{ layout }}"
-        src="{{ content.featured_image }}"
-        loading="lazy"
-        alt="{{ content.featured_image_alt_text }}"
-      >
-    </a>
-  {% endif %}
-{% endmacro %}
-
-{% macro post_title() %}
-  {% if show_title %}
-    <h2 class="hs-blog-post-listing__post-title"><a class="hs-blog-post-listing__post-title-link" href="{{ content.absolute_url }}">{{ content.name }}</a></h2>
-  {% endif %}
-{% endmacro %}
-
-{% macro post_author() %}
-  {% if (show_author_image or show_author_name) and content.blog_author %}
-    <div class="hs-blog-post-listing__post-author">
-      {% if show_author_image and content.blog_author.avatar %}
-        <div class="hs-blog-post-listing__post-author-image-wrapper">
-          <img
-            class="hs-blog-post-listing__post-author-image"
-            src="{{ content.blog_author.avatar }}"
-            loading="lazy"
-            alt="{{ module.default_text.author_alt_text }}"
-          >
-        </div>
-      {% endif %}
-      {% if show_author_name %}
-        <a class="hs-blog-post-listing__post-author-name" href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}">{{ content.blog_author.display_name }}</a>
-      {% endif %}
-    </div>
-  {% endif %}
-{% endmacro %}
-
-{% macro post_tags() %}
-  {% if show_tags and content.tag_list %}
-    <div class="hs-blog-post-listing__post-tags">
-      {% for tag in content.tag_list %}
-        <a class="hs-blog-post-listing__post-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
-      {% endfor %}
-    </div>
-  {% endif %}
-{% endmacro %}
-
-{% macro post_date() %}
-  {% if show_publish_date and content.publish_date %}
-    <time class="hs-blog-post-listing__post-timestamp" datetime="{{ content.publish_date }}">
-      {{ content.publish_date_localized }}
-    </time>
-  {% endif %}
-{% endmacro %}
-
-{% macro post_description() %}
-  {% if show_description %}
-    <p class="hs-blog-post-listing__post-description">{{ content.post_list_content|striptags|truncatehtml(100) }}</p>
-  {% endif %}
-{% endmacro %}
-
-{% macro post_button() %}
-  {% if show_button %}
-    <div class="hs-blog-post-listing__post-button-wrapper">
-      <a
-        class="hs-blog-post-listing__post-button"
-        href="{{ content.absolute_url }}"
-        aria-label="{{ module.default_text.read_full_post_aria_label }}"
-      >
-        {{ module.button_text }}
-      </a>
-    </div>
-  {% endif %}
-{% endmacro %}
-
-{% macro post_content() %}
-  <div class="hs-blog-post-listing__post-content hs-blog-post-listing__post-content--{{ layout }} {{ "hs-blog-post-listing__post-content--with-image" if content.featured_image and show_image }}">
-    {{ post_title() }}
-    {{ post_author() }}
-    {{ post_tags() }}
-    {{ post_date() }}
-    {{ post_description() }}
-    {{ post_button() }}
-  </div>
-{% endmacro %}
-
-{####################################################}
 {################## Blog layout #####################}
 {####################################################}
 
-<section class="hs-blog-post-listing hs-blog-post-listing--{{ layout }}">
+<section class="grid {{ columns_class }} gap-x-3 gap-y-10">
   {% for content in contents %}
-
-    {# Blog listing article #}
-
-    <article
-      class="hs-blog-post-listing__post hs-blog-post-listing__post--{{ layout }} {{ "hs-blog-post-listing__post--{{ columns }}" }}"
-      aria-label="{{ module.default_text.full_blog_post_summary_text }}"
-    >
-
-      {# Post image #}
-
-      {{ post_image() }}
-
-      {# Article content #}
-
-      {{ post_content() }}
-
-    </article>
+    {% include "../templates/partials/blog-card.html" %}
   {% endfor %}
 </section>

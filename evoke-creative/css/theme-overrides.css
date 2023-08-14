@@ -441,89 +441,7 @@ tfoot td {
 }
 
 {###########################################################################}
-{##############################   9. Blog   ################################}
-{###########################################################################}
-
-.blog-post,
-.blog-header__inner,
-.blog-related-posts {
-  margin: var(--dnd-section-padding) 0;
-}
-
-/* Blog post */
-
-.blog-post__meta a {
-  color: var(--primary-color);
-}
-
-.blog-post__tag-link {
-  color: var(--primary-color);
-}
-
-.blog-post__tag-link:hover,
-.blog-post__tag-link:focus {
-  color: var(--primary-color-dark);
-}
-
-.blog-post__tag-link:active {
-  color: var(--primary-color-light);
-}
-
-/* Blog related posts */
-
-.blog-related-posts__title-link,
-.blog-related-posts__title-link:hover,
-.blog-related-posts__title-link:focus,
-.blog-related-posts__title-link:active {
-  font-weight: var(--secondary-font-weight);
-}
-
-.blog-related-posts__title-link {
-  color: var(--primary-color);
-}
-
-.blog-related-posts__title-link:hover,
-.blog-related-posts__title-link:focus {
-  color: var(--primary-color-dark);
-}
-
-.blog-related-posts__title-link:active {
-  color: var(--primary-color-light);
-}
-
-/* Blog comments */
-
-.blog-comments {
-  margin-bottom: var(--dnd-section-padding);
-}
-
-#comments-listing .comment-reply-to {
-  color: var(--anchor-font-color);
-}
-
-#comments-listing .comment-reply-to:hover,
-#comments-listing .comment-reply-to:focus {
-  color: var(--anchor-font-color-dark);
-}
-
-#comments-listing .comment-reply-to:active {
-  color: var(--anchor-font-color-light);
-}
-
-@media(max-width: 991px) {
-  .blog-post,
-  .blog-header__inner,
-  .blog-related-posts {
-    margin: var(--dnd-section-padding-mobile) 0;
-  }
-  
-  .blog-comments {
-    margin-bottom: var(--dnd-section-padding-mobile);
-  }
-}
-
-{###########################################################################}
-{##########################   10. System pages   ###########################}
+{##########################   9. System pages   ###########################}
 {###########################################################################}
 
 .hs-search-results__title {
@@ -534,33 +452,6 @@ tfoot td {
 {###########################################################################}
 {############################   11. Modules   ##############################}
 {###########################################################################}
-
-/* Blog listing */
-
-.hs-blog-post-listing__post-title-link,
-.hs-blog-post-listing__post-title-link:hover,
-.hs-blog-post-listing__post-title-link:focus,
-.hs-blog-post-listing__post-title-link:active {
-  font-weight: var(--secondary-font-weight);
-}
-
-.hs-blog-post-listing__post-title-link {
-  color: var(--primary-color);
-}
-
-.hs-blog-post-listing__post-title-link:hover,
-.hs-blog-post-listing__post-title-link:focus {
-  color: var(--primary-color-dark);
-}
-
-.hs-blog-post-listing__post-title-link:active {
-  color: var(--primary-color-light);
-}
-
-.hs-blog-post-listing__post-tag,
-.hs-blog-post-listing__post-author-name {
-  color: var(--primary-color);
-}
 
 /* Blog pagination */
 
