@@ -1,22 +1,24 @@
-<div class="honeycomb-grid-module {{ module.style.layout == 'images-text' ? 'bg-gradient py-8 rounded-theme | lg:py-20' : '' }}">
-    <div class="content-wrapper max-xl:space-y-8">
+<div class="honeycomb-grid-module {{ module.style.layout }} {{ module.style.layout == 'images-text' ? 'bg-gradient py-8 rounded-theme | lg:py-20' : '' }}">
+    <div class="content-wrapper {{ module.style.layout == 'images-text' ? 'max-xl:space-y-8' : 'flex' }}">
         {% for item in module.section %}
-            <div class="relative flex items-start row-{{ loop.index }}">
+            <div class="relative flex items-start section-{{ loop.index }}">
                 {% if item.image.src %}
                     {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
         
-                    <div class="svg-clipped shrink-0 w-16 lg:w-40 xl:w-1/4 {% cycle 'path-1','path-2' %}">
+                    <div class="svg-clipped {% cycle 'path-1','path-2' %} {{ module.style.layout == 'images-text' ? 'shrink-0 w-16 | lg:w-40 | xl:w-1/4' : '' }}">
                         <img src="{{ item.image.src }}" class="w-full h-full object-cover" alt="{{ item.image.alt }}" {{ loadingAttr }}>
                     </div>
                 {% endif %}
         
-                <div class="text">
-                    {% if item.title %}
-                        <h3 class="mb-5 text-secondary">{{ item.title }}</h3>
-                    {% endif %}
+                {% if module.style.layout == 'images-text' %}
+                  <div class="text ml-5 | lg:ml-8 xl:absolute | xl:left-[25%] xl:ml-[5%] xl:w-[40%] | 2xl:ml-[10%] 2xl:w-[35%]">
+                      {% if item.title %}
+                          <h3 class="mb-5 text-secondary">{{ item.title }}</h3>
+                      {% endif %}
 
-                    {{ item.text }}
-                </div>
+                      {{ item.text }}
+                  </div>
+                {% endif %}
             </div>
         {% endfor %}
     </div>

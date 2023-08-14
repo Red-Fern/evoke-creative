@@ -1,21 +1,15 @@
 <!--
   templateType: section
-  label: Honeycomb grid with text
+  label: Honeycomb grid
   isAvailableForNewContent: true
-  screenshotPath: ../images/section-previews/honeycomb-grid-text.png
-  description: "Full size background color section separated in two columns. Left column has honeycomb grid of images and right column has text."
+  screenshotPath: ../images/section-previews/honeycomb-grid.png
+  description: "Honeycomb grid of images."
 -->
-{% dnd_section
-  margin={
-    "top": 0,
-    "bottom": 0
-  }
-  full_width=true
-%}
+{% dnd_section %}
   {% dnd_module
     path="../modules/honeycomb-grid",
     style={
-      "layout": "images-text"
+      "layout": "images-only"
     }
     section=[ 
       {
@@ -26,9 +20,7 @@
           "max_width": context.image_width or 420,
           "size_type": "auto",
           "src": context.image or get_asset_url("../images/grayscale-mountain.png"),
-        },
-        "title": context.title or "Lorem ipsum",
-        "text": context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>",
+        }
       }, 
       {
         "image": {
@@ -39,8 +31,6 @@
           "size_type": "auto",
           "src": context.image or get_asset_url("../images/grayscale-mountain.png"),
         },
-        "title": context.title or "Lorem ipsum",
-        "text": context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>",
       }, 
       {
         "image": {
@@ -51,8 +41,6 @@
           "size_type": "auto",
           "src": context.image or get_asset_url("../images/grayscale-mountain.png"),
         },
-        "title": context.title or "Lorem ipsum",
-        "text": context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>",
       }, 
       {
         "image": {
@@ -62,9 +50,7 @@
           "max_width": context.image_width or 420,
           "size_type": "auto",
           "src": context.image or get_asset_url("../images/grayscale-mountain.png"),
-        },
-        "title": context.title or "Lorem ipsum",
-        "text": context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>",
+        }
       } 
     ]
   %}
