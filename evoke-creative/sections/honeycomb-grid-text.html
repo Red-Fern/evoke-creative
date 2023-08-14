@@ -1,0 +1,69 @@
+<!--
+  templateType: section
+  label: Honeycomb grid with text
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/honeycomb-grid-text.png
+  description: "Full size background color section separated in two columns. Left column has honeycomb grid of images and right column has text."
+-->
+{% dnd_section
+  margin={
+    "top": 0,
+    "bottom": 0
+  }
+  full_width=true
+%}
+  {% dnd_module
+    path="../modules/honeycomb-grid",
+    section=[ 
+      {
+        "image": {
+          "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+          "loading": context.image_loading or "lazy",
+          "max_height": context.image_height or 370,
+          "max_width": context.image_width or 420,
+          "size_type": "auto",
+          "src": context.image or get_asset_url("../images/grayscale-mountain.png"),
+        },
+        "title": context.title or "Lorem ipsum",
+        "text": context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>",
+      }, 
+      {
+        "image": {
+          "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+          "loading": context.image_loading or "lazy",
+          "max_height": context.image_height or 370,
+          "max_width": context.image_width or 420,
+          "size_type": "auto",
+          "src": context.image or get_asset_url("../images/grayscale-mountain.png"),
+        },
+        "title": context.title or "Lorem ipsum",
+        "text": context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>",
+      }, 
+      {
+        "image": {
+          "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+          "loading": context.image_loading or "lazy",
+          "max_height": context.image_height or 370,
+          "max_width": context.image_width or 420,
+          "size_type": "auto",
+          "src": context.image or get_asset_url("../images/grayscale-mountain.png"),
+        },
+        "title": context.title or "Lorem ipsum",
+        "text": context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>",
+      }, 
+      {
+        "image": {
+          "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+          "loading": context.image_loading or "lazy",
+          "max_height": context.image_height or 370,
+          "max_width": context.image_width or 420,
+          "size_type": "auto",
+          "src": context.image or get_asset_url("../images/grayscale-mountain.png"),
+        },
+        "title": context.title or "Lorem ipsum",
+        "text": context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>",
+      } 
+    ]
+  %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
