@@ -3,12 +3,12 @@
     {# Set page if provided #}
     {% set page = content_by_id(card.page) %}
 
-    {# Image #}
     <div class="flex flex-col bg-white rounded-theme shadow-lg {{ module.cards_per_row == 2 ? 'xl:flex-row' : '' }}">
+      {# Image #}
       <div class="shrink-0 w-full aspect-[1/0.7] rounded-theme overflow-hidden {{ module.cards_per_row == 2 ? 'xl:w-[55%]' : '' }}">
         {% if module.pull_content && page %}
           {% if page.featured_image %}
-              <img src="{{ page.featured_image }}" class="w-full h-full object-cover"  alt="{{ page.featured_image_alt_text }}" loading="lazy">
+              <img src="{{ page.featured_image }}" class="w-full h-full object-cover" alt="{{ page.featured_image_alt_text }}" loading="lazy">
           {% endif %}
         {% else %}
           {% if card.image.src %}

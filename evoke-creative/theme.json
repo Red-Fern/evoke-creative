@@ -21,6 +21,8 @@
     }
   ],
   "hidden_modules": [
+    "@hubspot/button",
+    "@hubspot/menu",
     "@hubspot/blog_listing",
     "@hubspot/pagination",
     "@hubspot/follow_me",
