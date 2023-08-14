@@ -5,7 +5,7 @@
 
     <div class="flex flex-col bg-white rounded-theme shadow-lg {{ module.cards_per_row == 2 ? 'xl:flex-row' : '' }}">
       {# Image #}
-      <div class="shrink-0 w-full aspect-[1/0.7] rounded-theme overflow-hidden {{ module.cards_per_row == 2 ? 'xl:w-[55%]' : '' }}">
+      <div class="shrink-0 w-full aspect-[1/0.7] rounded-theme overflow-hidden {{ module.cards_per_row == 2 ? 'xl:w-1/2 2xl:w-[55%]' : '' }}">
         {% if module.pull_content && page %}
           {% if page.featured_image %}
               <img src="{{ page.featured_image }}" class="w-full h-full object-cover" alt="{{ page.featured_image_alt_text }}" loading="lazy">
@@ -25,7 +25,7 @@
         {% endif %}
       </div>
 
-      <div class="flex-1 flex flex-col px-4 py-8 | lg:p-8">
+      <div class="flex-1 flex flex-col px-4 py-8 | lg:p-8 {{ module.cards_per_row == 2 ? 'xl:w-1/2 2xl:w-[45%]' : '' }}">
         {# Title #}
         {% if module.pull_content && page %}
           <h4 class="mb-5">{{ page.title }}</h4>
