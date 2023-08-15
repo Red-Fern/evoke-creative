@@ -9,12 +9,12 @@
   margin={
     "top": 0,
     "bottom": 0
-  }
+  },
   full_width=true
 %}
   {% dnd_module
     path="../modules/hero",
-    title={{ context.title or "Lorem ipsum <span class='text-secondary'>dolor sit amet.</span>" }}
+    title={{ context.title or "Lorem ipsum <span class='text-secondary'>dolor sit amet.</span>" }},
     text={{ context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>" }},
     image={
       "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",

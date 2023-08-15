@@ -9,15 +9,15 @@
   margin={
     "top": 0,
     "bottom": 0
-  }
+  },
   full_width=true
 %}
   {% dnd_module
     path="../modules/hero",
     style={
       "layout": "grey"
-    }
-    title={{ context.title or "Lorem<br><span class='text-secondary'>ipsum.</span>" }}
+    },
+    title={{ context.title or "Lorem<br><span class='text-secondary'>ipsum.</span>" }},
     text={{ context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>" }},
     image={
       "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
