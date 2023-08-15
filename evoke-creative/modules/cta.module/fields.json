@@ -16,6 +16,16 @@
     "loading" : "lazy"
   }
 }, {
+  "id" : "35e3fac6-2931-0505-1b82-e0b84d87503b",
+  "name" : "break_image_out",
+  "display_width" : null,
+  "label" : "Break image out of container?",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
   "id" : "6a37e9e7-5508-c153-5524-24fff90ccf71",
   "name" : "title",
   "display_width" : null,

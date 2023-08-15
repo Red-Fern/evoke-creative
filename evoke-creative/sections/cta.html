@@ -3,7 +3,7 @@
   label: CTA
   isAvailableForNewContent: true
   screenshotPath: ../images/section-previews/cta.png
-  description: "Section separated in two columns. Left column has an image and right column has text."
+  description: "Section separated in two columns. Left column has an image and right column has text. The image can be toggled to break out of the container."
 -->
 {% dnd_section %}
   {% dnd_column %}
@@ -17,8 +17,8 @@
           "max_width": context.image_width or 630,
           "size_type": "auto_custom_max",
           "src": context.image or get_asset_url("../images/grayscale-mountain.png")
-        }
-        title={{ context.title or "Lorem <span class='text-secondary'>ipsum</span>" }}
+        },
+        title={{ context.title or "<span class='text-secondary'>Lorem ipsum</span>" }},
         text={{ context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>" }},
         button=[{
           "link": {
@@ -30,17 +30,7 @@
             }
           },
           "link_text": "Read more"
-        }, {
-          "link": {
-            "no_follow": false,
-            "open_in_new_tab": false,
-            "url": {
-              "href": "",
-              "type": "EXTERNAL"
-            }
-          },
-          "link_text": "Read more"
-        }],
+        }]
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}

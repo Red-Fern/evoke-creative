@@ -1,47 +1,53 @@
-<div class="bg-gradient px-4 py-8 rounded-theme | md:py-0 | lg:px-[80px]">
-    <div class="grid gap-10 items-center | md:grid-cols-2 md:gap-14">
-        <div class="md:relative md:self-end md:h-[calc(100%+100px)]">
-            <div class="md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:h-full md:w-full">
-                {% if module.image.src %}
-                    {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
-                    {% if module.image.size_type == 'auto' %}
-                        {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%; height: auto;"' %}
-                    {% elif module.image.size_type == 'auto_custom_max' %}
-                        {% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}"' %}
-                    {% endif %}
-                    {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
-                    
-                    <img src="{{ module.image.src }}" class="h-full rounded-theme object-contain object-bottom md:rounded-none" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+<div class="{{ module.break_image_out ? 'md:pt-[30px] | xl:pt-[60px]' : '' }}">
+    <div class="bg-gradient px-4 py-8 rounded-theme {{ module.break_image_out ? 'md:py-0 | lg:px-[80px]' : 'lg:p-12' }}">
+        <div class="grid gap-10 items-center | md:grid-cols-2 md:gap-12 | lg:gap-28">
+            {% if module.image.src %}
+                {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+                {% if module.image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%"' %}
+                {% elif module.image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}"' %}
+                {% endif %}
+                {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+
+                {% if module.break_image_out %}
+                    <div class="md:relative md:self-end md:h-[calc(100%+30px)] | xl:h-[calc(100%+60px)]">
+                        <div class="md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:w-full md:h-full">
+                            <img src="{{ module.image.src }}" class="h-full rounded-theme object-contain object-bottom md:rounded-none" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        </div>
+                    </div>
+                {% else %}
+                    <img src="{{ module.image.src }}" class="rounded-theme" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+            {% endif %}
+
+            <div class="space-y-8 | lg:space-y-10 {{ module.break_image_out ? 'md:py-8 | lg:py-[80px]' : '' }}">
+                {% if module.title %}
+                    <h3 class="text-white">{{ module.title }}</h3>
+                {% endif %}
+                
+                {% if module.text %}
+                    <div>{{ module.text }}</div>
+                {% endif %}
+
+                {% if module.button %}
+                    <div class="flex flex-wrap gap-x-8 gap-y-5 | lg:gap-x-12">
+                        {% for item in module.button %}
+                            {% set href = item.link.url.href %}
+                            {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+                                {% set href = "mailto:" + href %}
+                            {% endif %}
+
+                            <a href="{{ href }}" class="button {{ loop.first ? 'primary' : 'secondary' }}"
+                                {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                                {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+                                >
+                                {{ item.link_text }}
+                            </a>
+                        {% endfor %}
+                    </div>
                 {% endif %}
             </div>
-        </div>
-
-        <div class="space-y-8 | md:py-8 | lg:py-[80px] lg:space-y-10">
-            {% if module.title %}
-                <h3 class="text-white">{{ module.title }}</h3>
-            {% endif %}
-            
-            {% if module.text %}
-                {{ module.text }}
-            {% endif %}
-
-            {% if module.button %}
-                <div class="flex flex-wrap gap-x-8 gap-y-5 | lg:gap-x-12">
-                    {% for item in module.button %}
-                        {% set href = item.link.url.href %}
-                        {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
-                            {% set href = "mailto:" + href %}
-                        {% endif %}
-
-                        <a href="{{ href }}" class="button {{ loop.first ? 'primary' : 'secondary' }}"
-                            {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
-                            {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
-                            >
-                            {{ item.link_text }}
-                        </a>
-                    {% endfor %}
-                </div>
-            {% endif %}
         </div>
     </div>
 </div>
