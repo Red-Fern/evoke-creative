@@ -1,0 +1,27 @@
+<div class="bg-gradient px-4 py-8 rounded-theme | lg:p-12">
+    <div class="grid gap-10 items-center | md:grid-cols-2 md:gap-12 | lg:gap-28">
+        <div class="space-y-8 | lg:space-y-10">
+            {% if module.title %}
+                <h3 class="text-white">{{ module.title }}</h3>
+            {% endif %}
+            
+            {% if module.text %}
+                <div class="text-medium | lg:text-x-large">{{ module.text }}</div>
+            {% endif %}
+
+            <p>[ Form ]</p>
+        </div>
+
+        {% if module.image.src %}
+            {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+            {% if module.image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%"' %}
+            {% elif module.image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}"' %}
+            {% endif %}
+            {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+
+            <img src="{{ module.image.src }}" class="rounded-theme" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+    </div>
+</div>
