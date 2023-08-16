@@ -242,6 +242,13 @@ button.tertiary::after,
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="{{ theme.buttons.accent.color.color|urlencode }}" d="M13.91 3.375h.563v9h-1.125v-7.08l-8.884 8.883-.397.398-.795-.795.398-.397L12.554 4.5H5.473V3.375h8.438Z"/></svg>');
 }
 
+.text-white .button.secondary,
+.text-white .hs-button.secondary,
+.text-white .button.tertiary,
+.text-white .hs-button.tertiary {
+  color: var(--white-color);
+}
+
 @media(max-width: 991px) { 
   button,
   .button,

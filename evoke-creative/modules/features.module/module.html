@@ -1,0 +1,64 @@
+{% for item in module.feature %}
+    <div 
+        class="px-4 py-8 rounded-theme | lg:p-10 {{ item.text_colour == 'white' ? 'text-white' : '' }}" 
+        style="background-color: rgba({{ item.background_colour.color|convert_rgb }}, {{ item.background_colour.opacity / 100 }})"
+    >
+        <div class="grid | lg:grid-cols-2 lg:gap-20">
+            <div class="lg:p-2 lg:pr-0 | xl:p-10 xl:pr-0">
+                {% if item.title %}
+                    <h3 class="mb-8 {{ module.style.layout == 'products' ? 'h2' : '' }}" style="color: rgba({{ item.title_colour.color|convert_rgb }}, {{ item.title_colour.opacity / 100 }})">{{ item.title }}</h3>
+                {% endif %}
+
+                {% if item.sub_heading %}
+                    <h4 class="mb-8 {{ item.text_colour == 'white' ? 'text-white' : '' }}">{{ item.sub_heading }}</h4>
+                {% endif %}
+
+                {% if item.text %}
+                    <div class="mb-8 text-medium | xl:mb-14 lg:text-large">
+                        {{ item.text }}
+                    </div>
+                {% endif %}
+ 
+                {% if item.list is iterable %}
+                    <ul class="mb-8 pl-0 list-none | xl:mb-14 {{ module.style.layout == 'products' ? 'list-module tick space-y-2' : 'space-y-2.5' }}">
+                        {% for list_item in item.list %}
+                            <li class="{{ module.style.layout == 'products' ? '' : 'px-5 py-3 rounded-theme bg-gradient-to-r from-[rgb(240,240,240,0.3)]' }}">{% inline_text field="text" value="{{ list_item.text }}" %}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {% if item.button is iterable %}
+                    <div class="flex flex-wrap gap-x-8 gap-y-5 | lg:gap-x-12">
+                        {% for button in item.button %}
+                            {% set href = button.link.url.href %}
+                            {% if button.link.url.type is equalto "EMAIL_ADDRESS" %}
+                                {% set href = "mailto:" + href %}
+                            {% endif %}
+
+                            <a href="{{ href }}" class="button {{ loop.first ? 'secondary' : 'primary' }}"
+                                {% if button.link.open_in_new_tab %}target="_blank"{% endif %}
+                                {% if button.link.rel %}rel="{{ button.link.rel }}"{% endif %}
+                                >
+                                {{ button.link_text }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if item.image.src %}
+                {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+                {% if item.image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+                
+                <div class="hidden self-center items-center justify-center | lg:flex">
+                    <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}
