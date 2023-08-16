@@ -21,22 +21,6 @@
 @layer components {
     /* Modules */
 
-    .list-module.tick {
-        @apply text-secondary;
-    }
-
-    .list-module.tick li {
-        @apply pl-7 bg-no-repeat bg-[left_center] bg-[length:18px_18px];
-    }
-
-    .list-module.tick a {
-        @apply text-secondary;
-    }
-
-    .list-module.link a {
-        @apply text-primary;
-    }
-
     .svg-clipped {
         @apply aspect-[1/1.14] overflow-hidden;
     }

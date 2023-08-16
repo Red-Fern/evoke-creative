@@ -38,3 +38,13 @@
     background-size: 767px;
   }
 }
+
+/* Tick lists */
+
+.list-module.tick li {
+  padding-left: 30px;
+  background-image: url({{ get_asset_url('/evoke-creative/images/tick.svg') }});
+  background-repeat: no-repeat;
+  background-position: left 4px;
+  background-size: 18px 18px;
+}
