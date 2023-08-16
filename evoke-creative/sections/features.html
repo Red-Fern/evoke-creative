@@ -1,0 +1,62 @@
+<!--
+  templateType: section
+  label: Features
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/features.png
+  description: "A series of cards containing text, a list and an image each. Two layouts are available, one for projects and one for products."
+-->
+{% dnd_section %}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/evoke-creative/modules/features",
+        feature=[{
+          "background_colour": {
+            "color": "#3C4F57",
+            "opacity": 100
+          },
+          "button":[{
+            "link": {
+              "no_follow": false,
+              "open_in_new_tab": false,
+              "url": {
+                "href": "",
+                "type": "EXTERNAL"
+              }
+            },
+            "link_text": "Learn more"
+          }],
+          "image":{
+            "alt": context.card_one_image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+            "loading": context.card_one_image_loading or "lazy",
+            "max_height": context.card_one_image_height or 400,
+            "max_width": context.card_one_image_width or 600,
+            "size_type": "auto_custom_max",
+            "src": context.card_one_image or get_asset_url("../images/grayscale-mountain.png")
+          },
+          "list":[{
+            "text": "Lorem ipsum dolor sit amet"
+          }, 
+          {
+            "text": "Lorem ipsum dolor sit amet"
+          }, 
+          {
+            "text": "Lorem ipsum dolor sit amet"
+          }],
+          "sub_heading": "",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "text_colour": "white",
+          "title": "Lorem ipsum.",
+          "title_colour":{
+            "color": "#5DB035",
+            "opacity": 100
+          }
+        }],
+        style={
+          "layout": "projects"
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
