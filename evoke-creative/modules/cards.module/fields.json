@@ -46,7 +46,7 @@
   "occurrence" : {
     "min" : 1,
     "max" : null,
-    "sorting_label_field" : "card.title",
+    "sorting_label_field" : "724295e7-a77f-62f0-f282-3a82cce97303",
     "default" : 3
   },
   "children" : [ {
