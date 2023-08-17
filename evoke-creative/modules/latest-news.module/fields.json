@@ -1,0 +1,20 @@
+[ {
+  "id" : "9bf499a2-6573-cdbc-9236-3b0954395330",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "39ac932f-2850-be78-36b6-f98ce86d9188",
+  "name" : "text",
+  "display_width" : null,
+  "label" : "Text",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext"
+} ]
