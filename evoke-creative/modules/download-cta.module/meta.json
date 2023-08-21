@@ -1,7 +1,7 @@
 {
   "global" : true,
   "smart_type" : "NOT_SMART",
-  "host_template_types" : [ "PAGE" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
   "module_id" : 76928321724,
   "label" : "Download CTA",
   "is_available_for_new_content" : true

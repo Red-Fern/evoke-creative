@@ -1,6 +1,6 @@
 {
   "global" : false,
-  "host_template_types" : [ "PAGE" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
   "module_id" : 75921686483,
   "label" : "CTA",
   "is_available_for_new_content" : true
