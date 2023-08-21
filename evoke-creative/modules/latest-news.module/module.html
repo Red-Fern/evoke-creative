@@ -8,13 +8,17 @@
 
     <div class="latest-news-module">
         <div class="content-wrapper">
-            <h2>{{ module.title }}<span class="text-secondary">.</span></h2>
+            {% if module.title %}
+                <h2>{{ module.title }}<span class="text-secondary">.</span></h2>
+            {% endif %}
 
             <hr class="mt-8 border-dark-grey"> 
 
             <div class="xl:flex">
                 <div class="pt-12 | lg:pt-16 | xl:pr-8 xl:w-1/4">
-                    <div>{{ module.text }}</div>
+                    {% if module.text %}
+                        <div>{{ module.text }}</div>
+                    {% endif %}
 
                     <a href="{{ blog_all_posts_url("default") }}" class="button primary mt-8 | lg:mt-10">View all articles</a>
                 </div>

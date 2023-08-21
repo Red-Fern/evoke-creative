@@ -5,7 +5,7 @@
         {% if card.image.src %}
           {% set sizeAttrs = 'width="{{ card.image.width }}" height="{{ card.image.height }}"' %}
           {% if card.image.size_type == "auto" %}
-              {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+              {% set sizeAttrs = 'style="max-width: 100%;"' %}
           {% elif card.image.size_type == "auto_custom_max" %}
               {% set sizeAttrs = 'width="{{ card.image.max_width }}" height="{{ card.image.max_height }}" style="max-width: 100%;"' %}
           {% endif %}
