@@ -52,8 +52,10 @@
 {################## Blog layout #####################}
 {####################################################}
 
-<section class="grid {{ columns_class }} gap-x-3 gap-y-10">
-  {% for content in contents %}
-    {% include "../templates/partials/blog-card.html" %}
-  {% endfor %}
-</section>
+{% if contents is iterable %}
+  <section class="grid {{ columns_class }} gap-x-3 gap-y-10">
+    {% for content in contents %}
+      {% include "../templates/partials/blog-card.html" %}
+    {% endfor %}
+  </section>
+{% endif %}
