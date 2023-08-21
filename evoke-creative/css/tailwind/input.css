@@ -73,7 +73,7 @@
     /* Sections */
 
     .rounded-images .hs_cos_wrapper_type_linked_image {
-        @apply block rounded-theme overflow-hidden;
+        @apply block rounded-[--border-radius-mobile] overflow-hidden md:rounded-[--border-radius];
     }
 
     .title-section .dnd-column + .dnd-column {

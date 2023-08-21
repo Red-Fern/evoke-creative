@@ -32,9 +32,6 @@ module.exports = {
         'medium': 'var(--body-font-size)', 
         'large': 'var(--body-font-size-large)',
         'x-large': 'var(--body-font-size-x-large)'
-      },
-      borderRadius: {
-        'theme': 'var(--border-radius)'
       }
     }
   },

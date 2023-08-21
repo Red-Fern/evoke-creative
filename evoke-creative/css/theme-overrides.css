@@ -52,6 +52,12 @@ body {
   }
 }
 
+@media(max-width: 767px) {
+  .body-wrapper {
+    border-radius: var(--border-radius-mobile) var(--border-radius-mobile) 0 0;
+  }
+}
+
 /* Anchors */
 
 a {
@@ -413,12 +419,17 @@ tfoot td {
   }
 }
 
+@media(max-width: 767px) {
+  header.header.open {
+    border-radius: var(--border-radius-mobile) var(--border-radius-mobile) 0 0;
+  }
+}
+
 {###########################################################################}
 {###########################   8. Website footer   #########################}
 {###########################################################################}
 
 .footer {
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
   background-color: var(--primary-color);
   color: var(--light-grey-color);
 }

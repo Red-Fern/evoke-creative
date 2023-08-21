@@ -87,4 +87,5 @@
 
     /* Utility */
     --border-radius: 30px;
+    --border-radius-mobile: 15px;
 }

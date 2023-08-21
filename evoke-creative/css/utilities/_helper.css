@@ -24,6 +24,18 @@
   }
 }
 
+/* Border radius */
+
+.rounded-theme {
+  border-radius: var(--border-radius);
+}
+
+@media (max-width: 767px) {
+  .rounded-theme {
+    border-radius: var(--border-radius-mobile);
+  }
+}
+
 /* Grid background */
 
 .grid-bg {
