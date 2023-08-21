@@ -1,0 +1,38 @@
+<!--
+  templateType: section
+  label: USP Diagram
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/usp-diagram.png
+  description: "Diagram featuring a series of touch points."
+-->
+{% dnd_section %}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/evoke-creative/modules/usp-diagram",
+        diagram="retail",
+        retail_point=[{
+          "title": "Point 1",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum."
+        }, 
+        {
+          "title": "Point 2",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum."
+        }, 
+        {
+          "title": "Point 3",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum."
+        }, 
+        {
+          "title": "Point 4",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum."
+        }, 
+        {
+          "title": "Point 5",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum."
+        }]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

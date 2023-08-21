@@ -1,0 +1,114 @@
+[ {
+  "id" : "9f2c6935-d5a8-07ca-44cb-f0f12eff8a7c",
+  "name" : "diagram",
+  "display_width" : null,
+  "label" : "Diagram",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "retail", "Retail" ], [ "hospitality", "Hospitality" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice"
+}, {
+  "id" : "107912b0-de4a-a061-7c19-f6b4bb3c74fb",
+  "name" : "retail_point",
+  "display_width" : null,
+  "label" : "Point",
+  "help_text" : "",
+  "inline_help_text" : "Points are output in a clockwise direction from the top right. ",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 5,
+    "max" : 5,
+    "sorting_label_field" : "7904ad0d-0090-a2fc-20ea-6db277b953ed",
+    "default" : 5
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "diagram",
+    "controlling_value_regex" : "retail",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "7904ad0d-0090-a2fc-20ea-6db277b953ed",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "24ec3cc1-cb96-6e00-f583-7beb3341b357",
+    "name" : "text",
+    "display_width" : null,
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ { }, { }, { }, { }, { } ]
+}, {
+  "id" : "15518663-b037-46e0-28ef-ddb0f89aec4d",
+  "name" : "hospitality_point",
+  "display_width" : null,
+  "label" : "Point",
+  "help_text" : "",
+  "inline_help_text" : "Points are output in a clockwise direction from the top right. ",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 3,
+    "max" : 3,
+    "sorting_label_field" : "7904ad0d-0090-a2fc-20ea-6db277b953ed",
+    "default" : 3
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "diagram",
+    "controlling_value_regex" : "hospitality",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "5e1df8aa-1104-587a-cb4f-50451c9c4c98",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "39bf2a22-96fb-0d88-ca07-44fac4e6f3c7",
+    "name" : "text",
+    "display_width" : null,
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ { }, { }, { } ]
+} ]

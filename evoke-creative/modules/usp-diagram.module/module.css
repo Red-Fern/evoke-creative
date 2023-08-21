@@ -1,0 +1,62 @@
+/* Retail */
+
+.usp-diagram-retail .point-1,
+.usp-diagram-retail .point-1 .icon {
+    top: 1%;
+    left: 46%;
+}
+
+.usp-diagram-retail .point-2,
+.usp-diagram-retail .point-2 .icon {
+    top: 27%;
+    left: 67%;
+}
+
+.usp-diagram-retail .point-3,
+.usp-diagram-retail .point-3 .icon {
+    top: 70%;
+    left: 75%;
+}
+
+.usp-diagram-retail .point-4,
+.usp-diagram-retail .point-4 .icon {
+    top: 69%;
+    left: 25%;
+}
+
+.usp-diagram-retail .point-5,
+.usp-diagram-retail .point-5 .icon {
+    top: 26%;
+    left: 1%;
+}
+
+/* Hospitality */
+
+.usp-diagram-hospitality .point-1,
+.usp-diagram-hospitality .point-1 .icon {
+    top: 16%;
+    left: 90%;
+}
+
+.usp-diagram-hospitality .point-2,
+.usp-diagram-hospitality .point-2 .icon {
+    top: 77%;
+    left: 72%;
+}
+
+.usp-diagram-hospitality .point-3,
+.usp-diagram-hospitality .point-3 .icon {
+    top: 38%;
+    left: 15%;
+}
+
+/* Right aligned tooltips */
+
+@media(min-width: 992px) {
+    .usp-diagram-retail .point-3 .text,
+    .usp-diagram-hospitality .point-1 .text,
+    .usp-diagram-hospitality .point-2 .text {
+        right: -2rem;
+        left: auto;
+    }
+}
