@@ -1,0 +1,39 @@
+<div class="team-module">
+  {% if module.title %}
+    <h2 class="mb-8 | lg:mb-16">{{ module.title }}<span class="text-secondary">.</span></h2>
+  {% endif %}
+
+  {% if module.text %}
+    <div class="text-medium | lg:w-4/6 lg:text-x-large">{{ module.text }}</div>
+  {% endif %}
+
+  {% if module.team_member is iterable %}
+    <div class="grid gap-x-5 gap-y-10 mt-12 | sm:grid-cols-2 | md:grid-cols-3 | lg:grid-cols-4 lg:mt-20">
+      {% for item in module.team_member %}
+        <div>
+          {% if item.image.src %}
+            {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+            {% if item.image.size_type == "auto" %}
+                {% set sizeAttrs = 'style="max-width: 100%;"' %}
+            {% elif item.image.size_type == "auto_custom_max" %}
+                {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%;"' %}
+            {% endif %}
+            {% set loadingAttr = item.image.loading != "disabled" ? 'loading="{{ item.image.loading }}"' : "lazy" %}
+          
+            <div class="mb-3 aspect-[1/1.25] rounded-theme overflow-hidden">
+              <img src="{{ item.image.src }}" class="w-full h-full object-cover" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            </div>
+          {% endif %}
+
+          <span class="text-small font-bold uppercase">
+            {{ item.title }} 
+
+            {% if item.role %}
+              <span class="font-normal">{{ item.role }}</span>
+            {% endif %}
+          </span>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

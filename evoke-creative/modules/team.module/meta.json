@@ -1,0 +1,8 @@
+{
+  "global" : true,
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 76987603392,
+  "label" : "Team",
+  "is_available_for_new_content" : true
+}
