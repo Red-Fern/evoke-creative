@@ -1,4 +1,18 @@
 [ {
+  "id" : "cc38ce91-b518-4340-6893-dc59e53f60fe",
+  "name" : "number_of_columns",
+  "display_width" : null,
+  "label" : "Number of columns",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "8", "8" ], [ "10", "10" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "8"
+}, {
   "id" : "0781f7ed-ac43-f9bb-d836-9faec239088f",
   "name" : "image",
   "display_width" : null,

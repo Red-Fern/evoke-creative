@@ -1,5 +1,5 @@
 {% if module.image is iterable %}
-	<div class="grid grid-cols-4 items-center gap-6 | md:gap-x-12 | lg:grid-cols-8 | xl:gap-x-24">
+	<div class="grid items-center {{ module.number_of_columns == '8' ? 'grid-cols-4 gap-6 | md:gap-x-12 | lg:grid-cols-8 | xl:gap-x-24' : 'grid-cols-5 gap-6 | md:gap-x-10 | lg:grid-cols-10 | xl:gap-x-20' }}">
 		{% for item in module.image %}
 			{% if item.image.src %}
 				{% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
