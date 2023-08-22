@@ -23,6 +23,7 @@
   "hidden_modules": [
     "@hubspot/button",
     "@hubspot/menu",
+    "@hubspot/image_grid",
     "@hubspot/blog_listing",
     "@hubspot/pagination",
     "@hubspot/follow_me",

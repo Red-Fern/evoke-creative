@@ -1,0 +1,28 @@
+{% if module.image is iterable %}
+	<div class="grid grid-cols-4 items-center gap-6 | md:gap-x-12 | lg:grid-cols-8 | xl:gap-x-24">
+		{% for item in module.image %}
+			{% if item.image.src %}
+				{% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+				{% if item.image.size_type == 'auto' %}
+					{% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+				{% elif item.image.size_type == 'auto_custom_max' %}
+					{% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+				{% endif %}
+				{% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+
+				{% set href = item.link.url.href %}
+				{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+				{% endif %}
+			
+				<a href="{{ href }}"
+					class="flex justify-center"
+					{% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+					{% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+					>
+					<img src="{{ item.image.src }}" class="object-contain" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+				</a>
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endif %}
