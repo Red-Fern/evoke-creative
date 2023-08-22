@@ -38,9 +38,21 @@
         %}
 
         <div class="mt-12 ml-auto | lg:mt-0">
-          <h4 class="mb-3 text-secondary | lg:hidden">[ Title ]</h4>
+          <h4 class="mb-3 text-secondary | lg:hidden">
+            {% module "header_contact_title" 
+              path="@hubspot/text" 
+              label="Mobile menu contact title"
+              value="Let us show you around"
+            %}
+          </h4>
 
-          <p class="mb-4 text-white | lg:hidden">[ Text ]</p>
+          <div class="mb-4 text-white | lg:hidden">
+            {% module "header_contact_text" 
+              path="@hubspot/text" 
+              label="Mobile menu contact text"
+              value="Rather a personal, customised tour of Dash? Book a call with us and we'd be happy to show you around."
+            %}
+          </div>
 
           <a href="" class="button">Contact</a>
         </div>
