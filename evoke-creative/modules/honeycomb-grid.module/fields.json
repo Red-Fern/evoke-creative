@@ -19,12 +19,24 @@
     "preset" : null,
     "type" : "choice",
     "default" : "images-text"
+  }, {
+    "id" : "e0b968ab-a73a-1221-cc09-1cfdeccde319",
+    "name" : "full_width",
+    "display_width" : null,
+    "label" : "Make module full width?",
+    "inline_help_text" : "Toggle to true to allow this module to be full width on blog posts and case studies. ",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
   } ],
   "tab" : "STYLE",
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "layout" : "images-text"
+    "layout" : "images-text",
+    "full_width" : false
   }
 }, {
   "id" : "31941640-a02a-fa30-d60a-3108037de4fe",
@@ -95,12 +107,5 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
-  "default" : {
-    "image" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
-    }
-  }
+  "default" : [ ]
 } ]

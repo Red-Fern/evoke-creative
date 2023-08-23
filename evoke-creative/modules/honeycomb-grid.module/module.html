@@ -1,4 +1,4 @@
-<div class="honeycomb-grid-module {{ module.style.layout }} {{ module.style.layout == 'images-text' ? 'bg-gradient py-8 rounded-theme | lg:py-20' : '' }}">
+<div class="honeycomb-grid-module {{ module.style.layout }} {{ module.style.layout == 'images-text' ? 'bg-gradient py-8 rounded-theme | lg:py-20' : '' }} {{ module.style.full_width ? 'break-out' : '' }}">
     <div class="content-wrapper {{ module.style.layout == 'images-text' ? 'max-xl:space-y-8' : 'flex' }}">
         {% for item in module.section %}
             <div class="relative flex items-start section-{{ loop.index }}">
@@ -6,7 +6,7 @@
                     {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
         
                     <div class="svg-clipped {% cycle 'path-1','path-2' %} {{ module.style.layout == 'images-text' ? 'shrink-0 w-16 | lg:w-40 | xl:w-1/4' : '' }}">
-                        <img src="{{ item.image.src }}" class="w-full h-full object-cover" alt="{{ item.image.alt }}" {{ loadingAttr }}>
+                        <img src="{{ item.image.src }}" class="w-full !h-full object-cover" alt="{{ item.image.alt }}" {{ loadingAttr }}>
                     </div>
                 {% endif %}
         
