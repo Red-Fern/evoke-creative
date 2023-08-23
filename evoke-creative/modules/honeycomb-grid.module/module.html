@@ -1,7 +1,7 @@
 <div class="honeycomb-grid-module {{ module.style.layout }} {{ module.style.layout == 'images-text' ? 'bg-gradient py-8 rounded-theme | lg:py-20' : '' }} {{ module.style.full_width ? 'break-out' : '' }}">
     <div class="content-wrapper {{ module.style.layout == 'images-text' ? 'max-xl:space-y-8' : 'flex' }}">
         {% for item in module.section %}
-            <div class="relative flex items-start section-{{ loop.index }}">
+            <div class="relative flex-1 flex items-start section-{{ loop.index }}">
                 {% if item.image.src %}
                     {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
         
