@@ -28,7 +28,7 @@
   "occurrence" : {
     "min" : null,
     "max" : null,
-    "sorting_label_field" : null,
+    "sorting_label_field" : "91556ab1-eee7-b295-c271-0673769cf96f",
     "default" : null
   },
   "children" : [ {
@@ -74,12 +74,5 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
-  "default" : {
-    "image" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
-    }
-  }
+  "default" : [ ]
 } ]
