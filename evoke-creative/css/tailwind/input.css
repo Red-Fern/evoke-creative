@@ -115,6 +115,14 @@
     .swiper-container .swiper-buttons {
         @apply flex justify-between mt-8 space-x-6 lg:justify-start lg:mt-0;
     }
+
+    .swiper.features-module .swiper-pagination-bullet {
+        @apply m-0 w-auto h-auto px-4 py-3 border border-light-grey bg-white rounded-full text-x-small font-bold leading-none uppercase opacity-100 lg:px-6 lg:py-4 lg:text-small;
+    }
+
+    .swiper.features-module .swiper-pagination-bullet-active {
+        @apply border-tertiary text-tertiary;
+    }
 }
 
 @tailwind utilities;
