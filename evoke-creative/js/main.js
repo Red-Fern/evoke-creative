@@ -91,10 +91,13 @@
     });
   }
 
+  // Function to init standard carousels
   function initCarousels() {
+    // Grab all swiper containers
     let carouselContainers = document.getElementsByClassName('swiper-container');
   
     for (let i = 0; i < carouselContainers.length; i++) {
+      // Get carousel, arrows and data attributes
       let carousel = carouselContainers[i].querySelector('.swiper'),
           prevArrow = carouselContainers[i].querySelector('.swiper-button-prev'),
           nextArrow = carouselContainers[i].querySelector('.swiper-button-next'),
