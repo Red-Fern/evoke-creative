@@ -8,6 +8,10 @@
     {% if page_meta.html_title or pageTitle %}<title>{{ page_meta.html_title or pageTitle }}</title>{% endif %}
     {% if brand_settings.primaryFavicon.src %}<link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />{% endif %}
     <meta name="description" content="{{ page_meta.meta_description }}">
+    {# Swiper #}
+    {% require_css %}
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    {% end_require_css %}
     {# Inline CSS variables #}
     {% require_css %}
       <style>{% include '../../css/css-variables.css' %}</style>
@@ -39,6 +43,10 @@
         {% global_partial path="../partials/footer.html" %}
       {% endblock footer %}
     </div>
+    {# Swiper #}
+    {% require_js %}
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    {% end_require_js %}
     {{ require_js(get_asset_url("../../js/main.js")) }}
     {# To see a full list of what is included via standard_footer_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
     {{ standard_footer_includes }}

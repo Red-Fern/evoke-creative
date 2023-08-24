@@ -1,7 +1,3 @@
-{% require_css %}
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-{% end_require_css %}
-
 <div class="team-module">
   {% if module.title %}
     <h2 class="mb-8 | lg:mb-16">{{ module.title }}<span class="text-secondary">.</span></h2>
@@ -13,31 +9,33 @@
 
   {% if module.team_member is iterable %}
     <div class="swiper-container relative pt-12 | lg:pt-20">
-      <div class="swiper">
+      <div class="swiper" data-slides="1" data-slides-sm="2" data-slides-md="3" data-slides-lg="4" data-slides-gap="20">
         <div class="swiper-wrapper">
           {% for item in module.team_member %}
             <div class="swiper-slide">
-              {% if item.image.src %}
-                {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
-                {% if item.image.size_type == "auto" %}
-                    {% set sizeAttrs = 'style="max-width: 100%;"' %}
-                {% elif item.image.size_type == "auto_custom_max" %}
-                    {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%;"' %}
+              <div>
+                {% if item.image.src %}
+                  {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+                  {% if item.image.size_type == "auto" %}
+                      {% set sizeAttrs = 'style="max-width: 100%;"' %}
+                  {% elif item.image.size_type == "auto_custom_max" %}
+                      {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item.image.loading != "disabled" ? 'loading="{{ item.image.loading }}"' : "lazy" %}
+                
+                  <div class="mb-3 aspect-[1/1.25] rounded-theme overflow-hidden">
+                    <img src="{{ item.image.src }}" class="w-full h-full object-cover" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  </div>
                 {% endif %}
-                {% set loadingAttr = item.image.loading != "disabled" ? 'loading="{{ item.image.loading }}"' : "lazy" %}
-              
-                <div class="mb-3 aspect-[1/1.25] rounded-theme overflow-hidden">
-                  <img src="{{ item.image.src }}" class="w-full h-full object-cover" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-                </div>
-              {% endif %}
 
-              <span class="text-small font-bold uppercase">
-                {{ item.title }} 
+                <span class="text-small font-bold uppercase">
+                  {{ item.title }} 
 
-                {% if item.role %}
-                  <span class="font-normal">{{ item.role }}</span>
-                {% endif %}
-              </span>
+                  {% if item.role %}
+                    <span class="font-normal">{{ item.role }}</span>
+                  {% endif %}
+                </span>
+              </div>
             </div>
           {% endfor %}
         </div>
@@ -50,37 +48,3 @@
     </div>
   {% endif %}
 </div>
-
-{% require_js %}
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-  <script type="text/javascript">
-    let carouselContainers = document.getElementsByClassName('swiper-container');
-
-    for (let i = 0; i < carouselContainers.length; i++) {
-      let carousel = carouselContainers[i].querySelector('.swiper'),
-          prevArrow = carouselContainers[i].querySelector('.swiper-button-prev'),
-          nextArrow = carouselContainers[i].querySelector('.swiper-button-next');
-
-      new Swiper(carousel, {
-        navigation: {
-          prevEl: prevArrow,
-          nextEl: nextArrow
-        },
-        slidesPerView: 1,
-        spaceBetween: 20,
-        breakpoints: {
-          640: {
-            slidesPerView: 2
-          },
-          768: {
-            slidesPerView: 3
-          },
-          992: {
-            slidesPerView: 4
-          }
-        }
-      });
-    }
-  </script>
-{% end_require_js %}

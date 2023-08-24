@@ -91,6 +91,41 @@
     });
   }
 
+  function initCarousels() {
+    let carouselContainers = document.getElementsByClassName('swiper-container');
+  
+    for (let i = 0; i < carouselContainers.length; i++) {
+      let carousel = carouselContainers[i].querySelector('.swiper'),
+          prevArrow = carouselContainers[i].querySelector('.swiper-button-prev'),
+          nextArrow = carouselContainers[i].querySelector('.swiper-button-next'),
+          noSlides = carousel.dataset.slides ?? 1,
+          noSlidesSm = carousel.dataset.slidesSm ?? noSlides,
+          noSlidesMd = carousel.dataset.slidesMd ?? noSlides,
+          noSlidesLg= carousel.dataset.slidesLg ?? noSlides,
+          slidesGap = carousel.dataset.slidesGap ?? 12;
+
+      new Swiper(carousel, {
+        navigation: {
+          prevEl: prevArrow,
+          nextEl: nextArrow
+        },
+        slidesPerView: noSlides,
+        spaceBetween: slidesGap,
+        breakpoints: {
+          640: {
+            slidesPerView: noSlidesSm
+          },
+          768: {
+            slidesPerView: noSlidesMd
+          },
+          992: {
+            slidesPerView: noSlidesLg
+          }
+        }
+      });
+    }
+  }
+
   // Execute JavaScript on document ready
   domReady(function () {
     if (!document.body) {
@@ -120,6 +155,8 @@
       if (emailGlobalUnsub) {
         emailGlobalUnsub.addEventListener('change', toggleDisabled);
       }
+
+      initCarousels();
     }
   });
 })();
