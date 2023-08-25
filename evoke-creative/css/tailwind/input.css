@@ -88,6 +88,10 @@
         @apply justify-between;
     }
 
+    .full-width-video-section + .statistics-section {
+        @apply !mt-0 rounded-tl-none rounded-tr-none;
+    }
+
     /* Swiper */
 
     .swiper-container .swiper-slide {
