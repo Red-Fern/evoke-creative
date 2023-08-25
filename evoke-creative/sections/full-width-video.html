@@ -1,0 +1,49 @@
+<!--
+  templateType: section
+  label: Full Width Video
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/full-width-video.png
+  description: "Full size video section."
+-->
+{% dnd_section
+  class="full-width-video-section",
+  margin={
+    "default": {
+      "bottom": "0px",
+      "top": "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    padding={
+      "default": {
+        "left": "0px",
+        "right": "0px"
+      }
+    }
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/video",
+        embed_field={
+          "oembed_response": { },
+          "oembed_url": "",
+          "size_type": "auto",
+          "source_type": "oembed"
+        },
+        hubspot_video={
+          "autoplay": false,
+          "height": 1080,
+          "max_height": 600,
+          "max_width": 1067,
+          "player_type": "hsvideo2",
+          "size_type": "auto_full_width",
+          "width": 1920
+        },
+        video_type="hubspot_video"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
