@@ -173,7 +173,7 @@ h6,
 /* Blockquote */
 
 blockquote {
-  border-left-color: var(--tertiary-color);
+  border-left-color: var(--secondary-color);
 }
 
 {###########################################################################}
