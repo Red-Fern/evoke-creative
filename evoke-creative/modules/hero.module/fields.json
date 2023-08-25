@@ -19,12 +19,23 @@
     "preset" : null,
     "type" : "choice",
     "default" : "white"
+  }, {
+    "id" : "9f321d34-ea0c-10d5-bfcc-9215000a77e9",
+    "name" : "remove_bottom_border_radius",
+    "display_width" : null,
+    "label" : "Remove bottom border radius?",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
   } ],
   "tab" : "STYLE",
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "layout" : "white"
+    "layout" : "white",
+    "remove_bottom_border_radius" : false
   }
 }, {
   "id" : "6a37e9e7-5508-c153-5524-24fff90ccf71",
@@ -93,17 +104,7 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
-  "default" : {
-    "link" : {
-      "url" : {
-        "content_id" : null,
-        "href" : "",
-        "type" : "EXTERNAL"
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }
+  "default" : [ ]
 }, {
   "id" : "8c05aea2-0ea9-2d9b-dda9-478d5c930c39",
   "name" : "image",
