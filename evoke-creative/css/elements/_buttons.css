@@ -90,7 +90,9 @@ button:disabled,
 }
 
 .button.tertiary,
-.hs-button.tertiary {
+.hs-button.tertiary,
+.button.back,
+.hs-button.back {
   min-height: 34px;
 }
 
@@ -103,15 +105,30 @@ button:disabled,
   min-height: auto;
 }
 
+.button.back::after,
+.hs-button.back {
+  order: -1;
+  margin-left: 0;
+  margin-right: 15px;
+  transform: rotate(270deg);
+}
+
 @media(max-width: 767px) {
   .button.tertiary,
-  .hs-button.tertiary {
+  .hs-button.tertiary,
+  .button.back,
+  .hs-button.back {
     min-height: 24px;
   }
 
   .button.tertiary::after,
   .hs-button.tertiary::after {
     margin-left: 10px;
+  }
+
+  .button.back::after,
+  .hs-button.back::after {   
+    margin-right: 10px;
   }
 }
 
