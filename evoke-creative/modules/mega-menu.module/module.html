@@ -1,8 +1,26 @@
-<div class="flex space-x-4">
-  <ul>
+<div>
+  <ul class="list-none flex space-x-4">
     {% for item in module.menu_items %}
       <li>
-        {{ item.menu_title }}
+        <a href="#" class="text-white uppercase font-bold">{{ item.menu_title }}</a>
+        {% if item.has_child_menu %}
+          <div class="absolute top-full left-0 bg-white w-full">
+            <div class="content-wrapper">
+              <div class="flex">
+                {% for column in item.child_menu_columns %}
+                  <div class="flex flex-col">
+                    <div>{{ column.heading }}</div>
+                    
+                    {% if column.child_menu_type == "simple_menu" %}
+                      {% simple_menu menu_tree="{{ column.child_menu }}" %}
+                    {% endif %}
+
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>
