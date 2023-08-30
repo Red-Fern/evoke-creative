@@ -34,20 +34,32 @@
 
 .usp-diagram-hospitality .point-1,
 .usp-diagram-hospitality .point-1 .icon {
-    top: 16%;
-    left: 90%;
+    top: 36%;
+    right: 0;
 }
 
 .usp-diagram-hospitality .point-2,
 .usp-diagram-hospitality .point-2 .icon {
-    top: 77%;
-    left: 72%;
+    top: 84%;
+    left: 66%;
 }
 
 .usp-diagram-hospitality .point-3,
 .usp-diagram-hospitality .point-3 .icon {
-    top: 38%;
-    left: 15%;
+    top: 57%;
+    left: 0;
+}
+
+.usp-diagram-hospitality .point-4,
+.usp-diagram-hospitality .point-4 .icon {
+    top: 7%;
+    left: 12%;
+}
+
+.usp-diagram-hospitality .point-5,
+.usp-diagram-hospitality .point-5 .icon {
+    top: 27%;
+    left: 54%;
 }
 
 /* Right aligned tooltips */
