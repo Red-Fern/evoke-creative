@@ -4,48 +4,26 @@
 
 {# Columns #}
 
-{% set columns = module.columns %}
-
-{% if columns == 2 %}
-  {% set columns_class = 'md:grid-cols-2' %}
-{% elif columns == 3 %}
-  {% set columns_class = 'md:grid-cols-2 lg:grid-cols-3' %}
-{% elif columns == 4 %}
-  {% set columns_class = 'md:grid-cols-2 lg:grid-cols-4' %}
-{% endif %}
-
-{# Content options #}
-
-{% if module.display_for_each_list_item.index("image") >= 0 %}
+{% if blog.slug == 'blog' %}
   {% set show_image = true %}
-{% endif %}
-
-{% if module.display_for_each_list_item.index("title") >= 0 %}
   {% set show_title = true %}
-{% endif %}
-
-{% if module.display_for_each_list_item.index("author_image") >= 0 %}
-  {% set show_author_image = true %}
-{% endif %}
-
-{% if module.display_for_each_list_item.index("author_name") >= 0 %}
-  {% set show_author_name = true %}
-{% endif %}
-
-{% if module.display_for_each_list_item.index("tags") >= 0 %}
   {% set show_tags = true %}
-{% endif %}
-
-{% if module.display_for_each_list_item.index("publish_date") >= 0 %}
   {% set show_publish_date = true %}
-{% endif %}
-
-{% if module.display_for_each_list_item.index("description") >= 0 %}
   {% set show_description = true %}
-{% endif %}
 
-{% if module.display_for_each_list_item.index("button") >= 0 %}
-  {% set show_button = true %}
+  {% set columns_class = 'gap-x-3 gap-y-10 | md:grid-cols-2 | lg:grid-cols-3 ' %}
+{% elif blog.slug == 'projects' %}
+  {% set show_image = true %}
+  {% set show_title = true %}
+  {% set show_tags = true %}
+  {% set show_description = true %}
+
+  {% set columns_class = 'gap-x-3 gap-y-10 | md:grid-cols-2' %}
+{% elif blog.slug == 'careers' %}
+  {% set show_title = true %}
+  {% set show_description = true %}
+
+  {% set columns_class = 'border-b border-light-grey' %}
 {% endif %}
 
 {####################################################}
@@ -53,9 +31,15 @@
 {####################################################}
 
 {% if contents is iterable %}
-  <section class="grid {{ columns_class }} gap-x-3 gap-y-10">
+  <section class="grid {{ columns_class }}">
     {% for content in contents %}
-      {% include "../templates/partials/blog-card.html" %}
+      {% if blog.slug == 'blog' %}
+        {% include "../templates/partials/blog-card.html" %}
+      {% elif blog.slug == 'projects' %}
+        {% include "../templates/partials/project-card.html" %}
+      {% elif blog.slug == 'careers' %}
+        {% include "../templates/partials/career-card.html" %}
+      {% endif %}
     {% endfor %}
   </section>
 {% endif %}
