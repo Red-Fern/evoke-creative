@@ -71,10 +71,10 @@
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : 3,
-    "max" : 3,
+    "min" : 5,
+    "max" : 5,
     "sorting_label_field" : "7904ad0d-0090-a2fc-20ea-6db277b953ed",
-    "default" : 3
+    "default" : 5
   },
   "visibility" : {
     "controlling_field" : null,
@@ -110,5 +110,5 @@
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
-  "default" : [ { }, { }, { } ]
+  "default" : [ { }, { }, { }, { }, { } ]
 } ]
