@@ -1,5 +1,5 @@
 <div 
-    class="py-12 text-{{ module.style.text_colour }} | lg:pb-28"
+    class="py-12 text-{{ module.style.text_colour }} {{ !module.image.src ? 'rounded-theme rounded-tl-none rounded-tr-none' : '' }} | lg:pb-28"
     {% if module.style.background_colour %}style="background-color: rgba({{ module.style.background_colour.color|convert_rgb }}, {{ module.style.background_colour.opacity / 100 }})"{% endif %}
 >
     <div class="content-wrapper">
