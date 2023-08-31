@@ -30,7 +30,7 @@
   "id" : "63ca2e0d-54a5-054d-a39c-18e36093b6fd",
   "name" : "text_size",
   "display_width" : null,
-  "label" : "Text Size",
+  "label" : "Text size",
   "required" : false,
   "locked" : false,
   "display" : "select",
