@@ -15,24 +15,16 @@
     path="../modules/project-hero",
     title={{ context.title or content.name }},
     image={
-      "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+      "alt": context.image_alt or "Project featured image",
       "loading": context.image_loading or "disabled",
       "max_height": context.image_height or 1640,
       "max_width": context.image_width or 600,
       "size_type": "auto_custom_max",
       "src": context.image or content.featured_image
-    },
-    logo={
-      "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
-      "loading": context.image_loading or "disabled",
-      "max_height": context.image_height or 34,
-      "max_width": context.image_width or 34,
-      "size_type": "auto_custom_max",
-      "src": context.image or get_asset_url("../images/grayscale-mountain.png")
-    },
-    services="Lorem ipsum, Lorem ipsum",
-    products="Lorem ipsum, Lorem ipsum"
+    }
   %}
+
+
 
   {# Blog post #}
 
