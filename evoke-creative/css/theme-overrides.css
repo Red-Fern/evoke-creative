@@ -372,14 +372,14 @@ tfoot td {
   border-color: var(--dark-grey-color);
 }
 
-.header.grey .menu__link,
-.header.grey .header__logo .logo-company-name {
+.header.white .menu__link,
+.header.white .header__logo .logo-company-name {
   color: var(--white-color);
 }
 
-..header.grey menu .menu__link:hover,
-..header.grey menu .menu__link:focus,
-..header.grey menu .menu__link:active {
+..header.white menu .menu__link:hover,
+..header.white menu .menu__link:focus,
+..header.white menu .menu__link:active {
   color: var(--white-color_dark);
 }
 

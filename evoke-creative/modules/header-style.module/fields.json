@@ -1,12 +1,24 @@
 [ {
-  "id" : "d6166fd8-ec47-9672-af7a-d28867f764cd",
-  "name" : "style",
+  "id" : "1ccb1445-c52f-5173-c500-ed1d41ed58db",
+  "name" : "background_colour",
   "display_width" : null,
-  "label" : "Style",
+  "label" : "Background Colour",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : null,
+    "opacity" : null
+  }
+}, {
+  "id" : "d6166fd8-ec47-9672-af7a-d28867f764cd",
+  "name" : "text_colour",
+  "display_width" : null,
+  "label" : "Text Colour",
   "required" : false,
   "locked" : false,
   "display" : "select",
-  "choices" : [ [ "default", "Default" ], [ "grey", "Grey" ] ],
+  "choices" : [ [ "default", "Default" ], [ "white", "White" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
