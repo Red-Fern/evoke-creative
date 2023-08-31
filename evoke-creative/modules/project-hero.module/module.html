@@ -1,0 +1,67 @@
+<div 
+    class="py-12 text-{{ module.style.text_colour }} | lg:pb-28"
+    {% if module.style.background_colour %}style="background-color: rgba({{ module.style.background_colour.color|convert_rgb }}, {{ module.style.background_colour.opacity / 100 }})"{% endif %}
+>
+    <div class="content-wrapper">
+        <div class="mb-12 pb-6 border-b border-b | lg:mb-28 lg:pb-12 {{ module.style.text_colour == 'white' ? 'border-white' : 'border-dark-grey' }}">
+            <a href="{{ blog_all_posts_url("129408606257") }}" class="button secondary back">Back to projects</a>
+        </div>
+
+        {% if module.title %}
+            <h1 
+                class="text-{{ module.style.text_colour }} border-edge"
+                {% if module.style.title_colour %}style="color: rgba({{ module.style.title_colour.color|convert_rgb }}, {{ module.style.title_colour.opacity / 100 }})"{% endif %}
+            >
+                {{ module.title }}
+            </h1>
+        {% endif %}
+    </div>
+</div>
+
+{% if module.image.src %}
+    {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+    {% if module.image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%;"' %}
+    {% elif module.image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}" style="max-width: 100%;"' %}
+    {% endif %}
+    {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+    
+    <div class="aspect-[1/0.95] rounded-theme rounded-tl-none rounded-tr-none overflow-hidden | lg:aspect-[1/0.35]">
+        <img src="{{ module.image.src }}" class="w-full h-full object-cover" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    </div>
+{% endif %}
+
+{% if module.logo.src || module.services || module.products %}
+    <div class="content-wrapper">
+        <div class="py-6 space-y-3 border-b border-dark-grey | lg:flex lg:items-center lg:py-8 lg:space-x-14 lg:space-y-0">
+            {% if module.logo.src %}
+                {% set sizeAttrs = 'width="{{ module.logo.width }}" height="{{ module.logo.height }}"' %}
+                {% if module.logo.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ module.logo.width }}" height="{{ module.logo.height }}" style="max-width: 100%;"' %}
+                {% elif module.logo.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.logo.max_width }}" height="{{ module.logo.max_height }}" style="max-width: 100%;"' %}
+                {% endif %}
+                {% set loadingAttr = module.logo.loading != 'disabled' ? 'loading="{{ module.logo.loading }}"' : '' %}
+                
+                <img src="{{ module.logo.src }}" class="w-auto max-h-[34px]" alt="{{ module.logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+
+            {% if module.services %}
+                <div class="flex text-x-small | lg:max-w-[40%] lg:text-medium">
+                    <span class="shrink-0 relative inline-block mr-3 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-[0.35em] after:-right-px after:w-0.5 after:h-[0.7em] after:bg-dark-grey | lg:mr-4 lg:pr-4">Services</span>
+
+                    {{ module.services }}
+                </div>
+            {% endif %}
+
+            {% if module.products %}
+                <div class="flex text-x-small | lg:max-w-[40%] lg:text-medium">
+                    <span class="shrink-0 relative inline-block mr-3 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-[0.35em] after:-right-px after:w-0.5 after:h-[0.7em] after:bg-dark-grey | lg:mr-4 lg:pr-4">Products</span>
+
+                    {{ module.products }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
