@@ -14,7 +14,7 @@
 
   <article class="blog-post">
     <div class="content-wrapper">
-      <a href="{{ blog_all_posts_url("projects") }}" class="mt-12 button secondary back">Back to latest</a>
+      <a href="{{ blog_all_posts_url("projects") }}" class="mt-12 button secondary back">Back to projects</a>
 
       <div class="mt-6 border-t border-b border-dark-grey | lg:mt-12">
         <h1 class="h2 border-edge my-12 | lg:my-32">{{ content.name }}</h1>
@@ -64,7 +64,31 @@
 
   <section class="content-wrapper--vertical-spacing">
     <div class="content-wrapper">
-      {% module "download_cta" path="../modules/download-cta" %}
+      {% module
+        "project_cta"
+        path="../modules/cta",
+        image={
+          "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+          "loading": context.image_loading or "lazy",
+          "max_height": context.image_height or 550,
+          "max_width": context.image_width or 630,
+          "size_type": "auto_custom_max",
+          "src": context.image or get_asset_url("../images/grayscale-mountain.png")
+        },
+        title={{ context.title or "<span class='text-secondary'>Have a project in mind?</span>" }},
+        text={{ context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>" }},
+        button=[{
+          "link": {
+            "no_follow": false,
+            "open_in_new_tab": false,
+            "url": {
+              "href": "/contact",
+              "type": "EXTERNAL"
+            }
+          },
+          "link_text": "Make enquiry"
+        }]
+      %}
     </div>
   </section>
 
