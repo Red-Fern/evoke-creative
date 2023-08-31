@@ -3,7 +3,16 @@
   isAvailableForNewContent: true
   label: Project post
 -->
-{% module "header_style" path="../modules/header-style", export_to_template_context=True %}
+{% module 
+  "header_style" 
+  path="../modules/header-style", 
+  "background_colour"={
+    "color": "#3C4F57",
+    "opacity": 100
+  },
+  "text_colour"="white"
+  export_to_template_context=True 
+%}
   
 {% extends "./layouts/base.html" %}
 
@@ -21,10 +30,15 @@
       "max_width": context.image_width or 600,
       "size_type": "auto_custom_max",
       "src": context.image or content.featured_image
+    },
+    style={
+      "background_colour": {
+        "color": "#3C4F57",
+        "opacity": 100
+      },
+      "text_colour": "white"
     }
   %}
-
-
 
   {# Blog post #}
 
