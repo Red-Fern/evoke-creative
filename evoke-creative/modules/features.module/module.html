@@ -1,6 +1,8 @@
 {% if module.feature is iterable %}
     <div class="swiper features-module">
-        <div class="swiper-pagination relative inset-auto flex flex-wrap items-center justify-center mb-8 gap-2 | lg:mb-16"></div>
+        {% if module.feature|length > 1 %}
+            <div class="swiper-pagination relative inset-auto flex flex-wrap items-center justify-center mb-8 gap-2 | lg:mb-16"></div>
+        {% endif %}
     
         <div class="swiper-wrapper">
             {% for item in module.feature %}
