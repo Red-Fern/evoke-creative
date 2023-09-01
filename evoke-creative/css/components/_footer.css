@@ -13,6 +13,16 @@ footer.footer .grid-bg {
   height: var(--dnd-section-padding);
 }
 
+@media (max-width: 1299px) {
+  footer.footer {
+    margin-top: calc(var(--dnd-section-padding) * 0.75);
+  }
+
+  footer.footer .grid-bg {
+    height: calc(var(--dnd-section-padding) * 0.75);
+  }
+}
+
 @media (max-width: 991px) {
   footer.footer {
     margin-top: var(--dnd-section-padding-mobile);

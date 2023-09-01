@@ -1,9 +1,9 @@
 <div 
-    class="py-12 text-{{ module.style.text_colour }} {{ !module.image.src ? 'rounded-theme rounded-tl-none rounded-tr-none' : '' }} | lg:pb-28"
+    class="py-12 text-{{ module.style.text_colour }} {{ !module.image.src ? 'rounded-theme rounded-tl-none rounded-tr-none' : '' }} | lg:pb-20 | 2xl:pb-28"
     {% if module.style.background_colour %}style="background-color: rgba({{ module.style.background_colour.color|convert_rgb }}, {{ module.style.background_colour.opacity / 100 }})"{% endif %}
 >
     <div class="content-wrapper">
-        <div class="mb-12 pb-6 border-b border-b | lg:mb-28 lg:pb-12 {{ module.style.text_colour == 'white' ? 'border-white' : 'border-dark-grey' }}">
+        <div class="mb-12 pb-6 border-b border-b | lg:mb-20 lg:pb-12 | 2xl:mb-28 {{ module.style.text_colour == 'white' ? 'border-white' : 'border-dark-grey' }}">
             <a href="{{ blog_all_posts_url("129408606257") }}" class="button secondary back">Back to projects</a>
         </div>
 
