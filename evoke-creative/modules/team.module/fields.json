@@ -70,6 +70,33 @@
     "allow_new_line" : false,
     "show_emoji_picker" : false,
     "type" : "text"
+  }, {
+    "id" : "2b75e857-e1b1-f940-3b3c-94c719bb4c18",
+    "name" : "bio",
+    "display_width" : null,
+    "label" : "Bio",
+    "inline_help_text" : "This will appear in the modal.",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  }, {
+    "id" : "78ecb054-4f52-d176-c587-ff44c1ec96fd",
+    "name" : "additional_image",
+    "display_width" : null,
+    "label" : "Additional image",
+    "inline_help_text" : "This will appear in the modal.",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
