@@ -31,7 +31,7 @@
 <div class="content-wrapper mt-8 mb-12 | lg:mt-12 lg:mb-20 | 2xl:mt-20 2xl:mb-28">
     <div class="flex flex-wrap | lg:flex-nowrap {{ module.summary ? 'gap-8' : '' }}">
         <div class="w-full | lg:w-1/4">
-            <a href="" class="button primary">[Apply here]</a>
+            <a href="#" class="button primary" x-on:click.prevent="show">Apply here</a>
         </div>
 
         {% if module.summary %}
@@ -39,7 +39,6 @@
                 {{ module.summary }}
             </div>
         {% endif %}
-        </div>
     </div>
 </div>
 
