@@ -38,8 +38,8 @@ form select,
 form textarea {
   display: inline-block;
   padding: 15px 24px;
-  width: 100%;
-  border-radius: 30px;
+  width: 100% !important;
+  border-radius: var(--border-radius);
   color: var(--black-color);
 }
 
@@ -49,6 +49,20 @@ form textarea {
 
 form fieldset {
   max-width: 100% !important;
+}
+
+@media(max-width: 767px) {
+  form input[type=text],
+  form input[type=search],
+  form input[type=email],
+  form input[type=password],
+  form input[type=tel],
+  form input[type=number],
+  form input[type=file],
+  form select,
+  form textarea {
+    border-radius: var(--border-radius-mobile);
+  }
 }
 
 /* Inputs - checkbox/radio */
@@ -64,15 +78,36 @@ form .inputs-list > li {
   margin: 0.7rem 0;
 }
 
-form .inputs-list input,
 form .inputs-list span {
-  vertical-align: middle;
+  display: block;
+  margin-left: 0;
 }
 
 form input[type=checkbox],
 form input[type=radio] {
+  float: left;
   cursor: pointer;
-  margin-right: 0.35rem;
+  margin-top: 0.2em;
+  margin-right: 1em;
+  width: 1em !important;
+  height: 1em;
+}
+
+form .legal-consent-container .hs-form-booleancheckbox-display>span, 
+form .legal-consent-container .hs-form-booleancheckbox-display>span p {
+  margin-left: 0 !important;
+}
+
+/* Inputs - dropdown */
+
+form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 46px;
+  background-image: url({{ get_asset_url('/evoke-creative/images/arrow-down.svg') }});
+  background-position: right 15px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
 }
 
 /* Inputs - date picker */
