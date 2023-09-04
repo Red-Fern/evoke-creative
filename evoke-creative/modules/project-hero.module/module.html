@@ -34,7 +34,7 @@
 
 {% if module.logo.src || module.services || module.products %}
     <div class="content-wrapper">
-        <div class="py-6 space-y-3 border-b border-dark-grey | lg:flex lg:items-center lg:py-8 lg:space-x-14 lg:space-y-0">
+        <div class="py-6 space-y-3 border-b border-dark-grey | lg:flex lg:items-start lg:py-8 lg:space-x-14 lg:space-y-0">
             {% if module.logo.src %}
                 {% set sizeAttrs = 'width="{{ module.logo.width }}" height="{{ module.logo.height }}"' %}
                 {% if module.logo.size_type == 'auto' %}
