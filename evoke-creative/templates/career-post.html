@@ -39,11 +39,29 @@
 
     {# Body #}
 
-    <div class="content-wrapper">
-      <div class="my-12 | lg:my-16">
+    {% if content.post_body %}
+      <div class="content-wrapper my-12 | lg:my-16">
         {{ content.post_body }}
       </div>
-    </div>
+    {% endif %}
+
+    {% module "career_content"
+      path="../modules/career-content",
+      section=[
+        {
+          "title": context.text or "Lorem ipsum",
+          "text": context.text or "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.",
+        },
+        {
+          "title": context.text or "Lorem ipsum",
+          "text": context.text or "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.",
+        },
+        {
+          "title": context.text or "Lorem ipsum",
+          "text": context.text or "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.",
+        }
+      ]
+    %}
 
     {# CTA #}
 
