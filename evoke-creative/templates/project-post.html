@@ -16,66 +16,68 @@
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-<div class="body-container body-container--blog-post">
 
-  {% module "project_hero"
-    path="../modules/project-hero",
-    title={{ context.title or content.name }},
-    image={
-      "alt": context.image_alt or "Project featured image",
-      "loading": context.image_loading or "disabled",
-      "max_height": context.image_height or 1640,
-      "max_width": context.image_width or 600,
-      "size_type": "auto_custom_max",
-      "src": context.image or content.featured_image
-    },
-    style={
-      "background_colour": {
-        "color": "#3C4F57",
-        "opacity": 100
+  <div class="blog-post">
+    {# Hero #}
+
+    {% module "project_hero"
+      path="../modules/project-hero",
+      title={{ context.title or content.name }},
+      image={
+        "alt": context.image_alt or "Project featured image",
+        "loading": context.image_loading or "disabled",
+        "max_height": context.image_height or 1640,
+        "max_width": context.image_width or 600,
+        "size_type": "auto_custom_max",
+        "src": context.image or content.featured_image
       },
-      "text_colour": "white"
-    }
-  %}
+      style={
+        "background_colour": {
+          "color": "#3C4F57",
+          "opacity": 100
+        },
+        "text_colour": "white"
+      }
+    %}
 
-  {# Blog post #}
+    {# Body #}
 
-  <article class="blog-post">
     <div class="content-wrapper">
       <div class="mx-auto my-12 max-w-[980px] | lg:my-16">
         {{ content.post_body }}
       </div>
     </div>
-  </article>
 
-  <section class="content-wrapper--vertical-spacing">
-    <div class="content-wrapper">
-      {% module "project_cta"
-        path="../modules/cta",
-        image={
-          "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
-          "loading": context.image_loading or "lazy",
-          "max_height": context.image_height or 550,
-          "max_width": context.image_width or 630,
-          "size_type": "auto_custom_max",
-          "src": context.image or get_asset_url("../images/grayscale-mountain.png")
-        },
-        title={{ context.title or "<span class='text-secondary'>Have a project in mind?</span>" }},
-        text={{ context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>" }},
-        button=[{
-          "link": {
-            "no_follow": false,
-            "open_in_new_tab": false,
-            "url": {
-              "href": "/contact",
-              "type": "EXTERNAL"
-            }
+    {# CTA #}
+
+    <div class="content-wrapper--vertical-spacing">
+      <div class="content-wrapper">
+        {% module "project_cta"
+          path="../modules/cta",
+          image={
+            "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+            "loading": context.image_loading or "lazy",
+            "max_height": context.image_height or 550,
+            "max_width": context.image_width or 630,
+            "size_type": "auto_custom_max",
+            "src": context.image or get_asset_url("../images/grayscale-mountain.png")
           },
-          "link_text": "Make enquiry"
-        }]
-      %}
+          title={{ context.title or "<span class='text-secondary'>Have a project in mind?</span>" }},
+          text={{ context.text or "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>" }},
+          button=[{
+            "link": {
+              "no_follow": false,
+              "open_in_new_tab": false,
+              "url": {
+                "href": "/contact",
+                "type": "EXTERNAL"
+              }
+            },
+            "link_text": "Make enquiry"
+          }]
+        %}
+      </div>
     </div>
-  </section>
+  </div>
 
-</div>
 {% endblock body %}
