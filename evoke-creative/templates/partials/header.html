@@ -36,13 +36,18 @@
 
       <div class="header__navigation header--element">
         {% module "header_menu"
-          path="../../modules/menu",
+          path="../../modules/mega-menu",
           label="Header menu"
+        %}
+
+        {% module "mobile_menu"
+          path="../../modules/menu",
+          label="Mobile menu"
         %}
 
         <div class="mt-12 ml-auto | lg:mt-0">
           <h4 class="mb-3 text-secondary | lg:hidden">
-            {% module "header_contact_title" 
+            {% module "mobile_contact_title" 
               path="@hubspot/text" 
               label="Mobile menu contact title"
               value="Let us show you around"
@@ -50,7 +55,7 @@
           </h4>
 
           <div class="mb-4 text-white | lg:hidden">
-            {% module "header_contact_text" 
+            {% module "mobile_contact_text" 
               path="@hubspot/text" 
               label="Mobile menu contact text"
               value="Rather a personal, customised tour of Dash? Book a call with us and we'd be happy to show you around."
