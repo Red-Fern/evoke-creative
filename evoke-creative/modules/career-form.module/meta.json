@@ -1,0 +1,8 @@
+{
+  "global" : true,
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "BLOG_POST" ],
+  "module_id" : 78632534983,
+  "label" : "Career application form",
+  "is_available_for_new_content" : false
+}

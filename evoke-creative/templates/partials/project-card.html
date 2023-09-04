@@ -37,20 +37,6 @@
   {% endif %}
 {% endmacro %}
 
-{% macro post_date() %}
-  {% if show_publish_date and content.publish_date %}
-    <time class="block text-small" datetime="{{ content.publish_date }}">
-      {{ content.publish_date_localized }}
-    </time>
-  {% endif %}
-{% endmacro %}
-
-{% macro post_button() %}
-  {% if show_button %}
-    <a href="{{ content.absolute_url }}" class="button tertiary">{{ module.button_text ? module.button_text : 'Read more' }}</a>
-  {% endif %}
-{% endmacro %}
-
 {% macro post_content() %}
   <div class="flex-1 flex flex-col px-4 py-8 | lg:p-8">
     <div class="mb-5 space-y-4">
@@ -58,10 +44,8 @@
       {{ post_description() }}
     </div>
 
-    <div class="mt-auto space-y-3">
+    <div class="mt-auto space-y-4">
       {{ post_tags() }}
-      {{ post_date() }}
-      {{ post_button() }}
     </div>
   </div>
 {% endmacro %}

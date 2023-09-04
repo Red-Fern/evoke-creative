@@ -1,14 +1,14 @@
 {% if module.diagram == 'retail' %}
-    <div class="usp-diagram-retail relative mx-auto | max-lg:mb-[100px]">
-        <img src="{{ get_asset_url('/evoke-creative/images/usp-diagrams/retail.png') }}" alt="Retail USP diagram">
+    <div class="usp-diagram-retail inline-block relative left-1/2 -translate-x-1/2 max-h-[95vh] | max-lg:mb-[100px]">
+        <img src="{{ get_asset_url('/evoke-creative/images/usp-diagrams/retail.png') }}" class="max-h-[95vh]" alt="Retail USP diagram">
 
         {% for item in module.retail_point %}
             {% include "../templates/partials/usp-point.html" %}
         {% endfor %}
     </div>
 {% elif module.diagram == 'hospitality' %}
-    <div class="usp-diagram-hospitality relative mx-auto">
-        <img src="{{ get_asset_url('/evoke-creative/images/usp-diagrams/hospitality.png') }}" alt="Hospitality USP diagram">
+    <div class="usp-diagram-hospitality inline-block relative left-1/2 -translate-x-1/2 max-h-[95vh] | max-lg:mb-[100px]">
+        <img src="{{ get_asset_url('/evoke-creative/images/usp-diagrams/hospitality.png') }}" class="max-h-[95vh]" alt="Hospitality USP diagram">
 
         {% for item in module.hospitality_point %}
             {% include "../templates/partials/usp-point.html" %}

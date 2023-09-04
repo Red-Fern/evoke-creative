@@ -8,25 +8,24 @@
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-<div class="body-container body-container--blog-post">
 
-  {# Blog post #}
-
-  <article class="blog-post">
+  <div class="blog-post">
+    {# Hero #}
+    
     <div class="content-wrapper">
       <a href="{{ blog_all_posts_url("default") }}" class="mt-12 button secondary back">Back to latest</a>
 
       <div class="mt-6 border-t border-b border-dark-grey | lg:mt-12">
-        <h1 class="h2 border-edge my-12 | lg:my-32">{{ content.name }}</h1>
+        <h1 class="h2 border-edge my-12 | lg:my-20 | 2xl:my-28">{{ content.name }}</h1>
 
-        <div class="flex flex-wrap items-center gap-x-10 gap-y-3 py-5 border-t border-dark-grey text-x-small leading-none | lg:py-10 lg:text-medium">
+        <div class="flex flex-wrap items-start gap-x-10 gap-y-3 py-5 border-t border-dark-grey text-x-small | lg:flex-nowrap lg:py-10 lg:text-medium">
           {% if content.blog_post_author %}
-            <div class="relative flex items-center w-full | lg:w-auto {{ content.blog_post_author.avatar ? 'lg:pl-[145px]' : '' }}">
+            <div class="relative flex flex-wrap w-full | lg:w-auto {{ content.blog_post_author.avatar ? 'lg:pl-[145px]' : '' }}">
               {% if content.blog_post_author.avatar %}
                 <div class="hidden absolute -bottom-5 left-0 w-[100px] aspect-[1/1.35] rounded-theme bg-no-repeat bg-center bg-cover | lg:block" style="background-image: url('{{ content.blog_post_author.avatar }}')"></div>
               {% endif %}
 
-              <span class="relative inline-block mr-3 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-1/2 after:-right-px after:-translate-y-1/2 after:w-0.5 after:h-4/5 after:bg-dark-grey | lg:mr-4 lg:pr-4">Author</span>
+              <span class="relative inline-block mr-3 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-[0.35em] after:-right-px after:w-0.5 after:h-[0.7em] after:bg-dark-grey | lg:mr-4 lg:pr-4">Author</span>
 
               <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" class="link-inherit" rel="author">
                 {{ content.blog_post_author.display_name }}
@@ -34,9 +33,9 @@
             </div>
           {% endif %}
 
-          {% if content.blog_post_author %}
-            <div class="flex w-full | lg:w-auto">
-              <span class="relative inline-block mr-2.5 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-1/2 after:-right-px after:-translate-y-1/2 after:w-0.5 after:h-4/5 after:bg-dark-grey | lg:mr-4 lg:pr-4">Date</span>
+          {% if content.publish_date %}
+            <div class="flex flex-wrap w-full | lg:w-auto">
+              <span class="relative inline-block mr-2.5 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-[0.35em] after:-right-px after:w-0.5 after:h-[0.7em] after:bg-dark-grey | lg:mr-4 lg:pr-4">Date</span>
 
               <time datetime="{{ content.publish_date }}" class="block">
                 {{ content.publish_date_localized }}
@@ -45,8 +44,8 @@
           {% endif %}
 
           {% if content.tag_list %}
-            <div class="flex w-full | lg:w-auto">
-              <span class="relative inline-block mr-2.5 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-1/2 after:-right-px after:-translate-y-1/2 after:w-0.5 after:h-4/5 after:bg-dark-grey | lg:mr-4 lg:pr-4">Category</span>
+            <div class="flex flex-wrap w-full | lg:w-auto">
+              <span class="relative inline-block mr-2.5 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-[0.35em] after:-right-px after:w-0.5 after:h-[0.7em] after:bg-dark-grey | lg:mr-4 lg:pr-4">Category</span>
 
               {% for tag in content.tag_list %}
                 <a href="{{ blog_tag_url(group.id, tag.slug) }}" class="link-inherit" rel="tag">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
@@ -55,54 +54,57 @@
           {% endif %}
         </div>
       </div>
+    </div>
 
-      <div class="mx-auto my-12 max-w-[980px] | lg:my-16">
-        {{ content.post_body }}
+    {# Body #}
+
+    <div class="content-wrapper mx-auto my-12 max-w-[980px] | lg:my-16">
+      {{ content.post_body }}
+    </div>
+
+    {# CTA #}
+
+    <div class="content-wrapper--vertical-spacing">
+      <div class="content-wrapper">
+        {% module "download_cta" path="../modules/download-cta" %}
       </div>
     </div>
-  </article>
 
-  <section class="content-wrapper--vertical-spacing">
-    <div class="content-wrapper">
-      {% module "download_cta" path="../modules/download-cta" %}
-    </div>
-  </section>
+    {# Related posts #}
 
-  {# Recent posts listing #}
+    {% set tag_posts = blog_recent_tag_posts("default", content.tag_list, 4) %}
+    
+    {% if tag_posts|length > 2 %}
+      {% set i = 0 %}
 
-  {% set tag_posts = blog_recent_tag_posts("default", content.tag_list, 4) %}
-  
-  {% if tag_posts|length > 2 %}
-    {% set i = 0 %}
+      {% set show_image = true %}
+      {% set show_title = true %}
+      {% set show_tags = true %}
+      {% set show_publish_date = true %}
+      {% set show_description = true %}
 
-    {% set show_image = true %}
-    {% set show_title = true %}
-    {% set show_tags = true %}
-    {% set show_publish_date = true %}
-    {% set show_description = true %}
+      <div class="blog-related-posts content-wrapper--vertical-spacing">
+        <div class="content-wrapper">
+          <h2>Related articles<span class="text-secondary">.</span></h2>
 
-    <section class="blog-related-posts content-wrapper--vertical-spacing">
-      <div class="content-wrapper">
-        <h2>Related articles<span class="text-secondary">.</span></h2>
-
-        <hr class="mt-8 border-dark-grey"> 
-        
-        <div class="grid gap-x-3 gap-y-10 mt-12 | md:grid-cols-2 | lg:mt-20 lg:grid-cols-3">
-          {% for blog_post in tag_posts %}
-            {% if content.absolute_url != blog_post.absolute_url %}
-              {% if i < 3 %}
-                {% set content = blog_post %}
+          <hr class="mt-8 border-dark-grey"> 
+          
+          <div class="grid gap-x-3 gap-y-10 mt-12 | md:grid-cols-2 | lg:mt-20 lg:grid-cols-3">
+            {% for blog_post in tag_posts %}
+              {% if content.absolute_url != blog_post.absolute_url %}
+                {% if i < 3 %}
+                  {% set content = blog_post %}
+                    
+                  {% include "../templates/partials/blog-card.html" %}
                   
-                {% include "../templates/partials/blog-card.html" %}
-                
-                {% set i = i + 1 %}
+                  {% set i = i + 1 %}
+                {% endif %}
               {% endif %}
-            {% endif %}
-          {% endfor %}
+            {% endfor %}
+          </div>
         </div>
       </div>
-    </section>
-  {% endif %}
+    {% endif %}
+  </div>
 
-</div>
 {% endblock body %}

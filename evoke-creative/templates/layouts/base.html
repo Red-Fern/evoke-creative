@@ -43,6 +43,10 @@
         {% global_partial path="../partials/footer.html" %}
       {% endblock footer %}
     </div>
+    {# Alpine #}
+    {% require_js %}
+      <script src="//unpkg.com/alpinejs" defer></script>
+    {% end_require_js %}
     {# Swiper #}
     {% require_js %}
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

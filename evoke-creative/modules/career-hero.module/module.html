@@ -1,0 +1,59 @@
+<div class="py-12 bg-primary rounded-theme rounded-tl-none rounded-tr-none | lg:py-20 | 2xl:py-28">
+    <div class="content-wrapper">
+        {% if module.title %}
+            <h1 class="text-white border-edge">{{ module.title }}</h1>
+        {% endif %}
+    </div>
+</div>
+
+{% if module.department || module.features %}
+    <div class="content-wrapper">
+        <div class="py-6 space-y-3 border-b border-dark-grey | lg:flex lg:items-center lg:py-8 lg:space-x-14 lg:space-y-0">
+            {% if module.department %}
+                <div class="flex text-x-small | lg:max-w-[30%] lg:text-medium">
+                    <span class="shrink-0 relative inline-block mr-3 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-[0.35em] after:-right-px after:w-0.5 after:h-[0.7em] after:bg-dark-grey | lg:mr-4 lg:pr-4">Department</span>
+
+                    {{ module.department }}
+                </div>
+            {% endif %}
+
+            {% if module.features %}
+                <div class="flex text-x-small | lg:max-w-[70%] lg:text-medium">
+                    <span class="shrink-0 relative inline-block mr-3 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-[0.35em] after:-right-px after:w-0.5 after:h-[0.7em] after:bg-dark-grey | lg:mr-4 lg:pr-4">Features</span>
+
+                    {{ module.features }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
+
+<div class="content-wrapper mt-8 mb-12 | lg:mt-12 lg:mb-20 | 2xl:mt-20 2xl:mb-28">
+    <div class="flex flex-wrap | lg:flex-nowrap {{ module.summary ? 'gap-8' : '' }}">
+        <div class="w-full | lg:w-1/4">
+            <a href="#" class="button primary" x-on:click.prevent="show">Apply here</a>
+        </div>
+
+        {% if module.summary %}
+            <div class="w-full | lg:w-3/4">
+                {{ module.summary }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% if module.image.src %}
+    {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+    {% if module.image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%;"' %}
+    {% elif module.image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}" style="max-width: 100%;"' %}
+    {% endif %}
+    {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+    
+    <div class="content-wrapper mt-12 | lg:mt-20 | 2xl:mt-28">
+        <div class="aspect-[1/0.5] rounded-theme rounded-bl-none rounded-br-none overflow-hidden | lg:aspect-[1/0.35]">
+            <img src="{{ module.image.src }}" class="w-full h-full object-cover" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        </div>
+    </div>
+{% endif %}

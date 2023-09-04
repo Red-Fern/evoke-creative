@@ -1,0 +1,59 @@
+[ {
+  "id" : "5c9d6a88-8408-f184-a9d8-1081c8d3a78e",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "8d89f229-e2c4-0ea0-3a11-e8d285cb7b1a",
+  "name" : "department",
+  "display_width" : null,
+  "label" : "Department",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "c0918459-5be8-23ad-a227-0ec6e46c1f2f",
+  "name" : "features",
+  "display_width" : null,
+  "label" : "Features",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "d5dc2e2b-6ed0-07a2-9f5b-24913dafe1de",
+  "name" : "summary",
+  "display_width" : null,
+  "label" : "Summary",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "d7315075-b633-18cd-cce1-12c1d0b827cf",
+  "name" : "image",
+  "display_width" : null,
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]

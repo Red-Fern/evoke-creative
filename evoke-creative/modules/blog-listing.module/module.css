@@ -9,7 +9,6 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
   overflow: hidden;
   width: 100%;
 }

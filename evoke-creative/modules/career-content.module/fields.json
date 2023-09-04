@@ -1,0 +1,38 @@
+[ {
+  "id" : "93adf32d-4dc0-33e7-a34b-83656b56d792",
+  "name" : "section",
+  "display_width" : null,
+  "label" : "Section",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "59fbfc0e-b978-6628-1a5e-7e5ceff55c7a",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "59fbfc0e-b978-6628-1a5e-7e5ceff55c7a",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "33f42cab-bc16-da32-1aad-6dbf2cc2585f",
+    "name" : "text",
+    "display_width" : null,
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ { } ]
+} ]

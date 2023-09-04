@@ -109,15 +109,15 @@
 
 /* Variations */
 
-.header.grey {
+.header.white {
   background-color: var(--primary-color);
 }
 
-header.grey .header__logo--dark {
+header.white .header__logo--dark {
   display: none;
 }
 
-header.grey .header__logo--light {
+header.white .header__logo--light {
   display: flex;
 }
 
