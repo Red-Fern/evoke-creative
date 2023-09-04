@@ -8,11 +8,10 @@
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-<div class="body-container body-container--blog-post">
 
-  {# Blog post #}
-
-  <article class="blog-post">
+  <div class="blog-post">
+    {# Hero #}
+    
     <div class="content-wrapper">
       <a href="{{ blog_all_posts_url("default") }}" class="mt-12 button secondary back">Back to latest</a>
 
@@ -55,54 +54,59 @@
           {% endif %}
         </div>
       </div>
+    </div>
 
+    {# Body #}
+
+    <div class="content-wrapper">
       <div class="mx-auto my-12 max-w-[980px] | lg:my-16">
         {{ content.post_body }}
       </div>
     </div>
-  </article>
 
-  <section class="content-wrapper--vertical-spacing">
-    <div class="content-wrapper">
-      {% module "download_cta" path="../modules/download-cta" %}
-    </div>
-  </section>
+    {# CTA #}
 
-  {# Recent posts listing #}
-
-  {% set tag_posts = blog_recent_tag_posts("default", content.tag_list, 4) %}
-  
-  {% if tag_posts|length > 2 %}
-    {% set i = 0 %}
-
-    {% set show_image = true %}
-    {% set show_title = true %}
-    {% set show_tags = true %}
-    {% set show_publish_date = true %}
-    {% set show_description = true %}
-
-    <section class="blog-related-posts content-wrapper--vertical-spacing">
+    <div class="content-wrapper--vertical-spacing">
       <div class="content-wrapper">
-        <h2>Related articles<span class="text-secondary">.</span></h2>
+        {% module "download_cta" path="../modules/download-cta" %}
+      </div>
+    </div>
 
-        <hr class="mt-8 border-dark-grey"> 
-        
-        <div class="grid gap-x-3 gap-y-10 mt-12 | md:grid-cols-2 | lg:mt-20 lg:grid-cols-3">
-          {% for blog_post in tag_posts %}
-            {% if content.absolute_url != blog_post.absolute_url %}
-              {% if i < 3 %}
-                {% set content = blog_post %}
+    {# Related posts #}
+
+    {% set tag_posts = blog_recent_tag_posts("default", content.tag_list, 4) %}
+    
+    {% if tag_posts|length > 2 %}
+      {% set i = 0 %}
+
+      {% set show_image = true %}
+      {% set show_title = true %}
+      {% set show_tags = true %}
+      {% set show_publish_date = true %}
+      {% set show_description = true %}
+
+      <div class="blog-related-posts content-wrapper--vertical-spacing">
+        <div class="content-wrapper">
+          <h2>Related articles<span class="text-secondary">.</span></h2>
+
+          <hr class="mt-8 border-dark-grey"> 
+          
+          <div class="grid gap-x-3 gap-y-10 mt-12 | md:grid-cols-2 | lg:mt-20 lg:grid-cols-3">
+            {% for blog_post in tag_posts %}
+              {% if content.absolute_url != blog_post.absolute_url %}
+                {% if i < 3 %}
+                  {% set content = blog_post %}
+                    
+                  {% include "../templates/partials/blog-card.html" %}
                   
-                {% include "../templates/partials/blog-card.html" %}
-                
-                {% set i = i + 1 %}
+                  {% set i = i + 1 %}
+                {% endif %}
               {% endif %}
-            {% endif %}
-          {% endfor %}
+            {% endfor %}
+          </div>
         </div>
       </div>
-    </section>
-  {% endif %}
+    {% endif %}
+  </div>
 
-</div>
 {% endblock body %}
