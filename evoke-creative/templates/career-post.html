@@ -3,66 +3,98 @@
   isAvailableForNewContent: true
   label: Career post
 -->
-{% module "header_style" path="../modules/header-style", export_to_template_context=True %}
+{% module "header_style" 
+  path="../modules/header-style", 
+  "background_colour"={
+    "color": "#3C4F57",
+    "opacity": 100
+  },
+  "text_colour"="white"
+  export_to_template_context=True 
+%}
   
 {% extends "./layouts/base.html" %}
 
 {% block body %}
 <div class="body-container body-container--blog-post">
 
+  {% module "career_hero"
+    path="../modules/career-hero",
+    title={{ context.title or ("You could be our next<br> <span class='text-secondary'>[Career name].</span>") }},
+    image={
+      "alt": context.image_alt or "Career featured image",
+      "loading": context.image_loading or "disabled",
+      "max_height": context.image_height or 1640,
+      "max_width": context.image_width or 600,
+      "size_type": "auto_custom_max",
+      "src": context.image or content.featured_image
+    }
+  %}
   {# Blog post #}
 
   <article class="blog-post">
     <div class="content-wrapper">
-      <div class="mt-6 border-t border-b border-dark-grey | lg:mt-12">
-        <h1 class="h2 border-edge my-12 | lg:my-32">{{ content.name }}</h1>
-
-        <div class="flex flex-wrap items-center gap-x-10 gap-y-3 py-5 border-t border-dark-grey text-x-small | lg:py-10 lg:text-medium">
-          {% if content.blog_post_author %}
-            <div class="relative flex items-center w-full | lg:w-auto {{ content.blog_post_author.avatar ? 'lg:pl-[145px]' : '' }}">
-              {% if content.blog_post_author.avatar %}
-                <div class="hidden absolute -bottom-5 left-0 w-[100px] aspect-[1/1.35] rounded-theme bg-no-repeat bg-center bg-cover | lg:block" style="background-image: url('{{ content.blog_post_author.avatar }}')"></div>
-              {% endif %}
-
-              <span class="relative inline-block mr-3 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-1/2 after:-right-px after:-translate-y-1/2 after:w-0.5 after:h-4/5 after:bg-dark-grey | lg:mr-4 lg:pr-4">Author</span>
-
-              <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" class="link-inherit" rel="author">
-                {{ content.blog_post_author.display_name }}
-              </a>
-            </div>
-          {% endif %}
-
-          {% if content.blog_post_author %}
-            <div class="flex w-full | lg:w-auto">
-              <span class="relative inline-block mr-2.5 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-1/2 after:-right-px after:-translate-y-1/2 after:w-0.5 after:h-4/5 after:bg-dark-grey | lg:mr-4 lg:pr-4">Date</span>
-
-              <time datetime="{{ content.publish_date }}" class="block">
-                {{ content.publish_date_localized }}
-              </time>
-            </div>
-          {% endif %}
-
-          {% if content.tag_list %}
-            <div class="flex w-full | lg:w-auto">
-              <span class="relative inline-block mr-2.5 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-1/2 after:-right-px after:-translate-y-1/2 after:w-0.5 after:h-4/5 after:bg-dark-grey | lg:mr-4 lg:pr-4">Category</span>
-
-              {% for tag in content.tag_list %}
-                <a href="{{ blog_tag_url(group.id, tag.slug) }}" class="link-inherit" rel="tag">{{ tag.name }}</a>{% if not loop.last %},{% endif %}
-              {% endfor %}
-            </div>
-          {% endif %}
-        </div>
-      </div>
-
-      <div class="mx-auto my-12 max-w-[980px] | lg:my-16">
+      <div class="my-12 | lg:my-16">
         {{ content.post_body }}
       </div>
     </div>
   </article>
 
-  <section class="content-wrapper--vertical-spacing">
-    <div class="content-wrapper">
-      {% module "download_cta" path="../modules/download-cta" %}
+  <section class="dnd-section rounded-images">
+    <div class="row-fluid items-center">
+      <div class="span6 dnd-column">
+        {% module "cta_title"
+          path="@hubspot/rich_text",
+          label="CTA title",
+          html="<h3>Interested in the role - lets chat</h3>"
+        %}
+
+        {% module "cta_text"
+          path="@hubspot/rich_text",
+          label="CTA text",
+          html="<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique hendrerit eros at rutrum. Vivamus convallis velit vel justo dignissim condimentum.</p>",
+          margin={
+          "default": {
+            "top": "40px",
+          },
+          "mobile": {
+            "top": "32px",
+          }
+        }
+        %}
+
+        {% module "cta_button"
+          path="/evoke-creative/modules/button",
+          label="CTA button",
+          styles={
+            "spacing" : {
+              "spacing" : {
+                "margin" : {
+                  "top" : {
+                    "units" : "px",
+                    "value" : 40
+                  }
+                }
+              }
+            }
+          }
+        %}
+      </div>
+
+      <div class="span6 dnd-column">
+        {% module "cta_image"
+          path="@hubspot/linked_image",
+          label="CTA image"
+          img={
+            "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+            "loading": context.image_loading or "lazy",
+            "max_height": context.image_height or 530,
+            "max_width": context.image_width or 710,
+            "size_type": "auto_custom_max",
+            "src": context.image or get_asset_url("../images/grayscale-mountain.png")
+          }
+        %}
+      </div>
     </div>
   </section>
 
