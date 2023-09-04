@@ -1,18 +1,46 @@
 <div>
   <ul class="list-none flex space-x-4">
     {% for item in module.menu_items %}
-      <li>
-        <a href="#" class="text-white uppercase font-bold">{{ item.menu_title }}</a>
+      <li class="group">
+        <a href="#" class="block text-white uppercase font-bold py-4">{{ item.menu_title }}</a>
         {% if item.has_child_menu %}
-          <div class="absolute top-full left-0 bg-white w-full">
+          <div class="absolute top-full left-0 bg-white py-10 w-full z-40 invisible opacity-0 | group-hover:opacity-100 group-hover:visible">
             <div class="content-wrapper">
-              <div class="flex">
+              <div class="flex space-x-12">
                 {% for column in item.child_menu_columns %}
-                  <div class="flex flex-col">
-                    <div>{{ column.heading }}</div>
+                  {% set column_width = loop.index == 2 ? 'w-3/6' : (loop.index == 3 ? 'w-2/6' : 'w-1/6') %}
+                  <div class="flex flex-col {{ column_width }}">
+                    {% if column.heading %}
+                    <div class="uppercase text-[#5DB035] font-bold">{{ column.heading }}</div>
+                    {% endif %}
                     
                     {% if column.child_menu_type == "simple_menu" %}
                       {% simple_menu menu_tree="{{ column.child_menu }}" %}
+                    {% endif %}
+
+                    {% if column.child_menu_type == "featured_content" %}
+                      <div class="relative">
+                        {% set href = column.featured_item.featured_item_link.url.href %}
+                        {% if column.featured_item.featured_item_link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                        {% endif %}
+                        <a href="{{ href }}"
+                            {% if column.featured_item.featured_item_link.open_in_new_tab %}target="_blank"{% endif %}
+                            {% if column.featured_item.featured_item_link.rel %}rel="{{ column.featured_item.featured_item_link.rel }}"{% endif %}
+                        >
+                          {% if column.featured_item.featured_item_image.src %}
+                            {% set sizeAttrs = 'width="{{ column.featured_item.featured_item_image.width }}" height="{{ column.featured_item.featured_item_image.height }}"' %}
+                            {% if column.featured_item.featured_item_image.size_type == 'auto' %}
+                                {% set sizeAttrs = 'width="{{ column.featured_item.featured_item_image.width }}" height="{{ column.featured_item.featured_item_image.height }}" style="max-width: 100%; height: auto;"' %}
+                            {% elif column.featured_item.featured_item_image.size_type == 'auto_custom_max' %}
+                                {% set sizeAttrs = 'width="{{ column.featured_item.featured_item_image.max_width }}" height="{{ column.featured_item.featured_item_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                            {% endif %}
+                            {% set loadingAttr = column.featured_item.featured_item_image.loading != 'disabled' ? 'loading="{{ column.featured_item.featured_item_image.loading }}"' : '' %}
+                            <img src="{{ column.featured_item.featured_item_image.src }}" alt="{{ item2.featured_item.featured_item_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                          {% endif %}
+                          <span class="absolute top-4 left-3 bg-white border border-[#5DB035] py-1 px-4 rounded-full text-sm uppercase text-[#5DB035]">{{ column.featured_item.featured_item_label }}</span>
+                        </a>
+                      </div>
                     {% endif %}
 
                   </div>
