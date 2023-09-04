@@ -3,8 +3,7 @@
   isAvailableForNewContent: true
   label: Project post
 -->
-{% module 
-  "header_style" 
+{% module "header_style" 
   path="../modules/header-style", 
   "background_colour"={
     "color": "#3C4F57",
@@ -19,8 +18,7 @@
 {% block body %}
 <div class="body-container body-container--blog-post">
 
-  {% module
-    "project_hero"
+  {% module "project_hero"
     path="../modules/project-hero",
     title={{ context.title or content.name }},
     image={
@@ -52,8 +50,7 @@
 
   <section class="content-wrapper--vertical-spacing">
     <div class="content-wrapper">
-      {% module
-        "project_cta"
+      {% module "project_cta"
         path="../modules/cta",
         image={
           "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
