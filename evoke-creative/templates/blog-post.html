@@ -19,9 +19,9 @@
       <div class="mt-6 border-t border-b border-dark-grey | lg:mt-12">
         <h1 class="h2 border-edge my-12 | lg:my-20 | 2xl:my-28">{{ content.name }}</h1>
 
-        <div class="flex flex-wrap items-center gap-x-10 gap-y-3 py-5 border-t border-dark-grey text-x-small | lg:py-10 lg:text-medium">
+        <div class="flex flex-wrap items-start gap-x-10 gap-y-3 py-5 border-t border-dark-grey text-x-small | lg:flex-nowrap lg:py-10 lg:text-medium">
           {% if content.blog_post_author %}
-            <div class="relative flex items-center w-full | lg:w-auto {{ content.blog_post_author.avatar ? 'lg:pl-[145px]' : '' }}">
+            <div class="relative flex flex-wrap w-full | lg:w-auto {{ content.blog_post_author.avatar ? 'lg:pl-[145px]' : '' }}">
               {% if content.blog_post_author.avatar %}
                 <div class="hidden absolute -bottom-5 left-0 w-[100px] aspect-[1/1.35] rounded-theme bg-no-repeat bg-center bg-cover | lg:block" style="background-image: url('{{ content.blog_post_author.avatar }}')"></div>
               {% endif %}
@@ -34,8 +34,8 @@
             </div>
           {% endif %}
 
-          {% if content.blog_post_author %}
-            <div class="flex w-full | lg:w-auto">
+          {% if content.publish_date %}
+            <div class="flex flex-wrap w-full | lg:w-auto">
               <span class="relative inline-block mr-2.5 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-[0.35em] after:-right-px after:w-0.5 after:h-[0.7em] after:bg-dark-grey | lg:mr-4 lg:pr-4">Date</span>
 
               <time datetime="{{ content.publish_date }}" class="block">
@@ -45,7 +45,7 @@
           {% endif %}
 
           {% if content.tag_list %}
-            <div class="flex w-full | lg:w-auto">
+            <div class="flex flex-wrap w-full | lg:w-auto">
               <span class="relative inline-block mr-2.5 pr-2.5 text-primary font-serif font-medium uppercase after:absolute after:top-[0.35em] after:-right-px after:w-0.5 after:h-[0.7em] after:bg-dark-grey | lg:mr-4 lg:pr-4">Category</span>
 
               {% for tag in content.tag_list %}
