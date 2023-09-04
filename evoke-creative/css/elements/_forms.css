@@ -142,9 +142,9 @@ form select {
 /* Inputs - file picker */
 
 form input[type=file] {
-  background-color: transparent;
-  border: initial;
-  padding: initial;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: var(--white-color);
 }
 
 /* Headings and text */
