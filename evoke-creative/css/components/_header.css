@@ -102,8 +102,18 @@
 }
 
 @media (min-width: 992px) {
+  .header__navigation #hs_cos_wrapper_mobile_menu {
+    display: none;
+  }
+
   .header__navigation .button {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 991px) {
+  .header__navigation #hs_cos_wrapper_header_menu {
+    display: none;
   }
 }
 
