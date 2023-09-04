@@ -1,0 +1,7 @@
+{
+  "global" : false,
+  "host_template_types" : [ "BLOG_POST" ],
+  "module_id" : 78648181198,
+  "label" : "Career Content",
+  "is_available_for_new_content" : true
+}

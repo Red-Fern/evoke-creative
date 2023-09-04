@@ -1,0 +1,19 @@
+{% if module.section is iterable %}
+    <div class="content-wrapper my-12 | lg:my-20">
+        <div class="space-y-12 divide-y divide-dark-grey | lg:space-y-20">
+            {% for item in module.section %}
+                <div class="flex flex-wrap gap-8 pt-12 first:pt-0 | lg:flex-nowrap lg:pt-20">
+                    <div class="w-full | lg:w-1/4">
+                        {% if item.title %}
+                            <h3>{{ item.title }}</h3>
+                        {% endif %}
+                    </div>
+
+                    <div class="w-full | lg:w-3/4">
+                        {{ item.text }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
