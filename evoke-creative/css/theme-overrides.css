@@ -363,27 +363,19 @@ tfoot td {
 .menu .menu__link:hover,
 .menu .menu__link:focus,
 .menu .menu__link:active {
-  color: var(--dark-grey-color_dark);
+  color: var(--dark-grey-color-dark);
 }
 
-.menu__child-toggle-icon {
-  border-color: var(--dark-grey-color);
-}
+@media(min-width: 992px) {
+  .header.white .menu__link,
+  .header.white .header__logo .logo-company-name {
+    color: var(--white-color);
+  }
 
-.header.white .menu__link,
-.header.white .header__logo .logo-company-name {
-  color: var(--white-color);
-}
-
-..header.white menu .menu__link:hover,
-..header.white menu .menu__link:focus,
-..header.white menu .menu__link:active {
-  color: var(--white-color_dark);
-}
-
-@media(min-width: 991px) {
-  .menu__submenu {
-    background-color: var(--light-grey-color);
+  .header.white .menu__link:hover,
+  .header.white .menu__link:focus,
+  .header.white .menu__link:active {
+    color: var(--white-color-dark);
   }
 }
 
@@ -415,6 +407,20 @@ tfoot td {
   .menu .menu__item--depth-1 {
     border-color: var(--dark-grey-color);
   }
+
+  .menu__submenu {
+    background-color: var(--light-grey-color);
+  }
+
+  .menu__submenu .menu__link {
+    color: var(--dark-grey-color);
+  }
+
+  .menu__submenu .menu__link:hover,
+  .menu__submenu .menu__link:focus,
+  .menu__submenu .menu__link:active {
+    color: var(--dark-grey-color-dark);
+  } 
 }
 
 @media(max-width: 767px) {
