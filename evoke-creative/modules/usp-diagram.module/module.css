@@ -1,3 +1,16 @@
+.usp-point .text {
+    display: none;
+}
+
+.usp-point.active .icon {
+    z-index: 30;
+}
+
+.usp-point.active .text {
+    display: block;
+    z-index: 20;
+}
+
 /* Retail */
 
 .usp-diagram-retail .point-1,
