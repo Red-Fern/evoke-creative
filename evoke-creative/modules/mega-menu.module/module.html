@@ -1,0 +1,65 @@
+<div class="mega-menu-module">
+  <ul class="pl-0 list-none flex">
+    {% for item in module.menu_items %}
+      <li class="group">
+        <a href="#" class="menu__link inline-block px-3.5 py-8 uppercase | xl:px-8">{{ item.menu_title }}</a>
+
+        {% if item.has_child_menu %}
+          <div class="absolute top-full left-0 -ml-[30px] px-[30px] py-16 w-[calc(100%+60px)] rounded-theme bg-white z-40 invisible opacity-0 | group-hover:opacity-100 group-hover:visible">
+            <div class="content-wrapper">
+              <div class="flex space-x-5">
+                {% for column in item.child_menu_columns %}
+                  {% set column_width = loop.index == 2 ? 'w-3/6' : (loop.index == 3 ? 'w-2/6' : 'w-1/6') %}
+
+                  <div class="flex flex-col {{ column_width }}">
+                    {% if column.heading %}
+                      <div class="mb-8 text-large text-secondary uppercase font-bold">{{ column.heading }}</div>
+                    {% endif %}
+                    
+                    {% if column.child_menu_type == "menu" %}
+                      <div class="menu-wrapper pr-5 | 2xl:pr-16 {{ column.number_of_columns }}">
+                        {% simple_menu menu_tree="{{ column.child_menu }}" %}
+                      </div>
+                    {% endif %}
+
+                    {% if column.child_menu_type == "featured_content" %}
+                      <div class="relative">
+                        {% set href = column.featured_item.featured_item_link.url.href %}
+                        {% if column.featured_item.featured_item_link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                        {% endif %}
+
+                        <a href="{{ href }}"
+                            {% if column.featured_item.featured_item_link.open_in_new_tab %}target="_blank"{% endif %}
+                            {% if column.featured_item.featured_item_link.rel %}rel="{{ column.featured_item.featured_item_link.rel }}"{% endif %}
+                        >
+                          {% if column.featured_item.featured_item_image.src %}
+                            {% set sizeAttrs = 'width="{{ column.featured_item.featured_item_image.width }}" height="{{ column.featured_item.featured_item_image.height }}"' %}
+                            {% if column.featured_item.featured_item_image.size_type == 'auto' %}
+                                {% set sizeAttrs = 'width="{{ column.featured_item.featured_item_image.width }}" height="{{ column.featured_item.featured_item_image.height }}" style="max-width: 100%;"' %}
+                            {% elif column.featured_item.featured_item_image.size_type == 'auto_custom_max' %}
+                                {% set sizeAttrs = 'width="{{ column.featured_item.featured_item_image.max_width }}" height="{{ column.featured_item.featured_item_image.max_height }}" style="max-width: 100%;"' %}
+                            {% endif %}
+                            {% set loadingAttr = column.featured_item.featured_item_image.loading != 'disabled' ? 'loading="{{ column.featured_item.featured_item_image.loading }}"' : '' %}
+
+                            <div class="w-full h-[375px] rounded-theme shadow-lg overflow-hidden">
+                              <img src="{{ column.featured_item.featured_item_image.src }}" class="w-full h-full object-cover" alt="{{ item2.featured_item.featured_item_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                            </div>
+                          {% endif %}
+
+                          {% if column.featured_item.featured_item_label %}
+                            <span class="absolute top-5 left-5 py-1 px-4 border border-secondary rounded-full bg-white text-sm text-secondary font-bold uppercase">{{ column.featured_item.featured_item_label }}</span>
+                          {% endif %}
+                        </a>
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
