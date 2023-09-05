@@ -2,7 +2,12 @@
   <ul class="pl-0 list-none flex">
     {% for item in module.menu_items %}
       <li class="group">
-        <a href="#" class="menu__link inline-block px-3.5 py-8 uppercase | xl:px-8">{{ item.menu_title }}</a>
+        {% set menu_href = item.menu_link.url.href %}
+        {% if item.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set menu_href = "mailto:" + href %}
+        {% endif %}
+
+        <a href="{{ menu_href }}" class="menu__link inline-block px-3.5 py-8 uppercase | xl:px-8 {{ item.has_child_menu ? 'has-child-menu' : '' }}">{{ item.menu_title }}</a>
 
         {% if item.has_child_menu %}
           <div class="absolute top-full left-0 -ml-[30px] px-[30px] py-16 w-[calc(100%+60px)] rounded-theme bg-white z-40 invisible opacity-0 | group-hover:opacity-100 group-hover:visible">
@@ -24,12 +29,12 @@
 
                     {% if column.child_menu_type == "featured_content" %}
                       <div class="relative">
-                        {% set href = column.featured_item.featured_item_link.url.href %}
+                        {% set featured_href = column.featured_item.featured_item_link.url.href %}
                         {% if column.featured_item.featured_item_link.url.type is equalto "EMAIL_ADDRESS" %}
-                            {% set href = "mailto:" + href %}
+                            {% set featured_href = "mailto:" + href %}
                         {% endif %}
 
-                        <a href="{{ href }}"
+                        <a href="{{ featured_href }}"
                             {% if column.featured_item.featured_item_link.open_in_new_tab %}target="_blank"{% endif %}
                             {% if column.featured_item.featured_item_link.rel %}rel="{{ column.featured_item.featured_item_link.rel }}"{% endif %}
                         >

@@ -24,6 +24,25 @@
     "type" : "text",
     "default" : "Menu Title"
   }, {
+    "id" : "9960e7db-e9f5-7cbe-a149-53b31c4c8512",
+    "name" : "menu_link",
+    "display_width" : null,
+    "label" : "Menu Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
     "id" : "b631e8e3-0dc5-27c2-b949-3fec6e9fbcc5",
     "name" : "has_child_menu",
     "display_width" : null,
@@ -339,6 +358,15 @@
           "no_follow" : false
         }
       }
-    } ]
+    } ],
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   } ]
 } ]
