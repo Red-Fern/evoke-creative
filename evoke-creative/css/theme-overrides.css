@@ -366,6 +366,10 @@ tfoot td {
   color: var(--dark-grey-color-dark);
 }
 
+.menu__link .dropdown-arrow {
+  fill: var(--dark-grey-color);
+}
+
 .mega-menu-module .hs-menu-item a { 
   color: var(--dark-grey-color);
 }
@@ -386,6 +390,10 @@ tfoot td {
   .header.white .menu__link:focus,
   .header.white .menu__link:active {
     color: var(--white-color-dark);
+  }
+
+  .header.white .menu__link .dropdown-arrow {
+    fill: var(--white-color);
   }
 }
 

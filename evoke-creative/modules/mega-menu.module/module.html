@@ -7,7 +7,15 @@
             {% set menu_href = "mailto:" + href %}
         {% endif %}
 
-        <a href="{{ menu_href }}" class="menu__link inline-block px-3.5 py-8 uppercase | xl:px-8 {{ item.has_child_menu ? 'has-child-menu' : '' }}">{{ item.menu_title }}</a>
+        <a href="{{ menu_href }}" class="menu__link inline-flex items-center px-3 py-8 uppercase | xl:px-4 | 2xl:px-8">
+          {{ item.menu_title }}
+
+          {% if item.has_child_menu %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" class="dropdown-arrow -mt-1 ml-2.5 | 2xl:ml-4" viewBox="0 0 10 5" fill="none">
+              <path d="M9.42373 0.468442C9.52542 0.547337 9.52542 0.705128 9.42373 0.803748L5.17288 4.92604C5.07119 5.02465 4.92881 5.02465 4.82712 4.92604L0.576271 0.803748C0.474576 0.705128 0.474576 0.547337 0.576271 0.468442L0.962712 0.0739645C1.06441 -0.0246548 1.22712 -0.0246548 1.30847 0.0739645L5.01017 3.64398L8.69153 0.0739645C8.77288 -0.0246548 8.93559 -0.0246548 9.03729 0.0739645L9.42373 0.468442Z"/>
+            </svg>
+          {% endif %}
+        </a>
 
         {% if item.has_child_menu %}
           <div class="absolute top-full left-0 -ml-[30px] px-[30px] py-16 w-[calc(100%+60px)] rounded-theme bg-white z-40 invisible opacity-0 | group-hover:opacity-100 group-hover:visible">
