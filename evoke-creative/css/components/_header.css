@@ -112,7 +112,7 @@
 }
 
 @media (max-width: 991px) {
-  .header__navigation #hs_cos_wrapper_header_menu {
+  .header__navigation #hs_cos_wrapper_mega_menu {
     display: none;
   }
 }
@@ -169,6 +169,7 @@ header.white .header__logo--light {
     left: 1rem;
     width: calc(100% - 2rem);
     height: calc(100% - 1rem);
+    overflow-y: auto;
     z-index: 10;
   }
 
