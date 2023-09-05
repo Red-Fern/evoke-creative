@@ -360,9 +360,19 @@ tfoot td {
   color: var(--dark-grey-color);
 }
 
-.menu .menu__link:hover,
-.menu .menu__link:focus,
-.menu .menu__link:active {
+.menu__link:hover,
+.menu__link:focus,
+.menu__link:active {
+  color: var(--dark-grey-color-dark);
+}
+
+.mega-menu-module .hs-menu-item a { 
+  color: var(--dark-grey-color);
+}
+
+.mega-menu-module .hs-menu-item a:hover,
+.mega-menu-module .hs-menu-item a:focus,
+.mega-menu-module .hs-menu-item a:active {
   color: var(--dark-grey-color-dark);
 }
 
@@ -398,13 +408,13 @@ tfoot td {
     color: var(--white-color);
   }
 
-  .menu .menu__link:hover,
-  .menu .menu__link:focus,
-  .menu .menu__link:active {
+  .menu__link:hover,
+  .menu__link:focus,
+  .menu__link:active {
     color: var(--white-color-dark);
   }
 
-  .menu .menu__item--depth-1 {
+  .menu__item--depth-1 {
     border-color: var(--dark-grey-color);
   }
 

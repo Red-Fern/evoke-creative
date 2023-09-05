@@ -73,12 +73,34 @@
       "required" : false,
       "locked" : false,
       "display" : "select",
-      "choices" : [ [ "simple_menu", "Simple Menu" ], [ "menu_with_columns", "Menu with Columns" ], [ "featured_content", "Featured Content" ] ],
+      "choices" : [ [ "menu", "Menu" ], [ "featured_content", "Featured Content" ] ],
       "multiple" : false,
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "default" : "simple_menu"
+      "default" : "menu"
+    }, {
+      "id" : "8fbdd80e-15a5-b4b0-9e3c-922ff341b291",
+      "name" : "number_of_columns",
+      "display_width" : null,
+      "label" : "Number of Columns",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "menu_items.child_menu_columns.child_menu_type",
+        "controlling_value_regex" : "menu",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "one-col", "1" ], [ "two-col", "2" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "one-col"
     }, {
       "id" : "f875fbf0-f573-7b37-6355-17406547b731",
       "name" : "child_menu",
@@ -89,7 +111,7 @@
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "menu_items.child_menu_columns.child_menu_type",
-        "controlling_value_regex" : "simple_menu",
+        "controlling_value_regex" : "menu",
         "property" : null,
         "operator" : "EQUAL",
         "access" : null
@@ -184,7 +206,8 @@
     "expanded" : false,
     "type" : "group",
     "default" : [ {
-      "child_menu_type" : "simple_menu",
+      "child_menu_type" : "menu",
+      "number_of_columns" : "one-col",
       "child_menu" : [ ],
       "featured_item" : {
         "featured_item_image" : {
@@ -204,7 +227,8 @@
         }
       }
     }, {
-      "child_menu_type" : "simple_menu",
+      "child_menu_type" : "menu",
+      "number_of_columns" : "one-col",
       "child_menu" : [ ],
       "featured_item" : {
         "featured_item_image" : {
@@ -224,7 +248,8 @@
         }
       }
     }, {
-      "child_menu_type" : "simple_menu",
+      "child_menu_type" : "menu",
+      "number_of_columns" : "one-col",
       "child_menu" : [ ],
       "featured_item" : {
         "featured_item_image" : {
@@ -252,7 +277,8 @@
     "menu_title" : "Menu Title",
     "has_child_menu" : false,
     "child_menu_columns" : [ {
-      "child_menu_type" : "simple_menu",
+      "child_menu_type" : "menu",
+      "number_of_columns" : "one-col",
       "child_menu" : [ ],
       "featured_item" : {
         "featured_item_image" : {
@@ -272,7 +298,8 @@
         }
       }
     }, {
-      "child_menu_type" : "simple_menu",
+      "child_menu_type" : "menu",
+      "number_of_columns" : "one-col",
       "child_menu" : [ ],
       "featured_item" : {
         "featured_item_image" : {
@@ -292,7 +319,8 @@
         }
       }
     }, {
-      "child_menu_type" : "simple_menu",
+      "child_menu_type" : "menu",
+      "number_of_columns" : "one-col",
       "child_menu" : [ ],
       "featured_item" : {
         "featured_item_image" : {
