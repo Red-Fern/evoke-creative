@@ -55,7 +55,7 @@
                             {% endif %}
                             {% set loadingAttr = column.featured_item.featured_item_image.loading != 'disabled' ? 'loading="{{ column.featured_item.featured_item_image.loading }}"' : '' %}
 
-                            <div class="w-full h-[375px] rounded-theme shadow-lg overflow-hidden">
+                            <div class="w-full rounded-theme shadow-lg overflow-hidden {{ loop.index == 2 ? 'aspect-[1/0.52]' : (loop.index == 3 ? 'aspect-[1/0.78]' : 'aspect-[1/1.56]') }}">
                               <img src="{{ column.featured_item.featured_item_image.src }}" class="w-full h-full object-cover" alt="{{ item2.featured_item.featured_item_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
                             </div>
                           {% endif %}
