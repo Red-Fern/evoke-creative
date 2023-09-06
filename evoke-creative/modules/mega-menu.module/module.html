@@ -18,7 +18,7 @@
         </a>
 
         {% if item.has_child_menu %}
-          <div class="absolute top-full left-0 -ml-[30px] px-[30px] py-16 w-[calc(100%+60px)] rounded-theme bg-white z-40 invisible opacity-0 | group-hover:opacity-100 group-hover:visible">
+          <div class="absolute top-full left-0 -ml-[30px] px-[30px] py-16 w-[calc(100%+60px)] shadow-lg rounded-theme bg-white z-40 invisible opacity-0 | group-hover:opacity-100 group-hover:visible">
             <div class="content-wrapper">
               <div class="flex space-x-5">
                 {% for column in item.child_menu_columns %}
