@@ -5,7 +5,7 @@
   "label" : "Button link",
   "required" : false,
   "locked" : false,
-  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
   "show_advanced_rel_options" : false,
   "type" : "link",
   "default" : {
@@ -68,7 +68,10 @@
     } ],
     "tab" : "STYLE",
     "expanded" : false,
-    "type" : "group"
+    "type" : "group",
+    "default" : {
+      "spacing" : { }
+    }
   }, {
     "id" : "styles.alignment",
     "name" : "alignment",
@@ -89,12 +92,21 @@
     } ],
     "tab" : "STYLE",
     "expanded" : false,
-    "type" : "group"
+    "type" : "group",
+    "default" : {
+      "alignment" : { }
+    }
   } ],
   "tab" : "STYLE",
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "style" : "primary"
+    "style" : "primary",
+    "spacing" : {
+      "spacing" : { }
+    },
+    "alignment" : {
+      "alignment" : { }
+    }
   }
 } ]
