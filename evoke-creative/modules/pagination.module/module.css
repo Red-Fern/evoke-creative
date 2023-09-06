@@ -11,12 +11,15 @@
 
 .hs-pagination__link {
   align-items: center;
+  justify-content: center;
   display: flex;
-  margin-right: 0.5rem;
-}
-
-.hs-pagination__link:last-child {
-  margin-right: 0;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #CECECE;
+  border-radius: 999px;
+  background-color: var(--white-color);
+  color: var(--tertiary-color);
+  font-size: var(--body-font-size-small);
 }
 
 .hs-pagination__link,
@@ -26,14 +29,14 @@
   text-decoration: none;
 }
 
-.hs-pagination__link--text-and-icon.hs-pagination__link--first > .hs-pagination__link-icon,
-.hs-pagination__link--text-and-icon.hs-pagination__link--prev > .hs-pagination__link-icon {
-  margin-right: 0.25rem;
+.hs-pagination__link.hs-pagination__link--active {
+  border-color: var(--tertiary-color);
 }
 
-.hs-pagination__link--text-and-icon.hs-pagination__link--last > .hs-pagination__link-icon,
-.hs-pagination__link--text-and-icon.hs-pagination__link--next > .hs-pagination__link-icon {
-  margin-left: 0.25rem;
+.hs-pagination__link.hs-pagination__link--prev,
+.hs-pagination__link.hs-pagination__link--next {
+  border: none;
+  background-color: var(--tertiary-color);
 }
 
 .hs-pagination__link-icon {
@@ -41,15 +44,17 @@
 }
 
 .hs-pagination__link-icon svg {
-  height: 16px;
-  width: 16px;
-}
-
-.hs-pagination__link--number {
-  padding: 0.25rem 0.5rem;
+  height: 14px;
+  width: 14px;
+  fill: var(--white-color);
 }
 
 @media (max-width: 767px) {
+  .hs-pagination__link {
+    width: 40px;
+    height: 40px;
+  }
+
   .hs-pagination__show-for-sr--mobile {
     border: 0 !important;
     clip: rect(0, 0, 0, 0) !important;

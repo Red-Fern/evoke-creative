@@ -18,7 +18,7 @@
 {# Pagination #}
 
 {% if total_page_count > 1 %}
-  <nav aria-label="{{ module.default_text.pagination_navigation }}" role="navigation" class="hs-pagination">
+  <nav aria-label="{{ module.default_text.pagination_navigation }}" role="navigation" class="hs-pagination pt-8 mt-8 gap-2.5 border-t border-dark-grey | lg:pt-14 lg:mt-16">
     {# Previous page link #}
 
     {% if last_page_num and (show_next_and_previous_arrows or show_next_and_previous_labels) %}
@@ -29,7 +29,7 @@
         {% if show_next_and_previous_arrows %}
           {% icon "hs_previous_icon"
             extra_classes="hs-pagination__link-icon",
-            name="angle-left",
+            name="chevron-left",
             purpose="decorative",
             style="SOLID",
             unicode="f104" %}
@@ -93,7 +93,7 @@
         {% if show_next_and_previous_arrows %}
           {% icon "hs_next_icon"
             extra_classes="hs-pagination__link-icon",
-            name="angle-right",
+            name="chevron-right",
             purpose="decorative",
             style="SOLID",
             unicode="f105" %}
