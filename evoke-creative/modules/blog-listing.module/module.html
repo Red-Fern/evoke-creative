@@ -5,25 +5,25 @@
 {# Columns #}
 
 {% if blog.slug == 'blog' %}
+  {% set columns_class = 'gap-x-3 gap-y-10 | md:grid-cols-2 | lg:grid-cols-3' %}
+
   {% set show_image = true %}
   {% set show_title = true %}
   {% set show_tags = true %}
   {% set show_publish_date = true %}
   {% set show_description = true %}
-
-  {% set columns_class = 'gap-x-3 gap-y-10 | md:grid-cols-2 | lg:grid-cols-3 ' %}
 {% elif blog.slug == 'projects' %}
+  {% set columns_class = 'gap-x-3 gap-y-10 | md:grid-cols-2' %}
+
   {% set show_image = true %}
   {% set show_title = true %}
   {% set show_tags = true %}
   {% set show_description = true %}
-
-  {% set columns_class = 'gap-x-3 gap-y-10 | md:grid-cols-2' %}
 {% elif blog.slug == 'careers' %}
+  {% set columns_class = 'border-b border-light-grey' %}
+
   {% set show_title = true %}
   {% set show_description = true %}
-
-  {% set columns_class = 'border-b border-light-grey' %}
 {% endif %}
 
 {####################################################}
@@ -34,7 +34,31 @@
   <section class="grid {{ columns_class }}">
     {% for content in contents %}
       {% if blog.slug == 'blog' %}
+        {% if loop.first %}
+          <div class="hidden p-8 bg-secondary rounded-theme text-white | lg:block | xl:p-12">
+            <h4 class="mb-8 text-white">The latest articles and insights direct to your inbox.</h4>
+
+            <div>
+              {% form
+                form_to_use="{{ widget_data.sign_up_cta.form.form_id }}"
+                response_response_type="{{ widget_data.sign_up_cta.form.response_type }}"
+                response_message="{{ widget_data.sign_up_cta.form.message }}"
+                response_redirect_id="{{ widget_data.sign_up_cta.form.redirect_id }}"
+                response_redirect_url="{{ widget_data.sign_up_cta.form.redirect_url }}"
+                gotowebinar_webinar_key="{{ widget_data.sign_up_cta.form.gotowebinar_webinar_key }}"
+              %}
+            </div>
+          </div>
+        {% endif %}
+
         {% include "../templates/partials/blog-card.html" %}
+
+        {% if loop.index == 5 %}
+          <div class="hidden | lg:block lg:col-span-3">
+            {% set module = widget_data.download_cta %}
+            {% include "../templates/partials/download-cta.html" %}
+          </div>
+        {% endif %}
       {% elif blog.slug == 'projects' %}
         {% include "../templates/partials/project-card.html" %}
       {% elif blog.slug == 'careers' %}

@@ -5,6 +5,13 @@
 -->
 {% module "header_style" path="../modules/header-style", export_to_template_context=True %}
 
+{# Global CTA fields #}
+
+{% if blog.slug == 'blog' %}
+  {% module "download_cta" path="../modules/download-cta", export_to_template_context=True %}
+  {% module "sign_up_cta" path="../modules/sign-up-cta", export_to_template_context=True %}
+{% endif %}
+
 {% extends "./layouts/base.html" %}
 
 {% block body %}
