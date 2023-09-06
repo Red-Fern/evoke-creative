@@ -126,6 +126,7 @@
 }
 
 .mega-menu-module .hs-menu-item a { 
+  display: block;
   font-weight: bold;
   text-transform: uppercase;
 }
