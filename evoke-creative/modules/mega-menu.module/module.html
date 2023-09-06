@@ -22,7 +22,7 @@
             <div class="content-wrapper">
               <div class="flex space-x-5">
                 {% for column in item.child_menu_columns %}
-                  {% set column_width = loop.index == 2 ? 'w-3/6' : (loop.index == 3 ? 'w-2/6' : 'w-1/6') %}
+                  {% set column_width = loop.index == 2 ? 'w-[45%]' : (loop.index == 3 ? 'w-[33%]' : 'w-[22%]') %}
 
                   <div class="flex flex-col {{ column_width }}">
                     {% if column.heading %}
@@ -55,7 +55,7 @@
                             {% endif %}
                             {% set loadingAttr = column.featured_item.featured_item_image.loading != 'disabled' ? 'loading="{{ column.featured_item.featured_item_image.loading }}"' : '' %}
 
-                            <div class="w-full rounded-theme shadow-lg overflow-hidden {{ loop.index == 2 ? 'aspect-[1/0.52]' : (loop.index == 3 ? 'aspect-[1/0.78]' : 'aspect-[1/1.56]') }}">
+                            <div class="w-full rounded-theme shadow-lg overflow-hidden {{ loop.index == 2 ? 'aspect-[1/0.572]' : (loop.index == 3 ? 'aspect-[1/0.78]' : 'aspect-[1/1.17]') }}">
                               <img src="{{ column.featured_item.featured_item_image.src }}" class="w-full h-full object-cover" alt="{{ item2.featured_item.featured_item_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
                             </div>
                           {% endif %}
