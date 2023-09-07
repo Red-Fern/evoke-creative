@@ -1,5 +1,5 @@
 <div class="bg-gradient px-4 py-8 rounded-theme {{ module.break_image_out ? 'md:py-0 | lg:px-[80px]' : 'lg:p-12' }}">
-    <div class="grid gap-10 items-center | md:grid-cols-2 md:gap-12 | lg:gap-20 | 2xl:gap-28">
+    <div class="relative grid gap-10 items-center | md:grid-cols-2 md:gap-12 | lg:gap-20 | 2xl:gap-28">
         {% if module.image.src %}
             {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
             {% if module.image.size_type == 'auto' %}

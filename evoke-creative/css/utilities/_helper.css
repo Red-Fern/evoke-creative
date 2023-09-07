@@ -72,3 +72,39 @@
   padding: 0 1rem;
   width: 100vw;
 }
+
+/* Gradient background */
+
+.bg-gradient {
+  position: relative;
+  background-color: var(--primary-color);
+  background-image: linear-gradient(149deg, rgba(60, 60, 59, 0.60) 16.96%, rgba(116, 116, 116, 0.00) 83.46%);
+  color: var(--white-color);
+}
+
+.bg-gradient a, 
+.bg-gradient .list-module.link a {
+  color: var(--white-color);
+}
+
+.bg-gradient .row-fluid {
+  position: relative;
+}
+
+.bg-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1/0.5;
+  max-height: 50%;
+  border-radius: var(--border-radius);
+  background-image: linear-gradient(to top right, transparent 50%, var(--primary-color) 50%);
+}
+
+@media (max-width: 767px) {
+  .bg-gradient::before {
+    border-radius: var(--border-radius-mobile);
+  }
+}

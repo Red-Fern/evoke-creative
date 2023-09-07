@@ -115,18 +115,6 @@
         @apply text-current hover:text-current focus:text-current active:text-current;
     }
 
-    .bg-gradient {
-        @apply bg-primary text-white;
-    }
-
-    .bg-gradient a {
-        @apply text-white;
-    }
-
-    .bg-gradient .list-module.link a {
-        @apply text-white;
-    }
-
     .border-edge {
         @apply relative pl-5 lg:pl-[75px];
     }
