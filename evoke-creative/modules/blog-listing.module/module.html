@@ -35,7 +35,7 @@
     {% for content in contents %}
       {% if blog.slug == 'blog' %}
         {% if loop.first %}
-          <div class="hidden p-8 bg-secondary rounded-theme text-white | lg:block | xl:p-12">
+          <div class="hidden p-8 bg-secondary bg-no-repeat bg-bottom bg-[length:100%_auto] rounded-theme text-white | lg:block | xl:p-12" style="background-image: url({{ get_asset_url('/evoke-creative/images/cta-gradient.svg') }})">
             <h4 class="mb-8 text-white">The latest articles and insights direct to your inbox.</h4>
 
             <div>
