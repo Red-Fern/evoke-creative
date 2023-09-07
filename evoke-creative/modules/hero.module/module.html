@@ -1,5 +1,45 @@
-<div class="py-12 | lg:py-20 | 2xl:py-28 {{ module.style.layout == 'grey' ? 'bg-gradient rounded-theme rounded-tl-none rounded-tr-none' : '' }} {{ module.style.remove_bottom_border_radius ? 'rounded-bl-none rounded-br-none' : '' }}">
-    <div class="content-wrapper">
+{% require_css %}
+    <style>
+
+        {# Vector backgrounds #}
+
+        {% if widget_data.header_style.text_colour == 'white' && module.style.layout == 'grey' %}
+            @media (min-width: 992px) {
+                header .header__container::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: -6%;
+                    width: 33%;
+                    aspect-ratio: 1/1;
+                    background-image: url({{ get_asset_url('/evoke-creative/images/hero-vector-grey.svg') }});
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        {% endif %}
+
+        {% if widget_data.header_style.text_colour == 'default' && module.style.layout == 'white' %}
+            @media (min-width: 992px) {
+                header .header__container::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -10%;
+                    width: 80%;
+                    aspect-ratio: 1/1;
+                    background-image: url({{ get_asset_url('/evoke-creative/images/hero-vector-white.svg') }});
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        {% endif %}
+
+    </style>
+{% end_require_css %}
+
+<div class="hero-module py-12 | lg:py-20 | 2xl:py-28 {{ module.style.layout == 'grey' ? 'bg-gradient rounded-theme rounded-tl-none rounded-tr-none' : '' }} {{ module.style.remove_bottom_border_radius ? 'rounded-bl-none rounded-br-none' : '' }}">
+    <div class="content-wrapper relative">
         {% if !module.image.src && module.title %}
             <h1 class="border-edge mb-8 | lg:mb-14 {{ module.style.layout == 'grey' ? 'text-white' : '' }}">{{ module.title }}</h1>
         {% endif %}
