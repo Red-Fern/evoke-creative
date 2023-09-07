@@ -1,0 +1,42 @@
+.honeycomb-grid-module.images-only .section-2,
+.honeycomb-grid-module.images-only .section-4, {
+  margin-top: 5%;
+  margin-left: -3.5%;
+}
+
+.honeycomb-grid-module.images-only .section-3 {
+  margin-left: 1.5%;
+}
+
+@media (min-width: 1200px) {
+  .honeycomb-grid-module.images-text .section-2 {
+    left: 12%;
+    margin-top: -5%;
+  }
+
+  .honeycomb-grid-module.images-text .section-3 {
+    left: 26%;
+    margin-top: -8%;
+  }
+
+  .honeycomb-grid-module.images-text .section-4 {
+    left: 11%;
+    margin-top: -4%;
+  }
+
+  .honeycomb-grid-module.images-text .section-1 .text {
+    padding-top: 3%;
+  }
+
+  .honeycomb-grid-module.images-text .section-2 .text {
+    padding-top: 4%;
+  }
+
+  .honeycomb-grid-module.images-text .section-3 .text {
+    padding-top: 4%;
+  }
+
+  .honeycomb-grid-module.images-text .section-4 .text {
+    padding-top: 6%;
+  }
+}
