@@ -35,18 +35,24 @@
             }
         {% endif %}
 
+        {# Video #}
+
+        .hs-video-wrapper {
+            padding-bottom: 100% !important;
+        }
+
     </style>
 {% end_require_css %}
 
 <div class="hero-module py-12 | lg:py-20 | 2xl:py-28 {{ module.style.layout == 'grey' ? 'rounded-theme rounded-tl-none rounded-tr-none bg-primary text-white' : '' }} {{ module.style.remove_bottom_border_radius ? 'rounded-bl-none rounded-br-none' : '' }}">
     <div class="content-wrapper relative">
-        {% if !module.image.src && module.title %}
+        {% if !(module.image.src || module.video.player_id) && module.title %}
             <h1 class="border-edge mb-8 | lg:mb-14 {{ module.style.layout == 'grey' ? 'text-white' : '' }}">{{ module.title }}</h1>
         {% endif %}
 
         <div class="gap-10 items-center | md:flex md:gap-14">
             <div class="space-y-8 | md:w-[55%] | lg:space-y-14">
-                {% if module.image.src && module.title %}
+                {% if (module.image.src || module.video.player_id) && module.title %}
                     <h1 class="border-edge {{ module.style.layout == 'grey' ? 'text-white' : '' }}">{{ module.title }}</h1>
                 {% endif %}
                 
@@ -73,7 +79,7 @@
                 {% endif %}
             </div>
 
-            {% if module.image.src %}
+            {% if module.image.src && module.media_type == 'image' %}
                 {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
                 {% if module.image.size_type == 'auto' %}
                     {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%; height: auto;"' %}
@@ -84,6 +90,22 @@
                 
                 <div class="flex justify-center | md:w-[45%]">
                     <img src="{{ module.image.src }}" class="rounded-theme" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                </div>
+            {% elif module.video.player_id && module.media_type == 'video' %}
+                {% set max_width = module.video.size_type == 'auto_custom_max' ? module.video.max_width : module.video.width %}
+                {% set max_height = module.video.size_type == 'auto_custom_max' ? module.video.max_height : module.video.height %}
+                
+                <div class="text-center | md:w-[45%]">
+                    {% video_player "embed_player"
+                        player_id={{ module.video.player_id }}
+                        type={{ module.video.player_type || 'scriptV4' }}
+                        full_width={{ module.video.size_type == 'auto_full_width' }},
+                        conversion_asset={{ module.video.conversion_asset|tojson|safe }}
+                        autoplay={{ module.video.autoplay }}
+                        hidden_controls={{ module.video.hide_controls }}
+                        loop={{ module.video.loop_video }}
+                        muted={{ module.video.mute_by_default }}
+                    %}
                 </div>
             {% endif %}
         </div>

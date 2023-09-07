@@ -106,12 +106,34 @@
   "type" : "group",
   "default" : [ ]
 }, {
+  "id" : "5511afaf-1045-cb60-30e7-fb6d4a4c8351",
+  "name" : "media_type",
+  "display_width" : null,
+  "label" : "Media type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "image", "Image" ], [ "video", "Video" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "image"
+}, {
   "id" : "8c05aea2-0ea9-2d9b-dda9-478d5c930c39",
   "name" : "image",
   "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "media_type",
+    "controlling_value_regex" : "image",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
   "responsive" : true,
   "resizable" : true,
   "show_loading" : false,
@@ -122,4 +144,23 @@
     "alt" : null,
     "loading" : "lazy"
   }
+}, {
+  "id" : "21cab348-7a7b-d221-f79e-9e20e89c110f",
+  "name" : "video",
+  "display_width" : null,
+  "label" : "Video",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "media_type",
+    "controlling_value_regex" : "video",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "resizable" : true,
+  "show_preview" : true,
+  "show_advanced_options" : true,
+  "type" : "videoplayer"
 } ]
