@@ -1,0 +1,56 @@
+<template x-teleport="body">
+    <div
+        x-show="showing"
+        class="fixed inset-0 w-full h-full bg-[rgba(61,87,92,0.80)] z-40"
+        x-on:click="hide"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-out duration-300"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+    >
+        <div class="ml-auto w-[calc(100%-52px)] max-h-screen overflow-y-scroll | md:w-3/5 | xl:w-[1000px]" x-on:click.stop>
+        <button type="button" class="fixed top-2.5 left-2.5 | md:top-4 md:left-auto md:right-[calc(60%+1rem)] | xl:right-[calc(1000px+1rem)]" x-on:click="hide">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <circle cx="16" cy="16" r="15.625" fill="white" stroke="#DCDCDC" stroke-width="0.75"/>
+            <path fill="#009FE3" d="M10.084 21.526 21.61 10l.795.795L10.88 22.32l-.795-.795Z"/>
+            <path fill="#009FE3" d="M21.608 22.321 10.082 10.795l.795-.795 11.526 11.526-.794.795Z"/>
+            </svg>
+        </button>
+
+        <div class="p-8 bg-light-grey min-h-screen | lg:py-14 lg:px-10">
+            <h3 class="mb-8 text-secondary">Join our talented team</h3>
+
+            {% if career_form %}
+                {% form
+                    form_to_use="{{ career_form.form_id }}"
+                    response_response_type="{{ career_form.response_type }}"
+                    response_message="{{ career_form.message }}"
+                    response_redirect_id="{{ career_form.redirect_id }}"
+                    response_redirect_url="{{ career_form.redirect_url }}"
+                    gotowebinar_webinar_key="{{ career_form.gotowebinar_webinar_key }}"
+                %}
+            {% endif %}
+        </div>
+        </div>
+    </div>
+</template>
+
+{% require_js %}
+    <script type="text/javascript">
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('career', () => ({
+          showing: false,
+          show() {
+              this.showing = true;
+              document.body.classList.add('overflow-hidden')
+          },
+          hide() {
+              this.showing = false;
+              document.body.classList.remove('overflow-hidden')
+          }
+        }))
+      })
+    </script>
+{% end_require_js %}
