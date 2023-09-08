@@ -7,42 +7,40 @@
     {% set show_button = true %}
 
     <div class="latest-news-module">
-        <div class="content-wrapper">
-            <div class="swiper-container relative">
-                {% if module.title %}
-                    <h2>{{ module.title }}<span class="text-secondary">.</span></h2>
-                {% endif %}
+        <div class="swiper-container relative">
+            {% if module.title %}
+                <h2>{{ module.title }}<span class="text-secondary">.</span></h2>
+            {% endif %}
 
-                <hr class="mt-8 border-dark-grey | lg:mt-14"> 
+            <hr class="mt-8 border-dark-grey | lg:mt-14"> 
 
-                <div class="xl:flex">
-                    <div class="pt-12 | lg:pt-16 | xl:pr-8 xl:w-1/4">
-                        {% if module.text %}
-                            <div>{{ module.text }}</div>
-                        {% endif %}
+            <div class="xl:flex">
+                <div class="pt-12 | lg:pt-16 | xl:pr-8 xl:w-1/4">
+                    {% if module.text %}
+                        <div>{{ module.text }}</div>
+                    {% endif %}
 
-                        <a href="{{ blog_all_posts_url("default") }}" class="button primary mt-8 | lg:mt-10">View all articles</a>
-                    </div>
+                    <a href="{{ blog_all_posts_url("default") }}" class="button primary mt-8 | lg:mt-10">View all articles</a>
+                </div>
 
-                    <div class="pt-12 w-full border-dark-grey | lg:pt-16 | xl:pl-16 xl:w-3/4 xl:border-l">
-                        <div class="swiper" data-slides="1" data-slides-md="2" data-slides-lg="3">
-                            <div class="swiper-wrapper">
-                                {% for rec_post in rec_posts %}
-                                    {% set content = rec_post %}
+                <div class="pt-12 w-full border-dark-grey | lg:pt-16 | xl:pl-16 xl:w-3/4 xl:border-l">
+                    <div class="swiper" data-slides="1" data-slides-md="2" data-slides-lg="3">
+                        <div class="swiper-wrapper">
+                            {% for rec_post in rec_posts %}
+                                {% set content = rec_post %}
 
-                                    <div class="swiper-slide">
-                                        {% include "../templates/partials/blog-card.html" %}
-                                    </div>
-                                {% endfor %}
-                            </div>
+                                <div class="swiper-slide">
+                                    {% include "../templates/partials/blog-card.html" %}
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="swiper-buttons lg:absolute lg:top-0 lg:right-0">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+            <div class="swiper-buttons lg:absolute lg:top-0 lg:right-0">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </div>
