@@ -43,7 +43,7 @@
                                             {% set href = "mailto:" + href %}
                                         {% endif %}
 
-                                        <a href="{{ href }}" class="button {{ loop.first ? 'secondary' : 'primary' }}"
+                                        <a href="{{ href }}" class="button {{ item.button|length > 1 && loop.first ? 'secondary' : 'primary' }}"
                                             {% if button.link.open_in_new_tab %}target="_blank"{% endif %}
                                             {% if button.link.rel %}rel="{{ button.link.rel }}"{% endif %}
                                             >
