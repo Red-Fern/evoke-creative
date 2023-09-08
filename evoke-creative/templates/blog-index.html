@@ -5,54 +5,67 @@
 -->
 {% module "header_style" path="../modules/header-style", export_to_template_context=True %}
 
-{# Global CTA fields #}
+{# Blog specific global fields #}
 
 {% if blog.slug == 'blog' %}
   {% module "download_cta" path="../modules/download-cta", export_to_template_context=True %}
   {% module "sign_up_cta" path="../modules/sign-up-cta", export_to_template_context=True %}
 {% endif %}
 
+{% if blog.slug == 'careers' %}
+  {% module "career_form" path="../modules/career-form", export_to_template_context=True %}
+
+  {% set career_form = widget_data.career_form.form %}
+{% endif %}
+
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-{% dnd_area "dnd_area"
-  label="Main section",
-  class="body-container body-container--blog-index"
-%}
+  <div class="blog-listing" x-data="career">
+    {% dnd_area "dnd_area"
+      label="Main section",
+      class="body-container body-container--blog-index"
+    %}
 
-  {# Header #}
+      {# Header #}
 
-  {% dnd_section %}
-    {% dnd_column %}
-      {% dnd_row %}
-        {% dnd_module
-          path="@hubspot/rich_text",
-          html='<h1 class="border-edge">Lorem ipsum<br><span class="text-secondary">sit dolor</span></h1>'
-        %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
-  {% end_dnd_section %}
+      {% dnd_section %}
+        {% dnd_column %}
+          {% dnd_row %}
+            {% dnd_module
+              path="@hubspot/rich_text",
+              html='<h1 class="border-edge">Lorem ipsum<br><span class="text-secondary">sit dolor</span></h1>'
+            %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+        {% end_dnd_column %}
+      {% end_dnd_section %}
 
-  {# Blog listings and pagination #}
+      {# Blog listings and pagination #}
 
-  {% dnd_section
-    vertical_alignment="TOP"
-  %}
-    {% dnd_column %}
-      {% dnd_row %}
-        {% dnd_module path="../modules/blog-listing" %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-      
-      {% dnd_row %}
-        {% dnd_module path="../modules/pagination" %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
-  {% end_dnd_section %} 
+      {% dnd_section
+        vertical_alignment="TOP"
+      %}
+        {% dnd_column %}
+          {% dnd_row %}
+            {% dnd_module path="../modules/blog-listing" %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+          
+          {% dnd_row %}
+            {% dnd_module path="../modules/pagination" %}
+            {% end_dnd_module %}
+          {% end_dnd_row %}
+        {% end_dnd_column %}
+      {% end_dnd_section %} 
 
-  {% include_dnd_partial path="../sections/sign-up-cta.html" %}
+      {% include_dnd_partial path="../sections/sign-up-cta.html" %}
 
-{% end_dnd_area %}
+    {% end_dnd_area %}
+
+    {# Careers modal #}
+    {% if blog.slug == 'careers' %}
+      {% include "../templates/partials/career-modal.html" %}
+    {% endif %}
+  </div>
 {% endblock body %}
