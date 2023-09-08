@@ -1,6 +1,5 @@
 {% require_css %}
     <style>
-    {% scope_css %}
 
         {# Vector backgrounds #}
 
@@ -36,13 +35,15 @@
             }
         {% endif %}
 
-        {# Video #}
+        {% scope_css %}
 
-        .hs-video-wrapper {
-            padding-bottom: 100% !important;
-        }
+            {# Video #}
+            
+            .hs-video-wrapper {
+                padding-bottom: 100% !important;
+            }
 
-    {% end_scope_css %}
+        {% end_scope_css %}
     </style>
 {% end_require_css %}
 
