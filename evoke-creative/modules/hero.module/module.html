@@ -53,8 +53,8 @@
             <h1 class="border-edge mb-8 | lg:mb-14 {{ module.style.layout == 'grey' ? 'text-white' : '' }}">{{ module.title }}</h1>
         {% endif %}
 
-        <div class="gap-10 items-center | md:flex md:gap-14">
-            <div class="space-y-8 | md:w-[55%] | lg:space-y-14">
+        <div class="flex flex-wrap gap-10 items-center | md:flex-nowrap md:gap-14">
+            <div class="space-y-8 w-full | md:w-[55%] | lg:space-y-14">
                 {% if (module.image.src || module.video.player_id) && module.title %}
                     <h1 class="border-edge {{ module.style.layout == 'grey' ? 'text-white' : '' }}">{{ module.title }}</h1>
                 {% endif %}
@@ -91,14 +91,14 @@
                 {% endif %}
                 {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
                 
-                <div class="flex justify-center | md:w-[45%]">
+                <div class="flex justify-center w-full | md:w-[45%]">
                     <img src="{{ module.image.src }}" class="rounded-theme" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
                 </div>
             {% elif module.video.player_id && module.media_type == 'video' %}
                 {% set max_width = module.video.size_type == 'auto_custom_max' ? module.video.max_width : module.video.width %}
                 {% set max_height = module.video.size_type == 'auto_custom_max' ? module.video.max_height : module.video.height %}
                 
-                <div class="text-center | md:w-[45%]">
+                <div class="w-full text-center | md:w-[45%]">
                     {% video_player "embed_player"
                         player_id={{ module.video.player_id }}
                         type={{ module.video.player_type || 'scriptV4' }}
