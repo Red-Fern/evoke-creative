@@ -62,14 +62,6 @@
       {{ content.post_body }}
     </div>
 
-    {# CTA #}
-
-    <div class="content-wrapper--vertical-spacing">
-      <div class="content-wrapper">
-        {% module "download_cta" path="../modules/download-cta" %}
-      </div>
-    </div>
-
     {# Related posts #}
 
     {% set tag_posts = blog_recent_tag_posts("default", content.tag_list, 4) %}
