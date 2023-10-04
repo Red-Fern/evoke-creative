@@ -22,19 +22,21 @@
             </div>
         {% endfor %}
 
-        <svg xmlns="http://www.w3.org/2000/svg" class="hidden -mt-8 -ml-20 | xl:block" width="987" height="157" fill="none">
-            <g filter="url(#a)" style="mix-blend-mode:multiply">
-                <ellipse cx="489.5" cy="78.5" fill="#3C3C3B" fill-opacity=".6" rx="437.5" ry="18.5"/>
-            </g>
-            
-            <defs>
-                <filter id="a" width="995" height="157" x="-8" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                    <feGaussianBlur result="effect1_foregroundBlur_165_2909" stdDeviation="30"/>
-                </filter>
-            </defs>
-        </svg>
+        {% if module.style.layout == 'images-text' %}
+            <svg xmlns="http://www.w3.org/2000/svg" class="hidden -mt-8 -ml-20 | xl:block" width="987" height="157" fill="none">
+                <g filter="url(#a)" style="mix-blend-mode:multiply">
+                    <ellipse cx="489.5" cy="78.5" fill="#3C3C3B" fill-opacity=".6" rx="437.5" ry="18.5"/>
+                </g>
+                
+                <defs>
+                    <filter id="a" width="995" height="157" x="-8" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feGaussianBlur result="effect1_foregroundBlur_165_2909" stdDeviation="30"/>
+                    </filter>
+                </defs>
+            </svg>
+        {% endif %}
     </div>
 </div>
 
