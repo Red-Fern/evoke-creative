@@ -7,7 +7,10 @@
             {% set menu_href = "mailto:" + href %}
         {% endif %}
 
-        <a href="{{ menu_href }}" class="menu__link relative inline-flex items-center px-3 py-8 uppercase | xl:px-4 | 2xl:px-8">
+        <a 
+      {% if menu_href %}href="{{ menu_href }}"{% endif %%}
+          class="menu__link relative inline-flex items-center px-3 py-8 uppercase | xl:px-4 | 2xl:px-8"
+        >
           {{ item.menu_title }}
 
           {% if item.has_child_menu %}
