@@ -13,7 +13,7 @@
         <div class="swiper-wrapper">
           {% for item in module.team_member %}
             <div class="swiper-slide" x-data="team">
-              <a href="#" class="block" x-on:click.prevent="show">
+              <a href="#" class="block w-full" x-on:click.prevent="show">
                 {% if item.image.src %}
                   {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
                   {% if item.image.size_type == "auto" %}
