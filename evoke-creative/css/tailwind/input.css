@@ -116,14 +116,18 @@
     }
 
     .border-edge {
-        @apply relative pl-5 lg:pl-[75px];
+        @apply relative flex flex-col pl-5 lg:pl-[75px];
     }
 
     .border-edge::after {
-        @apply content-[''] absolute top-0 left-0 w-1 h-[calc(100%-0.15em)] bg-current lg:w-4;
+        @apply content-[''] absolute top-0 left-0 w-1 h-[calc(100%-5px)] bg-current lg:w-4 lg:h-[calc(100%-10px)];
     }
 
     .border-edge.edge-secondary::after {
         @apply bg-secondary;
+    }
+
+    div.border-edge::after {
+        @apply h-full;
     }
 }
