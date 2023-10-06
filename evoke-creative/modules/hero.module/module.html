@@ -101,22 +101,13 @@
                 <div class="flex justify-center w-full | md:w-[45%]">
                     <img src="{{ module.image.src }}" class="rounded-theme" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
                 </div>
-            {% elif module.video.player_id && module.media_type == 'video' %}
-                {% set max_width = module.video.size_type == 'auto_custom_max' ? module.video.max_width : module.video.width %}
-                {% set max_height = module.video.size_type == 'auto_custom_max' ? module.video.max_height : module.video.height %}
-                
+            {% elif module.video_src && module.media_type == 'video' %}
                 <div class="w-full text-center | md:w-[45%]">
-                    {% video_player "embed_player"
-                        player_id={{ module.video.player_id }}
-                        type={{ module.video.player_type || 'scriptV4' }}
-                        full_width={{ module.video.size_type == 'auto_full_width' }},
-                        conversion_asset={{ module.video.conversion_asset|tojson|safe }}
-                        autoplay={{ module.video.autoplay }}
-                        hidden_controls={{ module.video.hide_controls }}
-                        loop={{ module.video.loop_video }}
-                        muted={{ module.video.mute_by_default }}
-                    %}
+                    <video crossorigin="anonymous" playsinline="playsinline" preload="none" style="object-fit: contain;" loop="" muted="muted" autoplay>
+                        <source src="{{ module.video_src }}" type="video/mp4" />
+                    </video>
                 </div>
+            </video>
             {% endif %}
         </div>
     </div>

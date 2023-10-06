@@ -145,8 +145,9 @@
     "loading" : "lazy"
   }
 }, {
-  "id" : "21cab348-7a7b-d221-f79e-9e20e89c110f",
-  "name" : "video",
+  "picker" : "video",
+  "id" : "e5c29d5b-4859-82bc-72b4-933c3b7620b7",
+  "name" : "video_src",
   "display_width" : null,
   "label" : "Video",
   "required" : false,
@@ -159,8 +160,5 @@
     "operator" : "EQUAL",
     "access" : null
   },
-  "resizable" : true,
-  "show_preview" : true,
-  "show_advanced_options" : true,
-  "type" : "videoplayer"
+  "type" : "file"
 } ]
