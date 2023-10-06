@@ -8,13 +8,11 @@
 {% extends "./layouts/base.html" %}
 
 {% block body %}
+  {% dnd_area "dnd_area"
+    label="Main section",
+    class="body-container body-container--page"
+  %}
 
-{% dnd_area "dnd_area"
-  label="Main section",
-  class="body-container body-container--page"
-%}
-
-  {% include_dnd_partial path="../sections/hero.html" %}
-
+    {% include_dnd_partial path="../sections/hero.html" %}
 {% end_dnd_area %}
 {% endblock body %} 
