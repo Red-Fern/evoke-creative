@@ -57,14 +57,14 @@
                         {% if item.image.src %}
                             {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
                             {% if item.image.size_type == 'auto' %}
-                                {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+                                {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%;"' %}
                             {% elif item.image.size_type == 'auto_custom_max' %}
-                                {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                                {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%;"' %}
                             {% endif %}
                             {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
                             
                             <div class="hidden self-center items-center justify-center | lg:flex">
-                                <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                                <img src="{{ item.image.src }}" class="{{ module.style.layout == 'projects' ? 'absolute top-0 right-0 w-[calc(50%-2.5rem)] h-[calc(100%+2px)] object-cover' : '' }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
                             </div>
                         {% endif %}
                     </div>
