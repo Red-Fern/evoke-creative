@@ -102,12 +102,11 @@
                     <img src="{{ module.image.src }}" class="rounded-theme" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
                 </div>
             {% elif module.video_src && module.media_type == 'video' %}
-                <div class="w-full text-center | md:w-[45%]">
+                <div class="flex items-center w-full text-center aspect-[1/0.91] | md:w-[45%]">
                     <video crossorigin="anonymous" playsinline="playsinline" preload="none" style="object-fit: contain;" loop="" muted="muted" autoplay>
                         <source src="{{ module.video_src }}" type="video/mp4" />
                     </video>
                 </div>
-            </video>
             {% endif %}
         </div>
     </div>
