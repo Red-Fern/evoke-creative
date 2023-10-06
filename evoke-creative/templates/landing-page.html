@@ -3,20 +3,106 @@
   isAvailableForNewContent: true
   label: Landing page
 -->
+  
 {% extends "./layouts/base.html" %}
 
 {% block header %}
-  {% global_partial path="./partials/header-no-navigation.html" %}
 {% endblock header %}
 
 {% block body %}
-{% dnd_area "dnd_area"
-  label="Main section",
-  class="body-container body-container--landing-page"
-%}
+  <div class="content-wrapper py-6 | lg:flex lg:gap-10 lg:min-h-[calc(100vh-2rem)] | xl:gap-20 | 2xl:gap-40">
+    <div class="lg:flex-1">
+      <div class="header__logo">
+        {% module "header_logo"
+          path="@hubspot/logo"
+          label="Header logo"
+          img={
+            "loading": "eager"
+          }
+        %}
+      </div>
 
-{% end_dnd_area %}
-{% endblock body %}
+      <div class="my-12 | lg:my-24 | 2xl:my-32">
+        <h2 class="mb-8">
+          {% module "heading" 
+            path="@hubspot/text" 
+            label="Heading"
+            value="Lorem<br><span class='text-secondary'>ipsum.</span>"
+          %}
+        </h2>
+
+        <p>
+          {% module "text" 
+            path="@hubspot/text" 
+            label="Text"
+            value="Orci ligula condimentum risus, at tincidunt risus neque eu ante. Mauris euismod orci quis vehicula porttitor. Nunc at sollicitudin dui. Sed molestie metus in ipsum lobortis. Nunc at sollicitudin dui. Sed molestie metus in ipsum lobortis."
+          %}
+        </p>
+
+        <div class="mt-8 | lg:mt-12 | 2xl:mt-24">
+          {% module "form"
+            path="@hubspot/form" 
+            label="Form"
+          %}
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:flex-1 lg:flex lg:flex-col">
+      <div class="p-6 rounded-theme bg-primary text-white">
+        <div class="cover-image-wrapper w-full aspect-[1/0.7] rounded-theme">
+          {% module "image"
+            path="@hubspot/linked_image",
+            label="Image"
+            img={
+              "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+              "loading": context.image_loading or "lazy",
+              "max_height": context.image_height or 530,
+              "max_width": context.image_width or 710,
+              "size_type": "auto_custom_max",
+              "src": context.image or get_asset_url("../images/grayscale-mountain.png")
+            }
+          %}
+        </div>
+
+        <div class="mt-6 | lg:p-6 | 2xl:p-14">
+          <div class="lg:text-large">
+            {% module "quote" 
+              path="@hubspot/text" 
+              label="Quote"
+              value="“Cras nec nisi sollicitudin, ullamcorper est a, pellentesque ligula. Nam id ligula eget ipsum rhoncus interdum a vel lorem.”"
+            %}
+          </div>
+
+          <div class="flex items-center mt-8 | lg:mt-12">
+            <div class="cover-image-wrapper shrink-0 mr-6 w-16 aspect-[1/1.35] rounded-theme | lg:mr-10 lg:w-[100px]">
+              {% module "author_image"
+                path="@hubspot/linked_image",
+                label="Author image"
+                img={
+                  "alt": context.image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+                  "loading": context.image_loading or "lazy",
+                  "max_height": context.image_height or 530,
+                  "max_width": context.image_width or 710,
+                  "size_type": "auto_custom_max",
+                  "src": context.image or get_asset_url("../images/grayscale-mountain.png")
+                }
+              %}
+            </div>
+
+            <div class="uppercase">
+              {% module "Author" 
+                path="@hubspot/text" 
+                label="Text"
+                value="<strong>Name</strong> Role<br>Company"
+              %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock body %} 
 
 {% block footer %}
 {% endblock footer %}

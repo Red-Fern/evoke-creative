@@ -108,3 +108,21 @@
     border-radius: var(--border-radius-mobile);
   }
 }
+
+/* Image wrapper */
+
+.cover-image-wrapper {
+  display: flex;
+  overflow: hidden;
+}
+
+.cover-image-wrapper .hs_cos_wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.cover-image-wrapper .hs_cos_wrapper img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+}

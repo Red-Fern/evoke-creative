@@ -46,6 +46,10 @@ html[lang^="ko"] body {
   overflow: hidden;
 }
 
+.body-wrapper.hs-landing-page {
+  margin: 1rem;
+}
+
 /* Paragraphs */
 
 p {

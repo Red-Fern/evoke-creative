@@ -53,6 +53,10 @@ body {
   background-color: var(--light-grey-color);
 }
 
+.body-wrapper.hs-landing-page {
+  border-radius: var(--border-radius);
+}
+
 @media(max-width: 991px) {
   body {
     font-size: var(--body-font-size-mobile);
@@ -62,6 +66,10 @@ body {
 @media(max-width: 767px) {
   .body-wrapper {
     border-radius: var(--border-radius-mobile) var(--border-radius-mobile) 0 0;
+  }
+
+  .body-wrapper.hs-landing-page {
+    border-radius: var(--border-radius-mobile);
   }
 }
 
