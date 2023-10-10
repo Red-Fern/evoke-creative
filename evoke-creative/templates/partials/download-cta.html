@@ -17,6 +17,18 @@
                 response_redirect_url="{{ module.form.redirect_url }}"
                 gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
             %}
+
+            {% set href = module.button.link.url.href %}
+            {% if module.button.link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+            {% endif %}
+
+            <a href="{{ href }}" class="button primary"
+                {% if module.button.link.open_in_new_tab %}target="_blank"{% endif %}
+                {% if module.button.link.rel %}rel="{{ module.button.link.rel }}"{% endif %}
+                >
+                {{ module.button.link_text }}
+            </a>
         </div>
 
         {% if module.image.src %}

@@ -39,6 +39,58 @@
     "message" : "Thanks for submitting the form."
   }
 }, {
+  "id" : "802dd602-3e69-8b1d-e536-158802a1065d",
+  "name" : "button",
+  "display_width" : null,
+  "label" : "Button",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "b116fb14-4edd-7e3e-4e18-f8213f43baa4",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "bc458162-46dd-1812-87ad-2b53fea45f18",
+    "name" : "link_text",
+    "display_width" : null,
+    "label" : "Link text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+}, {
   "id" : "3d4129f3-0ff6-cabb-67f0-845de3c916e1",
   "name" : "image",
   "display_width" : null,
