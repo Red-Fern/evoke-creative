@@ -1,4 +1,6 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
     /* Lists */
@@ -15,8 +17,6 @@
         @apply list-[auto];
     }
 }
-
-@tailwind components;
 
 @layer components {
     /* Modules */
@@ -107,8 +107,6 @@
         @apply border-tertiary text-tertiary;
     }
 }
-
-@tailwind utilities;
 
 @layer utilities {
     .link-inherit {
